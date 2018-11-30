@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/ishasharma/CLionProjects/220 DJ Project/MasterSongList.cpp">
+			<Option target="220_DJ_Project"/>
+		</Unit>
+		<Unit filename="/Users/ishasharma/CLionProjects/220 DJ Project/MasterSongList.h">
+			<Option target="220_DJ_Project"/>
+		</Unit>
 		<Unit filename="/Users/ishasharma/CLionProjects/220 DJ Project/main.cpp">
 			<Option target="220_DJ_Project"/>
 		</Unit>

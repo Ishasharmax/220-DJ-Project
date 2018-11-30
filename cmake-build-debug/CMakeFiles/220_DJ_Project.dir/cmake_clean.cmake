@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/220_DJ_Project.dir/main.cpp.o"
+  "CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o"
   "220_DJ_Project.pdb"
   "220_DJ_Project"
 )

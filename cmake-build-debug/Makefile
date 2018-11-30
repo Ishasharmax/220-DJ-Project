@@ -123,6 +123,33 @@ depend:
 	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/build
 .PHONY : 220_DJ_Project/fast
 
+MasterSongList.o: MasterSongList.cpp.o
+
+.PHONY : MasterSongList.o
+
+# target to build an object file
+MasterSongList.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o
+.PHONY : MasterSongList.cpp.o
+
+MasterSongList.i: MasterSongList.cpp.i
+
+.PHONY : MasterSongList.i
+
+# target to preprocess a source file
+MasterSongList.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.i
+.PHONY : MasterSongList.cpp.i
+
+MasterSongList.s: MasterSongList.cpp.s
+
+.PHONY : MasterSongList.s
+
+# target to generate assembly for a file
+MasterSongList.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.s
+.PHONY : MasterSongList.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... 220_DJ_Project"
+	@echo "... MasterSongList.o"
+	@echo "... MasterSongList.i"
+	@echo "... MasterSongList.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
