@@ -14,5 +14,22 @@ C:\Users\KandacePC\.CLion2018.2\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Configuring done
+<<<<<<< HEAD
+CMake Error at CMakeLists.txt:6 (add_executable):
+  Cannot find source file:
+
+    Song.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: 220_DJ_Project
+
+
+-- Build files have been written to: /Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug
+=======
 -- Generating done
 -- Build files have been written to: /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug
+>>>>>>> e5322daf17357e87151dee01c1e4c32d8e6044a7

@@ -86,7 +86,17 @@
 		<Unit filename="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/MasterSongList.h">
 			<Option target="220_DJ_Project"/>
 		</Unit>
+<<<<<<< HEAD
+		<Unit filename="/Users/ishasharma/CLionProjects/220 DJ Project/SongLib.cpp">
+			<Option target="220_DJ_Project"/>
+		</Unit>
+		<Unit filename="/Users/ishasharma/CLionProjects/220 DJ Project/SongLib.h">
+			<Option target="220_DJ_Project"/>
+		</Unit>
+		<Unit filename="/Users/ishasharma/CLionProjects/220 DJ Project/main.cpp">
+=======
 		<Unit filename="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/main.cpp">
+>>>>>>> e5322daf17357e87151dee01c1e4c32d8e6044a7
 			<Option target="220_DJ_Project"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/CMakeLists.txt">

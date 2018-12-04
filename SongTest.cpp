@@ -6,8 +6,6 @@
 #include "MasterList.h"
 #include "../NewFinalProject/DJTestLib.h"
 
-
-
 void runCarTests(){
     Car myCar =  Car(1995, "Chevy", "Blazer", 500, 85);
     std::cout << myCar.toString() << std::endl;
