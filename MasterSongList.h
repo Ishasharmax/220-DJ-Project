@@ -5,13 +5,15 @@
 #ifndef INC_220_DJ_PROJECT_MASTERSONGLIST_H
 #define INC_220_DJ_PROJECT_MASTERSONGLIST_H
 
-#include "SongList.h"
+#include "PlayListNode.h"
+#include "Song.h"
 #include <iostream>
 #include<string.h>
 
 class MasterSongList {
 private:
-    PlaylistNode *songArray;
+    Song *songPtr;
+    PlayListNode *songArray;
     int currItemCount;
     int currCapacity;
 

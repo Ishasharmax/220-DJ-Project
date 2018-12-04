@@ -22,7 +22,7 @@ public:
 
     PlayListNode(const PlayListNode& nodeToCopy);
 
-    PlayListNode&operator=(const PlayListNode& nodeToCopy);
+    PlayListNode& operator=(const PlayListNode& nodeToCopy);
 
     Song getSong();
 

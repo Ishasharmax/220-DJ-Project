@@ -2,12 +2,12 @@
 // Created by Isha Sharma on 11/29/18.
 //
 #include "MasterSongList.h"
+#include "PlayListNode.h"
 #include <stdexcept>
 #include <string>
 #include <iostream>
 #include "Song.h"
 using namespace std;
-
 
 MasterSongList::MasterSongList(int initialCapacity){
     if (initialCapacity<1){
@@ -15,7 +15,8 @@ MasterSongList::MasterSongList(int initialCapacity){
     }else{
         this->currCapacity=initialCapacity;
         currItemCount=0;
-        songArray=new int[currCapacity];
+        songPtr=new int[currCapacity];
+        this->songArray= songPtr;
     }
 }
 
@@ -27,13 +28,13 @@ MasterSongList::~MasterSongList(){
 
 MasterSongList::MasterSongList(const MasterSongList& songToCopy){
     this->currCapacity=songToCopy.currCapacity;
-    this->songArray=new int[songToCopy.currCapacity];
+    this->songArray= new int[songToCopy.currCapacity];
     this->currItemCount=songToCopy.currItemCount;
     for (int i=0; i<songToCopy.currItemCount;i++){
         this->songArray[i]=songToCopy.songArray[i];
     }
-
 }
+
 MasterSongList& MasterSongList::operator=(const MasterSongList& songListToCopy){
     if (this !=&songListToCopy){
         delete[] this->songArray;
