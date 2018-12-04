@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /cygdrive/c/Users/KandacePC/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /cygdrive/c/Users/KandacePC/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/ishasharma/CLionProjects/220 DJ Project"
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug"
+CMAKE_BINARY_DIR = /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/220_DJ_Project.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/220_DJ_Project.dir/flags.make
 
 CMakeFiles/220_DJ_Project.dir/main.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
 CMakeFiles/220_DJ_Project.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/220_DJ_Project.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/main.cpp.o -c "/Users/ishasharma/CLionProjects/220 DJ Project/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/220_DJ_Project.dir/main.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/main.cpp.o -c /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/main.cpp
 
 CMakeFiles/220_DJ_Project.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/ishasharma/CLionProjects/220 DJ Project/main.cpp" > CMakeFiles/220_DJ_Project.dir/main.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/main.cpp > CMakeFiles/220_DJ_Project.dir/main.cpp.i
 
 CMakeFiles/220_DJ_Project.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/ishasharma/CLionProjects/220 DJ Project/main.cpp" -o CMakeFiles/220_DJ_Project.dir/main.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/main.cpp -o CMakeFiles/220_DJ_Project.dir/main.cpp.s
 
 CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
 CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o: ../MasterSongList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o -c "/Users/ishasharma/CLionProjects/220 DJ Project/MasterSongList.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o -c /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/MasterSongList.cpp
 
 CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/ishasharma/CLionProjects/220 DJ Project/MasterSongList.cpp" > CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/MasterSongList.cpp > CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.i
 
 CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/ishasharma/CLionProjects/220 DJ Project/MasterSongList.cpp" -o CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/MasterSongList.cpp -o CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.s
 
 CMakeFiles/220_DJ_Project.dir/SongLib.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
 CMakeFiles/220_DJ_Project.dir/SongLib.cpp.o: ../SongLib.cpp
@@ -105,16 +105,24 @@ CMakeFiles/220_DJ_Project.dir/SongLib.cpp.s: cmake_force
 # External object files for target 220_DJ_Project
 220_DJ_Project_EXTERNAL_OBJECTS =
 
+<<<<<<< HEAD
 220_DJ_Project: CMakeFiles/220_DJ_Project.dir/main.cpp.o
 220_DJ_Project: CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o
 220_DJ_Project: CMakeFiles/220_DJ_Project.dir/SongLib.cpp.o
 220_DJ_Project: CMakeFiles/220_DJ_Project.dir/build.make
 220_DJ_Project: CMakeFiles/220_DJ_Project.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable 220_DJ_Project"
+=======
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/main.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/build.make
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable 220_DJ_Project.exe"
+>>>>>>> e5322daf17357e87151dee01c1e4c32d8e6044a7
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/220_DJ_Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/220_DJ_Project.dir/build: 220_DJ_Project
+CMakeFiles/220_DJ_Project.dir/build: 220_DJ_Project.exe
 
 .PHONY : CMakeFiles/220_DJ_Project.dir/build
 
@@ -123,6 +131,6 @@ CMakeFiles/220_DJ_Project.dir/clean:
 .PHONY : CMakeFiles/220_DJ_Project.dir/clean
 
 CMakeFiles/220_DJ_Project.dir/depend:
-	cd "/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/ishasharma/CLionProjects/220 DJ Project" "/Users/ishasharma/CLionProjects/220 DJ Project" "/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug" "/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug" "/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug/CMakeFiles/220_DJ_Project.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles/220_DJ_Project.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/220_DJ_Project.dir/depend
 
