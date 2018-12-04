@@ -6,8 +6,8 @@
 
 #include <string>
 #include <stdexcept>
-#include Playlist.h
-#include LinkedPlayList.h
+#include "PlayList.h"
+#include "LinkedPlayList.h"
 class MasterPlayList{
 private:
     int *array;

@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /cygdrive/c/Users/KandacePC/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe
+CMAKE_COMMAND = /cygdrive/c/Users/Bobo/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /cygdrive/c/Users/KandacePC/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
+RM = /cygdrive/c/Users/Bobo/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/cygdrive/c/Users/KandacePC/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/cygdrive/c/Users/Bobo/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/cygdrive/c/Users/KandacePC/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
+	/cygdrive/c/Users/Bobo/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,168 @@ depend:
 	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/build
 .PHONY : 220_DJ_Project/fast
 
+DJTestLib.o: DJTestLib.cpp.o
+
+.PHONY : DJTestLib.o
+
+# target to build an object file
+DJTestLib.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.o
+.PHONY : DJTestLib.cpp.o
+
+DJTestLib.i: DJTestLib.cpp.i
+
+.PHONY : DJTestLib.i
+
+# target to preprocess a source file
+DJTestLib.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.i
+.PHONY : DJTestLib.cpp.i
+
+DJTestLib.s: DJTestLib.cpp.s
+
+.PHONY : DJTestLib.s
+
+# target to generate assembly for a file
+DJTestLib.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.s
+.PHONY : DJTestLib.cpp.s
+
+LinkedPlayList.o: LinkedPlayList.cpp.o
+
+.PHONY : LinkedPlayList.o
+
+# target to build an object file
+LinkedPlayList.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.o
+.PHONY : LinkedPlayList.cpp.o
+
+LinkedPlayList.i: LinkedPlayList.cpp.i
+
+.PHONY : LinkedPlayList.i
+
+# target to preprocess a source file
+LinkedPlayList.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.i
+.PHONY : LinkedPlayList.cpp.i
+
+LinkedPlayList.s: LinkedPlayList.cpp.s
+
+.PHONY : LinkedPlayList.s
+
+# target to generate assembly for a file
+LinkedPlayList.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.s
+.PHONY : LinkedPlayList.cpp.s
+
+LinkedPlaylistNodeTest.o: LinkedPlaylistNodeTest.cpp.o
+
+.PHONY : LinkedPlaylistNodeTest.o
+
+# target to build an object file
+LinkedPlaylistNodeTest.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.o
+.PHONY : LinkedPlaylistNodeTest.cpp.o
+
+LinkedPlaylistNodeTest.i: LinkedPlaylistNodeTest.cpp.i
+
+.PHONY : LinkedPlaylistNodeTest.i
+
+# target to preprocess a source file
+LinkedPlaylistNodeTest.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.i
+.PHONY : LinkedPlaylistNodeTest.cpp.i
+
+LinkedPlaylistNodeTest.s: LinkedPlaylistNodeTest.cpp.s
+
+.PHONY : LinkedPlaylistNodeTest.s
+
+# target to generate assembly for a file
+LinkedPlaylistNodeTest.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.s
+.PHONY : LinkedPlaylistNodeTest.cpp.s
+
+LinkedPlaylistTest.o: LinkedPlaylistTest.cpp.o
+
+.PHONY : LinkedPlaylistTest.o
+
+# target to build an object file
+LinkedPlaylistTest.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.o
+.PHONY : LinkedPlaylistTest.cpp.o
+
+LinkedPlaylistTest.i: LinkedPlaylistTest.cpp.i
+
+.PHONY : LinkedPlaylistTest.i
+
+# target to preprocess a source file
+LinkedPlaylistTest.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.i
+.PHONY : LinkedPlaylistTest.cpp.i
+
+LinkedPlaylistTest.s: LinkedPlaylistTest.cpp.s
+
+.PHONY : LinkedPlaylistTest.s
+
+# target to generate assembly for a file
+LinkedPlaylistTest.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.s
+.PHONY : LinkedPlaylistTest.cpp.s
+
+MasterPlaylist.o: MasterPlaylist.cpp.o
+
+.PHONY : MasterPlaylist.o
+
+# target to build an object file
+MasterPlaylist.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.o
+.PHONY : MasterPlaylist.cpp.o
+
+MasterPlaylist.i: MasterPlaylist.cpp.i
+
+.PHONY : MasterPlaylist.i
+
+# target to preprocess a source file
+MasterPlaylist.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.i
+.PHONY : MasterPlaylist.cpp.i
+
+MasterPlaylist.s: MasterPlaylist.cpp.s
+
+.PHONY : MasterPlaylist.s
+
+# target to generate assembly for a file
+MasterPlaylist.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.s
+.PHONY : MasterPlaylist.cpp.s
+
+MasterPlaylistTest.o: MasterPlaylistTest.cpp.o
+
+.PHONY : MasterPlaylistTest.o
+
+# target to build an object file
+MasterPlaylistTest.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.o
+.PHONY : MasterPlaylistTest.cpp.o
+
+MasterPlaylistTest.i: MasterPlaylistTest.cpp.i
+
+.PHONY : MasterPlaylistTest.i
+
+# target to preprocess a source file
+MasterPlaylistTest.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.i
+.PHONY : MasterPlaylistTest.cpp.i
+
+MasterPlaylistTest.s: MasterPlaylistTest.cpp.s
+
+.PHONY : MasterPlaylistTest.s
+
+# target to generate assembly for a file
+MasterPlaylistTest.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.s
+.PHONY : MasterPlaylistTest.cpp.s
+
 MasterSongList.o: MasterSongList.cpp.o
 
 .PHONY : MasterSongList.o
@@ -150,32 +312,113 @@ MasterSongList.cpp.s:
 	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.s
 .PHONY : MasterSongList.cpp.s
 
-main.o: main.cpp.o
+MasterSongListTest.o: MasterSongListTest.cpp.o
 
-.PHONY : main.o
+.PHONY : MasterSongListTest.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/main.cpp.o
-.PHONY : main.cpp.o
+MasterSongListTest.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.o
+.PHONY : MasterSongListTest.cpp.o
 
-main.i: main.cpp.i
+MasterSongListTest.i: MasterSongListTest.cpp.i
 
-.PHONY : main.i
+.PHONY : MasterSongListTest.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/main.cpp.i
-.PHONY : main.cpp.i
+MasterSongListTest.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.i
+.PHONY : MasterSongListTest.cpp.i
 
-main.s: main.cpp.s
+MasterSongListTest.s: MasterSongListTest.cpp.s
 
-.PHONY : main.s
+.PHONY : MasterSongListTest.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/main.cpp.s
-.PHONY : main.cpp.s
+MasterSongListTest.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.s
+.PHONY : MasterSongListTest.cpp.s
+
+PlayListNode.o: PlayListNode.cpp.o
+
+.PHONY : PlayListNode.o
+
+# target to build an object file
+PlayListNode.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.o
+.PHONY : PlayListNode.cpp.o
+
+PlayListNode.i: PlayListNode.cpp.i
+
+.PHONY : PlayListNode.i
+
+# target to preprocess a source file
+PlayListNode.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.i
+.PHONY : PlayListNode.cpp.i
+
+PlayListNode.s: PlayListNode.cpp.s
+
+.PHONY : PlayListNode.s
+
+# target to generate assembly for a file
+PlayListNode.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.s
+.PHONY : PlayListNode.cpp.s
+
+Song.o: Song.cpp.o
+
+.PHONY : Song.o
+
+# target to build an object file
+Song.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/Song.cpp.o
+.PHONY : Song.cpp.o
+
+Song.i: Song.cpp.i
+
+.PHONY : Song.i
+
+# target to preprocess a source file
+Song.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/Song.cpp.i
+.PHONY : Song.cpp.i
+
+Song.s: Song.cpp.s
+
+.PHONY : Song.s
+
+# target to generate assembly for a file
+Song.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/Song.cpp.s
+.PHONY : Song.cpp.s
+
+SongTest.o: SongTest.cpp.o
+
+.PHONY : SongTest.o
+
+# target to build an object file
+SongTest.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/SongTest.cpp.o
+.PHONY : SongTest.cpp.o
+
+SongTest.i: SongTest.cpp.i
+
+.PHONY : SongTest.i
+
+# target to preprocess a source file
+SongTest.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/SongTest.cpp.i
+.PHONY : SongTest.cpp.i
+
+SongTest.s: SongTest.cpp.s
+
+.PHONY : SongTest.s
+
+# target to generate assembly for a file
+SongTest.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/SongTest.cpp.s
+.PHONY : SongTest.cpp.s
 
 # Help Target
 help:
@@ -186,12 +429,39 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... 220_DJ_Project"
 	@echo "... edit_cache"
+	@echo "... DJTestLib.o"
+	@echo "... DJTestLib.i"
+	@echo "... DJTestLib.s"
+	@echo "... LinkedPlayList.o"
+	@echo "... LinkedPlayList.i"
+	@echo "... LinkedPlayList.s"
+	@echo "... LinkedPlaylistNodeTest.o"
+	@echo "... LinkedPlaylistNodeTest.i"
+	@echo "... LinkedPlaylistNodeTest.s"
+	@echo "... LinkedPlaylistTest.o"
+	@echo "... LinkedPlaylistTest.i"
+	@echo "... LinkedPlaylistTest.s"
+	@echo "... MasterPlaylist.o"
+	@echo "... MasterPlaylist.i"
+	@echo "... MasterPlaylist.s"
+	@echo "... MasterPlaylistTest.o"
+	@echo "... MasterPlaylistTest.i"
+	@echo "... MasterPlaylistTest.s"
 	@echo "... MasterSongList.o"
 	@echo "... MasterSongList.i"
 	@echo "... MasterSongList.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... MasterSongListTest.o"
+	@echo "... MasterSongListTest.i"
+	@echo "... MasterSongListTest.s"
+	@echo "... PlayListNode.o"
+	@echo "... PlayListNode.i"
+	@echo "... PlayListNode.s"
+	@echo "... Song.o"
+	@echo "... Song.i"
+	@echo "... Song.s"
+	@echo "... SongTest.o"
+	@echo "... SongTest.i"
+	@echo "... SongTest.s"
 .PHONY : help
 
 

@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /cygdrive/c/Users/KandacePC/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe
+CMAKE_COMMAND = /cygdrive/c/Users/Bobo/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /cygdrive/c/Users/KandacePC/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
+RM = /cygdrive/c/Users/Bobo/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/220_DJ_Project.dir/depend.make
@@ -57,45 +57,180 @@ include CMakeFiles/220_DJ_Project.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/220_DJ_Project.dir/flags.make
 
-CMakeFiles/220_DJ_Project.dir/main.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
-CMakeFiles/220_DJ_Project.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/220_DJ_Project.dir/main.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/main.cpp.o -c /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/main.cpp
+CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
+CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.o: ../DJTestLib.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.o -c /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/DJTestLib.cpp
 
-CMakeFiles/220_DJ_Project.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/main.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/main.cpp > CMakeFiles/220_DJ_Project.dir/main.cpp.i
+CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/DJTestLib.cpp > CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.i
 
-CMakeFiles/220_DJ_Project.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/main.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/main.cpp -o CMakeFiles/220_DJ_Project.dir/main.cpp.s
+CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/DJTestLib.cpp -o CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.s
+
+CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
+CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.o: ../LinkedPlayList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.o -c /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/LinkedPlayList.cpp
+
+CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/LinkedPlayList.cpp > CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.i
+
+CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/LinkedPlayList.cpp -o CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.s
 
 CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
 CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o: ../MasterSongList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o -c /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/MasterSongList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o -c /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterSongList.cpp
 
 CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/MasterSongList.cpp > CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.i
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterSongList.cpp > CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.i
 
 CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/MasterSongList.cpp -o CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.s
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterSongList.cpp -o CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.s
+
+CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
+CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.o: ../MasterPlaylist.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.o -c /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterPlaylist.cpp
+
+CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterPlaylist.cpp > CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.i
+
+CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterPlaylist.cpp -o CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.s
+
+CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
+CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.o: ../PlayListNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.o -c /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/PlayListNode.cpp
+
+CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/PlayListNode.cpp > CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.i
+
+CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/PlayListNode.cpp -o CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.s
+
+CMakeFiles/220_DJ_Project.dir/Song.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
+CMakeFiles/220_DJ_Project.dir/Song.cpp.o: ../Song.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/220_DJ_Project.dir/Song.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/Song.cpp.o -c /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/Song.cpp
+
+CMakeFiles/220_DJ_Project.dir/Song.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/Song.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/Song.cpp > CMakeFiles/220_DJ_Project.dir/Song.cpp.i
+
+CMakeFiles/220_DJ_Project.dir/Song.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/Song.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/Song.cpp -o CMakeFiles/220_DJ_Project.dir/Song.cpp.s
+
+CMakeFiles/220_DJ_Project.dir/SongTest.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
+CMakeFiles/220_DJ_Project.dir/SongTest.cpp.o: ../SongTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/220_DJ_Project.dir/SongTest.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/SongTest.cpp.o -c /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/SongTest.cpp
+
+CMakeFiles/220_DJ_Project.dir/SongTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/SongTest.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/SongTest.cpp > CMakeFiles/220_DJ_Project.dir/SongTest.cpp.i
+
+CMakeFiles/220_DJ_Project.dir/SongTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/SongTest.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/SongTest.cpp -o CMakeFiles/220_DJ_Project.dir/SongTest.cpp.s
+
+CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
+CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.o: ../LinkedPlaylistNodeTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.o -c /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/LinkedPlaylistNodeTest.cpp
+
+CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/LinkedPlaylistNodeTest.cpp > CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.i
+
+CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/LinkedPlaylistNodeTest.cpp -o CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.s
+
+CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
+CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.o: ../LinkedPlaylistTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.o -c /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/LinkedPlaylistTest.cpp
+
+CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/LinkedPlaylistTest.cpp > CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.i
+
+CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/LinkedPlaylistTest.cpp -o CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.s
+
+CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
+CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.o: ../MasterPlaylistTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.o -c /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterPlaylistTest.cpp
+
+CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterPlaylistTest.cpp > CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.i
+
+CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterPlaylistTest.cpp -o CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.s
+
+CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.o: CMakeFiles/220_DJ_Project.dir/flags.make
+CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.o: ../MasterSongListTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.o"
+	C:/cygwin64/bin/g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.o -c /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterSongListTest.cpp
+
+CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.i"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterSongListTest.cpp > CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.i
+
+CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.s"
+	C:/cygwin64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterSongListTest.cpp -o CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.s
 
 # Object files for target 220_DJ_Project
 220_DJ_Project_OBJECTS = \
-"CMakeFiles/220_DJ_Project.dir/main.cpp.o" \
-"CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o"
+"CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.o" \
+"CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.o" \
+"CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o" \
+"CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.o" \
+"CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.o" \
+"CMakeFiles/220_DJ_Project.dir/Song.cpp.o" \
+"CMakeFiles/220_DJ_Project.dir/SongTest.cpp.o" \
+"CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.o" \
+"CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.o" \
+"CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.o" \
+"CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.o"
 
 # External object files for target 220_DJ_Project
 220_DJ_Project_EXTERNAL_OBJECTS =
 
-220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/main.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/DJTestLib.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/LinkedPlayList.cpp.o
 220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/MasterPlaylist.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/PlayListNode.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/Song.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/SongTest.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/LinkedPlaylistNodeTest.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/LinkedPlaylistTest.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/MasterPlaylistTest.cpp.o
+220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/MasterSongListTest.cpp.o
 220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/build.make
 220_DJ_Project.exe: CMakeFiles/220_DJ_Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable 220_DJ_Project.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable 220_DJ_Project.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/220_DJ_Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +243,6 @@ CMakeFiles/220_DJ_Project.dir/clean:
 .PHONY : CMakeFiles/220_DJ_Project.dir/clean
 
 CMakeFiles/220_DJ_Project.dir/depend:
-	cd /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles/220_DJ_Project.dir/DependInfo.cmake --color=$(COLOR)
+	cd /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/CMakeFiles/220_DJ_Project.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/220_DJ_Project.dir/depend
 
