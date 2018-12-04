@@ -150,6 +150,33 @@ MasterSongList.cpp.s:
 	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.s
 .PHONY : MasterSongList.cpp.s
 
+SongLib.o: SongLib.cpp.o
+
+.PHONY : SongLib.o
+
+# target to build an object file
+SongLib.cpp.o:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/SongLib.cpp.o
+.PHONY : SongLib.cpp.o
+
+SongLib.i: SongLib.cpp.i
+
+.PHONY : SongLib.i
+
+# target to preprocess a source file
+SongLib.cpp.i:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/SongLib.cpp.i
+.PHONY : SongLib.cpp.i
+
+SongLib.s: SongLib.cpp.s
+
+.PHONY : SongLib.s
+
+# target to generate assembly for a file
+SongLib.cpp.s:
+	$(MAKE) -f CMakeFiles/220_DJ_Project.dir/build.make CMakeFiles/220_DJ_Project.dir/SongLib.cpp.s
+.PHONY : SongLib.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... MasterSongList.o"
 	@echo "... MasterSongList.i"
 	@echo "... MasterSongList.s"
+	@echo "... SongLib.o"
+	@echo "... SongLib.i"
+	@echo "... SongLib.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
