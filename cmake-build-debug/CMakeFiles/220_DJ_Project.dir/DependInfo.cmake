@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/ishasharma/CLionProjects/220 DJ Project/MasterSongList.cpp" "/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug/CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o"
-  "/Users/ishasharma/CLionProjects/220 DJ Project/main.cpp" "/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug/CMakeFiles/220_DJ_Project.dir/main.cpp.o"
+  "/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/MasterSongList.cpp" "/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o"
+  "/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/main.cpp" "/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles/220_DJ_Project.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

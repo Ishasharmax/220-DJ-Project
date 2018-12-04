@@ -1,3 +1,3 @@
-/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/ishasharma/CLionProjects/220 DJ Project/cmake-build-debug/CMakeFiles/220_DJ_Project.dir
+/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles/220_DJ_Project.dir
+/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/CMakeFiles/edit_cache.dir
