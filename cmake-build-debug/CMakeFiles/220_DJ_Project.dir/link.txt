@@ -1,1 +1,1 @@
-/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/220_DJ_Project.dir/main.cpp.o CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o  -o 220_DJ_Project.exe -Wl,--out-implib,lib220_DJ_Project.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+C:/cygwin64/bin/g++.exe -g  -Wl,--enable-auto-import CMakeFiles/220_DJ_Project.dir/main.cpp.o CMakeFiles/220_DJ_Project.dir/MasterSongList.cpp.o  -o 220_DJ_Project.exe -Wl,--out-implib,lib220_DJ_Project.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

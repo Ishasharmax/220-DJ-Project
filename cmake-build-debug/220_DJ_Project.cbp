@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="220_DJ_Project">
-				<Option output="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/220_DJ_Project.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug"/>
+				<Option output="/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/220_DJ_Project.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -42,15 +42,15 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 220_DJ_Project"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 220_DJ_Project"/>
+					<CompileFile command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="220_DJ_Project/fast">
-				<Option output="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/220_DJ_Project.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug"/>
+				<Option output="/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/220_DJ_Project.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -63,33 +63,33 @@
 					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/../include/w32api"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 220_DJ_Project/fast"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 220_DJ_Project/fast"/>
+					<CompileFile command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug"/>
+				<Option working_dir="/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/cygwin64/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/MasterSongList.cpp">
+		<Unit filename="/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterSongList.cpp">
 			<Option target="220_DJ_Project"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/MasterSongList.h">
+		<Unit filename="/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/MasterSongList.h">
 			<Option target="220_DJ_Project"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/main.cpp">
+		<Unit filename="/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/main.cpp">
 			<Option target="220_DJ_Project"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/CMakeLists.txt">
+		<Unit filename="/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
