@@ -5,7 +5,7 @@
 #ifndef INC_220_DJ_PROJECT_DJTESTLIB_H
 #define INC_220_DJ_PROJECT_DJTESTLIB_H
 
-#include <stringD>
+#include <string>
 
 void printAssertEquals(int expected, int actual);
 
