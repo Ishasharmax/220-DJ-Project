@@ -6,24 +6,18 @@
 #define INC_220_DJ_PROJECT_MASTERSONGLIST_H
 
 #include "SongList.h"
-#include <iostream>
-#include<string.h>
+
 
 class MasterSongList {
 private:
-    PlaylistNode *songArray;
-    int currItemCount;
-    int currCapacity;
-
+    PlaylistNode *Array;
 public:
-    MasterSongList(int initialCapacity);
+    MasterSongList();
     ~MasterSongList(); //creates an array
     MasterSongList(const MasterSongList& songToCopy); //only copies item, next is set to nullptr
     MasterSongList& operator=(const MasterSongList& queueToCopy);
-    void removeSong(Song songToRemove); //removes song from array
-    void importSong(Song songToAdd, int index); //imports a file to array
-    void doubleCapacity();
-
-    };
+    void removeSong(Song songs); //removes song from array
+    void importSong (); //imports a file to array
+};
 
 #endif //INC_220_DJ_PROJECT_MASTERSONGLIST_H

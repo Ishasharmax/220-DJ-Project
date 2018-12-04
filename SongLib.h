@@ -15,7 +15,10 @@
 
 #include <string>
 
-int binFind(const int* const songPtr, const int size, const int numToFind);
+int binFind(const int* const arrayPtr, const int size, const int numToFind, int& numLinesRun);
 void bubbleSort(std::string arr[], int n);
+
+#endif //COMP220LAB_ARRAYLIB_H
+
 
 #endif //INC_220_DJ_PROJECT_SONGLIB_H

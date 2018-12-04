@@ -10,45 +10,55 @@
 #define COMP220LAB_ARRAYLIB_H
 
 #include <string>
-int binarySearch(std::string names[], int size, std::string value) {
-    int first = 0,
-             last = size - 1,
-             middle,
-             position = -1;
-    bool found = false;
-
-    while (!found && first <= last) {
-        middle = (first + last) / 2;
-        if (names[middle].compare(value)) {
-            found = true;
-            position = middle;
+int binFind(const int* const arrayPtr, const int size, const int numToFind, int& numLinesRun, int low, int high);
+int binFind(const int* const arrayPtr, const int size, const int numToFind, int& numLinesRun, int low, int high) {
+    int mid;
+    numLinesRun+=7;
+    if (high>=low){
+        numLinesRun+=2;
+        mid=low+(high-low)/2;
+        if (arrayPtr[mid]==numToFind){
+            numLinesRun+=1;
+            return mid;
+        }else if (arrayPtr[mid]>numToFind){
+            numLinesRun+=1;
+            return binFind(arrayPtr,size,numToFind, numLinesRun,low,mid-1);                       //It is a tail recursion
+        }else{
+            numLinesRun+=1;
+            return binFind(arrayPtr,size,numToFind, numLinesRun, mid+1,high);                          //It is a tail recursion
         }
-        else if (names[middle].compare(value))
-            last = middle - 1;
-        else
-            first = middle + 1;
+    }else{
+        numLinesRun+=1;
+        return -1;
     }
-    return position;
+}
+
+int binFind(const int* const arrayPtr, const int size, const int numToFind,int& numLinesRun){
+    numLinesRun+=4;
+    return binFind(arrayPtr, size, numToFind, numLinesRun, 0, size);
 }
 
 
-void bubbleSort(std::string songArr[], int size) {
-    int minIndex;
-    std::string minValue;
+void bubbleSort(std::string arr[], int n) {
+    bool swapped = true;
+    int j = 0;
+    std::string tmp;
 
-    for (int i = 0; i < (size - 1); i++) {
-        minIndex = i;
-        minValue = songArr[i];
-        for (int index = i + 1; index < size; index++) {
-            if (songArr[index].compare(minValue)) {
-                minValue = songArr[index];
-                minIndex = index;
+    while (swapped){
+        swapped = false;
+        j++;
+        for (int i = 0; i < n - j; i++)
+        {
+            if ( arr[i].compare(arr[i + 1]) )
+            {
+
+                tmp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = tmp;
+                swapped = true;
             }
         }
-        songArr[minIndex] = songArr[i];
-        songArr[i] = minValue;
     }
 }
-
 
 #endif //COMP220LAB_ARRAYLIB_H
