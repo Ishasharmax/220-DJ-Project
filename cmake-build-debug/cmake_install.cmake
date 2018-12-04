@@ -1,4 +1,4 @@
-# Install script for directory: /cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project
+# Install script for directory: /cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/cygdrive/c/Users/Bobo/CLionProjects/220-DJ-Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/cygdrive/c/Users/KandacePC/CLionProjects/220-DJ-Project-New/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -3,8 +3,8 @@
 //
 #include <iostream>
 #include "Song.h"
-#include "MasterList.h"
-#include "../NewFinalProject/DJTestLib.h"
+#include "MasterSongList.h"
+#include "DJTestLib.h"
 
 
 

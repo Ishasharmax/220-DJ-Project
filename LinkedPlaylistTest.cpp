@@ -4,4 +4,4 @@
 #include <iostream>
 #include "Playlist.h"
 #include "LinkedPlaylist.h"
-#include "../NewFinalProject/DJTestLib.h"
+#include "DJTestLib.h"

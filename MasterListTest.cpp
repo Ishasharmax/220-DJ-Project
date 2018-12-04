@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include "MasterList.h"
-#include "../NewFinalProject/DJTestLib.h"
+#include "DJTestLib.h"
 void findTest(){
     std::cout << "-------findTest---------" <<std::endl;
     int a1[]={1, 2, 3, 22, 64, 33, 24, 9, 865, 23};

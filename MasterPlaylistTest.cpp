@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include "MasterPlaylist.h"
-#include "../NewFinalProject/DJTestLib.h"
+#include "DJTestLib.h"
 
 void insertAtEndAndGetValueAtTest(int* numsToTest, int numsToTestSize, int initialCapacity){
     std::cout << "-------insertAtEndAndGetValueAtTest---------" <<std::endl;

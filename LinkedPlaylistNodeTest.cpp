@@ -5,4 +5,4 @@
 #include "Playlist.h"
 #include "LinkedPlaylist.h"
 #include "LinkedPlaylistNode.h"
-#include "../NewFinalProject/DJTestLib.h"
+#include "DJTestLib.h"

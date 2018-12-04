@@ -2,7 +2,7 @@
 // Created by Bobo on 12/3/2018.
 //
 #include <iostream>
-#include "../NewFinalProject/DJTestLib.h"
+#include "DJTestLib.h"
 
 void printAssertEquals(int expected, int actual){
     if (expected == actual){
