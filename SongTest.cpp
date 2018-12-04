@@ -8,12 +8,13 @@
 
 void runSongTests(){
     Song mySong =  Song("Love on Top", "Beyonce", 4.00);
-    std::cout << mySong.toString() << std::endl;
-    printAssertEquals(415, mySong.calcPotentialProfit(), 0.00001);
+    //std::cout << mySong.toString() << std::endl;
+
 
     mySong.getArtist();
+    printAssertEquals("Beyonce", mySong.getArtist());
     mySong.getTitle();
-    printAssertEquals(300, mySong.calcPotentialProfit(), 0.00001);
+    printAssertEquals("Love on Top", mySong.getTitle());
 
    /* while (!qToTest->isEmpty()) {
         std::cout << qToTest->dequeueHighestPriorityItem() << std::endl;
