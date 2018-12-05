@@ -9,6 +9,10 @@
 
 void printAssertEquals(int expected, int actual);
 
+void printAssertEquals(float expected, float actual);
+
+
+
 
 void printAssertEquals(bool expected, bool actual);
 
