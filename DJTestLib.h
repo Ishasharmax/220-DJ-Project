@@ -4,16 +4,15 @@
 
 #ifndef INC_220_DJ_PROJECT_DJTESTLIB_H
 #define INC_220_DJ_PROJECT_DJTESTLIB_H
-#ifndef COMP220LAB_TESTLIBRARY_H
-#define COMP220LAB_TESTLIBRARY_H
 
+#include <string>
 
 void printAssertEquals(int expected, int actual);
 
 
 void printAssertEquals(bool expected, bool actual);
 
-/
+
 void printAssertEquals(std::string expected, std::string actual);
 
 
