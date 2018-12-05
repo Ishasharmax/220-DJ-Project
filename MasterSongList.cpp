@@ -7,6 +7,7 @@
 #include <string>
 #include <iostream>
 #include "Song.h"
+
 using namespace std;
 
 MasterSongList::MasterSongList(int initialCapacity){
@@ -15,36 +16,31 @@ MasterSongList::MasterSongList(int initialCapacity){
     }else{
         this->currCapacity=initialCapacity;
         currItemCount=0;
-        songPtr=new int[currCapacity];
-        this->songArray= songPtr;
+        arraySong=new Song[initialCapacity];
     }
 }
 
 MasterSongList::~MasterSongList(){
-    delete[] this->songArray;
-    this->songArray= nullptr;
-
+    delete[] this->arraySong;
+    this->arraySong= nullptr;
 }
 
 MasterSongList::MasterSongList(const MasterSongList& songToCopy){
     this->currCapacity=songToCopy.currCapacity;
-    this->songArray= new int[songToCopy.currCapacity];
     this->currItemCount=songToCopy.currItemCount;
     for (int i=0; i<songToCopy.currItemCount;i++){
-        this->songArray[i]=songToCopy.songArray[i];
+        this->arraySong[i]=songToCopy.arraySong[i];
     }
 }
 
-MasterSongList& MasterSongList::operator=(const MasterSongList& songListToCopy){
+MasterSongList&MasterSongList::operator=(const MasterSongList& songListToCopy){
     if (this !=&songListToCopy){
-        delete[] this->songArray;
-        this->songArray= nullptr;
-
+        delete[] this->arraySong;
+        this->arraySong= nullptr;
         this->currItemCount=songListToCopy.currItemCount;
         this->currCapacity=songListToCopy.currCapacity;
-        this->songArray=new int[songListToCopy.currCapacity];
         for (int i=0; i<songListToCopy.currItemCount;i++){
-            this->songArray[i]=songListToCopy.songArray[i];
+            this->arraySong[i]=songListToCopy.arraySong[i];
         }
     }
     return *this;
@@ -53,20 +49,21 @@ MasterSongList& MasterSongList::operator=(const MasterSongList& songListToCopy){
 
 void MasterSongList::doubleCapacity(){
     currCapacity=currCapacity*2;
-    int *newArray= new int[currCapacity];
+    Song *newArray= new Song[currCapacity];
     for (int i=0;i<currItemCount;i++){
-        newArray[i]=songArray[i];
-    }delete [] songArray;
-    songArray=newArray;
+        newArray[i]=arraySong[i];
+    }delete [] arraySong;
+    arraySong=newArray;
 }
 
-void MasterSongList::removeSong(Song songToRemove){
+
+void MasterSongList::removeSong(int index){
     if (currItemCount<1) {
         throw std::out_of_range("error");
     }else{
         currItemCount--;
-        for (int i=songToRemove;i<currItemCount;i++){
-            songArray[i]=songArray[i+1];
+        for (int i=index;i<currItemCount;i++){
+            arraySong[i]=arraySong[i+1];
         }
     }
 }
@@ -81,10 +78,25 @@ void MasterSongList::importSong(Song songToAdd, int index){
             doubleCapacity();
         }
         for (int i=currItemCount;i>index;i--){
-            songArray[i]=songArray[i-1];
-        }songArray[index]=songToAdd;
+            arraySong[i]=arraySong[i-1];
+        }arraySong[index]=songToAdd;
     }
 }
+
+std::string MasterSongList::toString() {
+    std::string str1 = "{";
+    for (int i = 0; i < currItemCount; i++) {
+        if (i != (currItemCount - 1)) {
+            str1 += std::to_string(arraySong[i]) + ", ";
+        } else if (i == (currItemCount - 1)) {
+            str1 += std::to_string(arraySong[i]);
+        }
+    }
+    str1 = str1 + "}";
+    return str1;
+}
+
+
 
 
 

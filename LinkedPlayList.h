@@ -7,6 +7,7 @@
 #include <string>
 #include <stdexcept>
 #include "PlayList.h"
+#include "PlayListNode.h"
 
 class LinkedPlayList {
 private:
@@ -27,6 +28,6 @@ public:
 
     std::string getHelp();
 
-    float calcPlayListDuartion();
+    float calcPlayListDuration();
 };
 #endif //INC_220_DJ_PROJECT_LINKEDPLAYLIST_H
