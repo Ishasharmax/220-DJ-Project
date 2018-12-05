@@ -5,7 +5,6 @@
 #define INC_220_DJ_PROJECT_MASTERPLAYLISTLIB_H
 
 #include <string>
-
 int* genRandArray(int size, int min, int max, int& numLinesRun);
 
 std::string toString(const int* arrayPtr, int size);int find(const int* arrayPtr, int size, int numToFind, int& numLinesRun);

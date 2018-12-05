@@ -4,54 +4,55 @@
 #include <iostream>
 #include "MasterPlaylist.h"
 #include "MasterPlaylistLib.h"
+#include "Linkedf"
 #include <stdexcept>
 #include <string>
 int numLinesEmpty=0;
 
-ArrayList::ArrayList(int initialCapacity) {
+MasterPlayList::MasterPlayList(int initialCapacity) {
     if(initialCapacity<1){
         throw std::invalid_argument("Size is less than 1");
     }
     else{
         this->currCapacity=initialCapacity;
-        array=new int[currCapacity];
+        arrayOfPlayList=new int[currCapacity];
         currItemCount=0;
     }
 
 }
 //Copy Constructor
-ArrayList::ArrayList(const ArrayList& arrayListToCopy){
-    this->currCapacity=arrayListToCopy.currCapacity;
-    this->array= new int [arrayListToCopy.currCapacity];
-    this->currItemCount=arrayListToCopy.currItemCount;
-    for(int i=0;i<arrayListToCopy.currItemCount;i++){
-        this->array[i]=arrayListToCopy.array[i];
+MasterPlayList::MasterPlayList(const MasterPlayList& MasterPlayListToCopy){
+    this->currCapacity=MasterPlayListToCopy.currCapacity;
+    this->arrayOfPlayList= new int [MasterPlayListToCopy.currCapacity];
+    this->currItemCount=MasterPlayListToCopy.currItemCount;
+    for(int i=0;i<MasterPlayListToCopy.currItemCount;i++){
+        this->arrayOfPlayListOfPlayList[i]=MasterPlayListToCopy.arrayOfPlayList[i];
     }
 }
 
 //Overloaded Assignment Operator
-ArrayList&  ArrayList::operator=(const ArrayList& arrayListToCopy){
-    if (this != &arrayListToCopy ) {
-        delete array;
-        this->array= nullptr;
-        this->currCapacity=arrayListToCopy.currCapacity;
-        this->array= new int [arrayListToCopy.currCapacity];
-        this->currItemCount=arrayListToCopy.currItemCount;
-        for(int i=0;i<arrayListToCopy.currItemCount;i++){
-            this->array[i]=arrayListToCopy.array[i];
+MasterPlayList&  MasterPlayList::operator=(const MasterPlayList& MasterPlayListToCopy){
+    if (this != &MasterPlayListToCopy ) {
+        delete arrayOfPlayList;
+        this->arrayOfPlayList= nullptr;
+        this->currCapacity=MasterPlayListToCopy.currCapacity;
+        this->arrayOfPlayList= new int [MasterPlayListToCopy.currCapacity];
+        this->currItemCount=MasterPlayListToCopy.currItemCount;
+        for(int i=0;i<MasterPlayListToCopy.currItemCount;i++){
+            this->arrayOfPlayList[i]=MasterPlayListToCopy.arrayOfPlayList[i];
         }
     }
     return *this;
 }
 
 //Destructor
-ArrayList::~ArrayList(){
-    delete[] this ->array;
-    this ->array= nullptr;
+MasterPlayList::~MasterPlayList(){
+    delete[] this -arrayOfPlayList;
+    this ->arrayOfPlayList= nullptr;
 
 }
 
-void  ArrayList::doubleCapacity(){
+void  MasterPlayList::doubleCapacity(){
     if(currCapacity<1){
         throw std::invalid_argument("Size is less than 1");
     }
@@ -59,31 +60,33 @@ void  ArrayList::doubleCapacity(){
         currCapacity=currCapacity*2;
         int * temp=new int [currCapacity];
         for(int i=0; i<currItemCount;i++){
-            temp[i]=array[i];
+            temp[i]=arrayOfPlayList[i];
         }
-        delete[]array;
-        array=temp;
+        delete[arrayOfPlayList;
+        arrayOfPlayList=temp;
     }
 }
 
-void  ArrayList::insertAtEnd(int itemToAdd) {
-    array[currItemCount++]=itemToAdd;
+void  MasterPlayList::insertAtEnd(PlayList playlistToAdd) {
+    PlayList *playListPtr=playlistToAdd;
+    arrayOfPlayList[currItemCount]=playListPtr;
+    //arrayOfPlayList[currItemCount++]=playlistToAdd;
 }
 
-int  ArrayList::getValueAt(int index){
+int  MasterPlayList::getValueAt(int index){
     if(index<0 || index>=currItemCount){
         throw std::out_of_range("Size is less than 1");
     }
     else{
-        return array[index];
+        return arrayOfPlayList[index];
     }
 }
 
-std::string  ArrayList::toString(){
-    return  ::toString(array,currCapacity);
+std::string MasterPlayList::toString(){
+    return  ::toString(arrayOfPlayList,currCapacity);
 }
 
-bool  ArrayList::isEmpty(){
+bool  MasterPlayList::isEmpty(){
     if(currItemCount==0){
         return true;
     }
@@ -92,7 +95,7 @@ bool  ArrayList::isEmpty(){
     }
 }
 
-int  ArrayList::itemCount(){
+int  MasterPlayList::itemCount(){
     if(isEmpty()){
         return 0;
     }
@@ -101,7 +104,7 @@ int  ArrayList::itemCount(){
     }
 }
 
-void  ArrayList::clearList(){
+void  MasterPlayList::clearList(){
     if(isEmpty()){
         throw std::invalid_argument("Size is already 0");
     }
@@ -110,30 +113,11 @@ void  ArrayList::clearList(){
     }
 }
 
-int ArrayList::find(int numToFind){
-    return  ::find(array,currCapacity,numToFind,numLinesEmpty);
+int MasterPlayList::find(int numToFind){
+    return  ::find(arrayOfPlayList,currCapacity,numToFind,numLinesEmpty);
 }
 
-int ArrayList::findLast(int numToFind){
-    return  ::findLast(array,currCapacity,numToFind,numLinesEmpty);
-}
-
-int  ArrayList::findMaxIndex(){
-    return  ::findMaxIndex(array,currCapacity,numLinesEmpty);
-}
-
-void  ArrayList::insertAtFront(int itemToAdd){
-    if(currItemCount>=currCapacity+1) {
-        doubleCapacity();
-    }
-    currItemCount++;
-    for(int i=currItemCount-1; i>0; i--){
-        array[i]=array[i-1];
-    }
-    array[0]=itemToAdd;
-}
-
-void  ArrayList::insertAt(int itemToAdd, int index) {
+void  MasterPlayList::insertAt(PlayList playlistToAdd, int index) {
     if(index<0 || currCapacity<index){
         throw std::out_of_range("Size is less than 1");
     }
@@ -143,43 +127,43 @@ void  ArrayList::insertAt(int itemToAdd, int index) {
             doubleCapacity();
         }
         for(int i=currItemCount;i>index;i--){
-            array[i]=array[i-1];
+            arrayOfPlayList[i]=arrayOfPlayList[i-1];
         }
-        array[index]=itemToAdd;
+        arrayOfPlayList[index]=playlistToAdd;
     }
 }
 
-int ArrayList::removeValueAtEnd() {
+int MasterPlayList::removeValueAtEnd() {
     if (currItemCount < 1) {
         throw std::out_of_range("List is empty");
     } else {
         currItemCount--;
-        int remove=array[currItemCount];
+        int remove=arrayOfPlayList[currItemCount];
         return remove;
     }
 }
 
-int ArrayList::removeValueAtFront() {
+int MasterPlayList::removeValueAtFront() {
     if (currItemCount < 1) {
         throw std::out_of_range("Size is less than 1");
     } else {
         currItemCount--;
-        int remove=array[0];
+        int remove=arrayOfPlayList[0];
         for(int i=0; i<currItemCount;i++ ){
-            array[i]=array[i+1];
+            arrayOfPlayList[i]=arrayOfPlayList[i+1];
         }
         return remove;
     }
 }
 
-int ArrayList::removeValueAt(int index) {
+int MasterPlayList::removeValueAt(int index) {
     if (currItemCount < 1) {
         throw std::invalid_argument("Size is less than 1");
     } else {
         currItemCount--;
-        int remove=array[index];
+        int remove=arrayOfPlayList[index];
         for(int i=index; i<currItemCount;i++ ){
-            array[i]=array[i+1];
+            arrayOfPlayList[i]=arrayOfPlayList[i+1];
         }
         return remove;
     }

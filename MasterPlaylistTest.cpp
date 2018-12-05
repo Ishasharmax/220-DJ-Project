@@ -503,7 +503,7 @@ void testAssnOperator(){
     }
     //remove and add stuff to one
     original.removeValueAt(0);
-    original.removeValueAt(0);
+    original.removeValueAt(1);
     original.insertAtEnd(4);
     original.insertAtEnd(5);
     //check that they're different
@@ -530,22 +530,19 @@ void testAssnOperator(){
 
 int main(){
 
-    int a1[5]{5, 6, 7, 8, 9};
+    MasterPlayList testList[5]{5, 6, 7, 8, 9};
 
-    insertAtEndAndGetValueAtTest(a1, 5, 5);
-    isEmptyTest(a1, 5, 5);
-    itemCountTest(a1, 5, 5);
-    clearListTest(a1, 5, 5);
+    insertAtEndAndGetValueAtTest(testList, 5, 5);
+    isEmptyTest(testList, 5, 5);
+    itemCountTest(testList, 5, 5);
+    clearListTest(testList, 5, 5);
 
     toStringTest();
     findTest();
-    findLastTest();
-    findMaxIndexTest();
 
     insertAtFrontTest();
     insertAtTest();
     removeValueAtEndTest();
-    removeValueAtFrontTest();
     removeValueAtTest();
 
     doubleCapacityTest();
