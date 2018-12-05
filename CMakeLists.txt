@@ -7,20 +7,20 @@ include_directories(.)
 add_executable(220_DJ_Project
         DJTestLib.cpp
 
-        LinkedPlayList.cpp
-        LinkedPlaylistNodeTest.cpp
+        #[[LinkedPlayList.cpp
+        LinkedPlaylistNodeTest.cpp]]
         LinkedPlaylistTest.cpp
-        MasterListTest.cpp
+        #[[MasterListTest.cpp
         MasterPlayList.cpp
 
         MasterPlayListTest.cpp
         MasterSongList.cpp
 
         MasterSongListTest.cpp
-        PlayListNode.cpp
+#        LinkedPlayListNode.cpp
 
         Song.cpp
 
         SongLib.cpp
 
-        SongTest.cpp)
+        SongTest.cpp]])

@@ -4,6 +4,7 @@
 #include <iostream>
 #include "MasterList.h"
 #include "DJTestLib.h"
+
 void findTest(){
     std::cout << "-------findTest---------" <<std::endl;
     int a1[]={1, 2, 3, 22, 64, 33, 24, 9, 865, 23};
@@ -31,96 +32,6 @@ void findTest(){
     std::cout << "--done--" <<std::endl;
 }
 
-//assumes working constructor and insertAtEnd
-void findLastTest(){
-    std::cout << "-------findLastTest---------" <<std::endl;
-    int a1[]={1, 2, 3, 22, 64, 33, 24, 9, 865, 23};
-    ArrayList* myListPtr = createAndFillList(a1, 10);
-    int failCount = 0;
-    for (int i=0; i< 10; i++){
-        if (i != myListPtr->findLast(a1[i])){
-            failCount++;
-        }
-    }
-    if (failCount <= 0){
-        std::cout << "pass\n";
-    }
-    else {
-        std::cout << "FAIL, fail count:" << failCount << std::endl;
-    }
-
-    delete myListPtr;
-    int a2[]={10, 20, 3, 22, 2, 33, 3, 9, 3, 2};
-    myListPtr = createAndFillList(a2, 10);
-
-    printAssertEquals(8, myListPtr->findLast(3));
-    printAssertEquals(-1, myListPtr->findLast(500));
-    printAssertEquals(-1, myListPtr->findLast(100));
-    delete myListPtr;
-    std::cout << "--done--" <<std::endl;
-}
-
-//assumes working constructor and insertAtEnd
-void findMaxIndexTest(){
-    std::cout << "-------findMaxIndexTest---------" <<std::endl;
-    //{3, 2, 5, 12, 16, 10} added in one at a time
-    ArrayList myList = ArrayList(6);
-    myList.insertAtEnd(3);
-    printAssertEquals(0, myList.findMaxIndex());
-    myList.insertAtEnd(2);
-    printAssertEquals(0,  myList.findMaxIndex());
-    myList.insertAtEnd(5);
-    printAssertEquals(2,  myList.findMaxIndex());
-    myList.insertAtEnd(12);
-    myList.insertAtEnd(16);
-    myList.insertAtEnd(10);
-    printAssertEquals(4, myList.findMaxIndex());
-
-    ArrayList myList2 = ArrayList(6);
-    std::cout << "negatives:"<< std::endl;
-    // {-300000, -200000, -500000, -1200, -160, -1000000} added one at a time
-    myList2.insertAtEnd(-30000);
-    printAssertEquals(0, myList2.findMaxIndex());
-    myList2.insertAtEnd(-20000);
-    printAssertEquals(1,  myList2.findMaxIndex());
-    myList2.insertAtEnd(-50000);
-    printAssertEquals(1,  myList2.findMaxIndex());
-    myList2.insertAtEnd(-1200);
-    printAssertEquals(3,  myList2.findMaxIndex());
-    myList2.insertAtEnd(-160);
-    myList2.insertAtEnd(-1000000);
-    printAssertEquals(4, myList2.findMaxIndex());
-
-    std::cout << "Multiple occurrences of max:"<< std::endl;
-    int a1[]={3, 2, 5, 1, 5, 1};
-    ArrayList* myListPtr = createAndFillList(a1, 6);
-    printAssertEquals(2, myListPtr->findMaxIndex());
-    //expect an exception to be thrown when size < 1
-    std::cout << "Throws exception:"<< std::endl;
-    delete myListPtr;
-    myListPtr = new ArrayList(5);
-    try{
-        myListPtr->findMaxIndex();
-        std::cout << "FAIL: find maxIndex did not throw exception" << std::endl;
-    }
-    catch(std::invalid_argument& e){
-        printAssertEquals("In findMaxIndex, List must have items", e.what());
-    }
-    delete myListPtr;
-    std::cout << "--done--" <<std::endl;
-}
-
-//assumes working constructor, toString, isEmpty, itemCount, clearList
-void insertAtFrontTest(){
-    std::cout << "-------insertAtFrontTest---------" <<std::endl;
-    int a1[5]{5, 6, 7, 8, 9};
-    ArrayList myList = ArrayList(5);
-    for (int i=0; i<5; i++){
-        myList.insertAtFront(a1[i]);
-    }
-    printAssertEquals("{9, 8, 7, 6, 5}", myList.toString());
-    printAssertEquals(false, myList.isEmpty());
-    printAssertEquals(5, myList.itemCount());
 
     //empty it
     myList.clearList();

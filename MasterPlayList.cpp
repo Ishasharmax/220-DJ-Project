@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include "MasterPlayList.h"
+#include "LinkedPlayList.h"
 #include <stdexcept>
 #include <string>
 

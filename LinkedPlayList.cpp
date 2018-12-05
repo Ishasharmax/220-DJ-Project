@@ -8,7 +8,7 @@
 #include "Song.h"
 using namespace std;
 
-LinkedPlayList::LinkedPlayList() {
+LinkedPlayList * LinkedPlayList::LinkedPlayList() {
     front= nullptr;
     end= nullptr;
     current= nullptr;

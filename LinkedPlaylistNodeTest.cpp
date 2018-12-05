@@ -5,11 +5,7 @@
 #include "Playlist.h"
 #include "song.h"
 #include "LinkedPlaylist.h"
-<<<<<<< HEAD
-#include "LinkedPlaylist.h"
-=======
-#include "PlaylistNode.h"
->>>>>>> fa76b918428946b6fd9e39cdbc4b3421379b1c63
+#include "LinkedPlayListNode.h"
 #include "DJTestLib.h"
 
 void runPlayListNode_Test(){
