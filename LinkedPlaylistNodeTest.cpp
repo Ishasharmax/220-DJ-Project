@@ -11,6 +11,6 @@
 void runPlayListNode_Test(){
     std::cout << "PlayList Node Test" << std:: endl;
     Song FineChina = Song("Fine China","Chris Brown",3.32);
-    PlayListNode firstSong = PlayListNode;
+    PlayListNode firstSong = PlayListNode
 
 }
