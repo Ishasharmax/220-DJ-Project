@@ -7,7 +7,7 @@
 
 void insertAtEndAndGetValueAtTest(int* numsToTest, int numsToTestSize, int initialCapacity){
     std::cout << "-------insertAtEndAndGetValueAtTest---------" <<std::endl;
-    MasterPlaylist myList = MasterPlaylist(initialCapacity);
+    MasterPlayList myList = MasterPlaylist(initialCapacity);
     try{
         myList.getValueAt(0);
         std::cout << "FAIL: getValueAt did not throw exception" << std::endl;
