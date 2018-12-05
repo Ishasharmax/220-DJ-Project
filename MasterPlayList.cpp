@@ -4,6 +4,7 @@
 #include <iostream>
 #include "MasterPlayList.h"
 #include "LinkedPlayList.h"
+#include "MasterPlayListLib.h"
 
 #include <stdexcept>
 #include <string>
@@ -18,6 +19,7 @@ MasterPlayList::MasterPlayList(int initialCapacity) {
         this->currCapacity=initialCapacity;
         arrayOfPlayList=new int[currCapacity];
         currItemCount=0;
+        playListPtr=nullptr;
     }
 
 }
@@ -48,7 +50,7 @@ MasterPlayList&  MasterPlayList::operator=(const MasterPlayList& MasterPlayListT
 
 //Destructor
 MasterPlayList::~MasterPlayList(){
-    delete[] this -arrayOfPlayList;
+    delete[] this ->arrayOfPlayList;
     this ->arrayOfPlayList= nullptr;
 
 }
@@ -69,17 +71,19 @@ void  MasterPlayList::doubleCapacity(){
 }
 
 void  MasterPlayList::addPlayList(PlayList playlistToAdd) {
-    LinkedPlayList *playListPtr =playlistToAdd;
-    arrayOfPlayList[currItemCount]=playListPtr;
+    arrayOfPlayList[currItemCount++];
+    MasterPlayList newPlayList=new MasterPlayList(currItemCount++);
+    playListPtr->newPtr;
+
     //arrayOfPlayList[currItemCount++]=playlistToAdd;
 }
 
-int  MasterPlayList::getValueAt(int index){
+std::string  MasterPlayList::getPlayListAt(int index){
     if(index<0 || index>=currItemCount){
         throw std::out_of_range("Size is less than 1");
     }
     else{
-        return arrayOfPlayList[index];
+        return ::toString(arrayOfPlayList[index],currCapacity);
     }
 }
 
@@ -96,7 +100,7 @@ bool  MasterPlayList::isEmpty(){
     }
 }
 
-int  MasterPlayList::itemCount(){
+int  MasterPlayList::getitemCount(){
     if(isEmpty()){
         return 0;
     }
@@ -114,11 +118,11 @@ void  MasterPlayList::clearList(){
     }
 }
 
-int MasterPlayList::find(int numToFind){
+LinkedPlayList MasterPlayList::findPlaylist(int numToFind){
     return  ::find(arrayOfPlayList,currCapacity,numToFind,numLinesEmpty);
 }
 
-void  MasterPlayList::insertAt(PlayList playlistToAdd, int index) {
+void  MasterPlayList::addPlayListAt(PlayList playlistToAdd, int index) {
     if(index<0 || currCapacity<index){
         throw std::out_of_range("Size is less than 1");
     }
@@ -134,7 +138,7 @@ void  MasterPlayList::insertAt(PlayList playlistToAdd, int index) {
     }
 }
 
-int MasterPlayList::removeValueAtEnd() {
+LinkedPlayList MasterPlayList::removePlayList() {
     if (currItemCount < 1) {
         throw std::out_of_range("List is empty");
     } else {
@@ -144,20 +148,8 @@ int MasterPlayList::removeValueAtEnd() {
     }
 }
 
-int MasterPlayList::removeValueAtFront() {
-    if (currItemCount < 1) {
-        throw std::out_of_range("Size is less than 1");
-    } else {
-        currItemCount--;
-        int remove=arrayOfPlayList[0];
-        for(int i=0; i<currItemCount;i++ ){
-            arrayOfPlayList[i]=arrayOfPlayList[i+1];
-        }
-        return remove;
-    }
-}
 
-int MasterPlayList::removeValueAt(int index) {
+LinkedPlayList MasterPlayList::removePlayListAt(int index) {
     if (currItemCount < 1) {
         throw std::invalid_argument("Size is less than 1");
     } else {

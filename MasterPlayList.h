@@ -10,7 +10,7 @@
 class MasterPlayList {
 private:
     int *arrayOfPlayList;
-    LinkedPlayList *playListPtr;
+    MasterPlayList *playListPtr;
     int currItemCount;
     int currCapacity;
     void doubleCapacity();
@@ -22,9 +22,11 @@ public:
     std::string toStringGetPlaylist(int index);
     void addPlayList(PlayList playlistToAdd);
     void addPlaylistAt(int itemToAdd, int index);
-    void insertAt(int index);
+    std::string getPlayListAt(int index);
     std::string removePlayList();
-    std::string findPlaylist(int index);
+    LinkedPlayList removePlayListAt(int index);
+    LinkedPlayList findPlaylist(int index);
+    int  getitemCount();
     void clearList();
     bool isEmpty();
 
