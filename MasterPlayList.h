@@ -24,8 +24,10 @@ public:
     void addPlaylistAt(int itemToAdd, int index);
     void insertAt(int index);
     std::string removePlayList();
-    std::string findPlaylist();
+    std::string findPlaylist(int index);
+    void clearList();
     bool isEmpty();
+
 };
 
 

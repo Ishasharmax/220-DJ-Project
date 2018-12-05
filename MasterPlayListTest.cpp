@@ -5,87 +5,86 @@
 #include "MasterPlayList.h"
 #include "DJTestLib.h"
 
-void insertAtEndAndGetValueAtTest(int* numsToTest, int numsToTestSize, int initialCapacity){
-    std::cout << "-------insertAtEndAndGetValueAtTest---------" <<std::endl;
-    MasterPlayList myList = MasterPlaylist(initialCapacity);
+void addPlaylistAtEndtoStringGetPlaylistTest(LinkedPlayList* listToTest,MasterPlayList& myList,int initialCapacity){
+    std::cout << "-------insertAtEndAndtoStringGetPlaylistTest---------" <<std::endl;
     try{
-        myList.getValueAt(0);
-        std::cout << "FAIL: getValueAt did not throw exception" << std::endl;
+        myList.toStringGetPlaylist(0);
+        std::cout << "FAIL: toStringGetPlaylist did not throw exception" << std::endl;
     }
     catch(std::out_of_range& e){
-        printAssertEquals("Bad index given to getValueAt: 0", e.what());
+        printAssertEquals("Bad index given to toStringGetPlaylist: 0", e.what());
     }
-    for (int i=0; i<numsToTestSize; i++){
+    for (int i=0; i<initialCapacity; i++){
         myList.insertAtEnd(numsToTest[i]);
-        printAssertEquals(numsToTest[i], myList.getValueAt(i));
+        printAssertEquals(numsToTest[i], myList.toStringGetPlaylist(i));
     }
     //once more now that the list is complete
-    for (int i=0; i<numsToTestSize; i++){
-        printAssertEquals(numsToTest[i], myList.getValueAt(i));
+    for (int i=0; i<initialCapacity; i++){
+        printAssertEquals(numsToTest[i], myList.toStringGetPlaylist(i));
     }
 
     try{
-        myList.getValueAt(5);
-        std::cout << "FAIL: getValueAt did not throw exception" << std::endl;
+        myList.toStringGetPlaylist(5);
+        std::cout << "FAIL: toStringGetPlaylist did not throw exception" << std::endl;
     }
     catch(std::out_of_range& e){
-        printAssertEquals("Bad index given to getValueAt: 5", e.what());
+        printAssertEquals("Bad index given to toStringGetPlaylist: 5", e.what());
     }
     try{
-        myList.getValueAt(100);
-        std::cout << "FAIL: getValueAt did not throw exception" << std::endl;
+        myList.toStringGetPlaylist(100);
+        std::cout << "FAIL: toStringGetPlaylist did not throw exception" << std::endl;
     }
     catch(std::out_of_range& e){
-        printAssertEquals("Bad index given to getValueAt: 100", e.what());
+        printAssertEquals("Bad index given to toStringGetPlaylist: 100", e.what());
     }
     try{
-        myList.getValueAt(-1);
-        std::cout << "FAIL: getValueAt did not throw exception" << std::endl;
+        myList.toStringGetPlaylist(-1);
+        std::cout << "FAIL: toStringGetPlaylist did not throw exception" << std::endl;
     }
     catch(std::out_of_range& e){
-        printAssertEquals("Bad index given to getValueAt: -1", e.what());
+        printAssertEquals("Bad index given to toStringGetPlaylist: -1", e.what());
     }
     std::cout << "--done--" <<std::endl;
 }
-void isEmptyTest(int* numsToTest, int numsToTestSize, int initialCapacity){
+void isEmptyTest(int* numsToTest, int initialCapacity, int initialCapacity){
     std::cout << "-------isEmptyTest---------" <<std::endl;
     MasterPlaylist myList = MasterPlaylist(initialCapacity);
     printAssertEquals(true, myList.isEmpty());
 
-    for (int i=0; i<numsToTestSize; i++){
+    for (int i=0; i<initialCapacity; i++){
         myList.insertAtEnd(numsToTest[i]);
         printAssertEquals(false, myList.isEmpty());
     }
     std::cout << "--done--" <<std::endl;
 }
-void itemCountTest(int* numsToTest, int numsToTestSize, int initialCapacity){
+void itemCountTest(int* numsToTest, int initialCapacity, int initialCapacity){
     std::cout << "-------itemCountTest---------" <<std::endl;
     MasterPlaylist myList = MasterPlaylist(initialCapacity);
-    for (int i=0; i<numsToTestSize; i++){
+    for (int i=0; i<initialCapacity; i++){
         printAssertEquals(i, myList.itemCount());
         myList.insertAtEnd(numsToTest[i]);
     }
-    printAssertEquals(numsToTestSize, myList.itemCount());
+    printAssertEquals(initialCapacity, myList.itemCount());
     std::cout << "--done--" <<std::endl;
 }
-void clearListTest(int* numsToTest, int numsToTestSize, int initialCapacity){
+void clearListTest(int* numsToTest, int initialCapacity, int initialCapacity){
     std::cout << "-------clearListTest---------" <<std::endl;
     MasterPlaylist myList = MasterPlaylist(initialCapacity);
     printAssertEquals(0, myList.itemCount());
     myList.clearList();
     printAssertEquals(0, myList.itemCount());
-    for (int i=0; i<numsToTestSize; i++){
+    for (int i=0; i<initialCapacity; i++){
         myList.insertAtEnd(numsToTest[i]);
     }
-    printAssertEquals(numsToTestSize, myList.itemCount());
+    printAssertEquals(initialCapacity, myList.itemCount());
     myList.clearList();
     printAssertEquals(0, myList.itemCount());
 
     //do it again
-    for (int i=0; i<numsToTestSize; i++){
+    for (int i=0; i<initialCapacity; i++){
         myList.insertAtEnd(numsToTest[i]);
     }
-    printAssertEquals(numsToTestSize, myList.itemCount());
+    printAssertEquals(initialCapacity, myList.itemCount());
     myList.clearList();
     printAssertEquals(0, myList.itemCount());
     std::cout << "--done--" <<std::endl;
@@ -117,11 +116,10 @@ MasterPlaylist* createAndFillList(int* arr, int size){
 }
 void findTest(){
     std::cout << "-------findTest---------" <<std::endl;
-    int a1[]={1, 2, 3, 22, 64, 33, 24, 9, 865, 23};
-    MasterPlaylist* myListPtr = createAndFillList(a1, 10);
+    MasterPlayList *myListPtr = new MasterPlayList(6);
     int failCount = 0;
     for (int i=0; i< 10; i++){
-        if (i != myListPtr->find(a1[i])){
+        if (i != myListPtr->findPlaylist(myListPtr[i]){
             failCount++;
         }
     }
@@ -142,124 +140,17 @@ void findTest(){
     std::cout << "--done--" <<std::endl;
 }
 
-//assumes working constructor and insertAtEnd
-void findLastTest(){
-    std::cout << "-------findLastTest---------" <<std::endl;
-    int a1[]={1, 2, 3, 22, 64, 33, 24, 9, 865, 23};
-    MasterPlaylist* myListPtr = createAndFillList(a1, 10);
-    int failCount = 0;
-    for (int i=0; i< 10; i++){
-        if (i != myListPtr->findLast(a1[i])){
-            failCount++;
-        }
-    }
-    if (failCount <= 0){
-        std::cout << "pass\n";
-    }
-    else {
-        std::cout << "FAIL, fail count:" << failCount << std::endl;
-    }
-
-    delete myListPtr;
-    int a2[]={10, 20, 3, 22, 2, 33, 3, 9, 3, 2};
-    myListPtr = createAndFillList(a2, 10);
-
-    printAssertEquals(8, myListPtr->findLast(3));
-    printAssertEquals(-1, myListPtr->findLast(500));
-    printAssertEquals(-1, myListPtr->findLast(100));
-    delete myListPtr;
-    std::cout << "--done--" <<std::endl;
-}
-
-//assumes working constructor and insertAtEnd
-void findMaxIndexTest(){
-    std::cout << "-------findMaxIndexTest---------" <<std::endl;
-    //{3, 2, 5, 12, 16, 10} added in one at a time
-    MasterPlaylist myList = MasterPlaylist(6);
-    myList.insertAtEnd(3);
-    printAssertEquals(0, myList.findMaxIndex());
-    myList.insertAtEnd(2);
-    printAssertEquals(0,  myList.findMaxIndex());
-    myList.insertAtEnd(5);
-    printAssertEquals(2,  myList.findMaxIndex());
-    myList.insertAtEnd(12);
-    myList.insertAtEnd(16);
-    myList.insertAtEnd(10);
-    printAssertEquals(4, myList.findMaxIndex());
-
-    MasterPlaylist myList2 = MasterPlaylist(6);
-    std::cout << "negatives:"<< std::endl;
-    // {-300000, -200000, -500000, -1200, -160, -1000000} added one at a time
-    myList2.insertAtEnd(-30000);
-    printAssertEquals(0, myList2.findMaxIndex());
-    myList2.insertAtEnd(-20000);
-    printAssertEquals(1,  myList2.findMaxIndex());
-    myList2.insertAtEnd(-50000);
-    printAssertEquals(1,  myList2.findMaxIndex());
-    myList2.insertAtEnd(-1200);
-    printAssertEquals(3,  myList2.findMaxIndex());
-    myList2.insertAtEnd(-160);
-    myList2.insertAtEnd(-1000000);
-    printAssertEquals(4, myList2.findMaxIndex());
-
-    std::cout << "Multiple occurrences of max:"<< std::endl;
-    int a1[]={3, 2, 5, 1, 5, 1};
-    MasterPlaylist* myListPtr = createAndFillList(a1, 6);
-    printAssertEquals(2, myListPtr->findMaxIndex());
-    //expect an exception to be thrown when size < 1
-    std::cout << "Throws exception:"<< std::endl;
-    delete myListPtr;
-    myListPtr = new MasterPlaylist(5);
-    try{
-        myListPtr->findMaxIndex();
-        std::cout << "FAIL: find maxIndex did not throw exception" << std::endl;
-    }
-    catch(std::invalid_argument& e){
-        printAssertEquals("In findMaxIndex, List must have items", e.what());
-    }
-    delete myListPtr;
-    std::cout << "--done--" <<std::endl;
-}
-
-//assumes working constructor, toString, isEmpty, itemCount, clearList
-void insertAtFrontTest(){
-    std::cout << "-------insertAtFrontTest---------" <<std::endl;
-    int a1[5]{5, 6, 7, 8, 9};
-    MasterPlaylist myList = MasterPlaylist(5);
-    for (int i=0; i<5; i++){
-        myList.insertAtFront(a1[i]);
-    }
-    printAssertEquals("{9, 8, 7, 6, 5}", myList.toString());
-    printAssertEquals(false, myList.isEmpty());
-    printAssertEquals(5, myList.itemCount());
-
-    //empty it
-    myList.clearList();
-    printAssertEquals(true, myList.isEmpty());
-    printAssertEquals("{}", myList.toString());
-    printAssertEquals(0, myList.itemCount());
-
-    //do it again
-    for (int i=0; i<5; i++){
-        myList.insertAtFront(a1[i]);
-    }
-    printAssertEquals("{9, 8, 7, 6, 5}", myList.toString());
-    printAssertEquals(false, myList.isEmpty());
-    printAssertEquals(5, myList.itemCount());
-    std::cout << "--done--" <<std::endl;
-}
-
-//assumes working constructor, getValueAt, toString, isEmpty, itemCount, clearList
+//assumes working constructor, toStringGetPlaylist, toString, isEmpty, itemCount, clearList
 void insertAtTest(){
     std::cout << "-------insertAtTest---------" <<std::endl;
     //copy of insertAtEnd
     int numsToTest[5]{5, 6, 7, 8, 9};
-    int numsToTestSize = 5;
+    int initialCapacity = 5;
     MasterPlaylist myList = MasterPlaylist(5);
 
-    for (int i=0; i<numsToTestSize; i++){
+    for (int i=0; i<initialCapacity; i++){
         myList.insertAt(numsToTest[i], i);
-        printAssertEquals(numsToTest[i], myList.getValueAt(i));
+        printAssertEquals(numsToTest[i], myList.toStringGetPlaylist(i));
     }
 
     try{
@@ -284,12 +175,6 @@ void insertAtTest(){
         printAssertEquals("Bad index given to insertAt: -1", e.what());
     }
 
-    //copy of insertAtFront
-    int a1[5]{5, 6, 7, 8, 9};
-    MasterPlaylist myList2 = MasterPlaylist(11);
-    for (int i=0; i<5; i++){
-        myList2.insertAt(a1[i], 0);
-    }
     printAssertEquals("{9, 8, 7, 6, 5}", myList2.toString());
     printAssertEquals(false, myList2.isEmpty());
     printAssertEquals(5, myList2.itemCount());
@@ -351,37 +236,6 @@ void removeValueAtEndTest(){
     std::cout << "--done--" <<std::endl;
 }
 
-void removeValueAtFrontTest(){
-    std::cout << "-------removeValueAtFrontTest---------" <<std::endl;
-    int a1[]={1, 2, 3, 22, 64, 33, 24, 9, 865, 23};
-    MasterPlaylist* myListPtr = createAndFillList(a1, 10);
-    int failCount = 0;
-    for (int i=0; i< 10; i++){
-        if (a1[i] != myListPtr->removeValueAtFront()){
-            failCount++;
-        }
-        printAssertEquals(9-i, myListPtr->itemCount());
-    }
-    printAssertEquals(true, myListPtr->isEmpty());
-    printAssertEquals(0, myListPtr->itemCount());
-    if (failCount <= 0){
-        std::cout << "pass\n";
-    }
-    else {
-        std::cout << "FAIL, fail count:" << failCount << std::endl;
-    }
-
-    try{
-        myListPtr->removeValueAtEnd();
-        std::cout << "FAIL: removeValueAtFront did not throw exception" << std::endl;
-    }
-    catch(std::out_of_range& e){
-        printAssertEquals("In removeValueAtFront, List must have items", e.what());
-    }
-    delete myListPtr;
-    std::cout << "--done--" <<std::endl;
-}
-
 void removeValueAtTest(){
     std::cout << "-------removeValueAtTest---------" <<std::endl;
     int a1[]={10, 20, 30, 40, 50};
@@ -433,7 +287,7 @@ void doubleCapacityTest(){
     printAssertEquals(false, myList.isEmpty());
 
     int a1[10]{5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-    insertAtEndAndGetValueAtTest(a1, 5, 3);
+    insertAtEndAndtoStringGetPlaylistTest(a1, 5, 3);
     isEmptyTest(a1, 5, 3);
     itemCountTest(a1, 5, 3);
     clearListTest(a1, 5, 3);
@@ -530,9 +384,10 @@ void testAssnOperator(){
 
 int main(){
 
-    MasterPlayList testList[5]{5, 6, 7, 8, 9};
+    MasterPlayList *testList = new MasterPlayList(6);
+    LinkedPlayList *testPtr= new LinkedPlayList();
 
-    insertAtEndAndGetValueAtTest(testList, 5, 5);
+    addPlaylistAtEndtoStringGetPlaylistTest(testPtr,testList,5 );
     isEmptyTest(testList, 5, 5);
     itemCountTest(testList, 5, 5);
     clearListTest(testList, 5, 5);
@@ -540,7 +395,6 @@ int main(){
     toStringTest();
     findTest();
 
-    insertAtFrontTest();
     insertAtTest();
     removeValueAtEndTest();
     removeValueAtTest();
