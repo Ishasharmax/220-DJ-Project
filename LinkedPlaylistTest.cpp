@@ -8,11 +8,8 @@
 
 
 void runLinkedPlaylistTests(){
-<<<<<<< Updated upstream
-    LinkedPlayList*playList1 =  new LinkedPlayList();
-=======
     LinkedPlayList *playList1 = new LinkedPlayList();
->>>>>>> Stashed changes
+
     std::cout << "-------AddToTests---------" <<std::endl;
     //void addSongAtEnd(std::string artist, std::string songName, float duration);
 
@@ -70,14 +67,12 @@ void runLinkedPlaylistTests(){
     std::cout << "--done--" <<std::endl;
 
     std::cout << "-------IsEmptyTests---------" <<std::endl;
-    bool isEmpty();
     //empty it
     printAssertEquals(true, playList1->isEmpty());
     printAssertEquals("{}", playList1->getAllSongs());
     printAssertEquals(0, playList1->getSongCount());
 
     std::cout << "-------ItemGetTests---------" <<std::endl;
-    int getSongCount();
     printAssertEquals(6, playList1->getSongCount());
     printAssertEquals("text", playList1->getHelp());
     printAssertEquals("text", playList1->getAllSongs());
@@ -104,9 +99,6 @@ void runLinkedPlaylistTests(){
 }
 int main() {
     runLinkedPlaylistTests();
-<<<<<<< Updated upstream
     //delete playList1;
-=======
->>>>>>> Stashed changes
     return 0;
 }
