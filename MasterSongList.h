@@ -12,8 +12,7 @@
 
 class MasterSongList {
 private:
-    Song *songPtr;
-    PlayListNode *songArray;
+    Song *arraySong;
     int currItemCount;
     int currCapacity;
 
@@ -22,10 +21,9 @@ public:
     ~MasterSongList(); //creates an array
     MasterSongList(const MasterSongList& songToCopy); //only copies item, next is set to nullptr
     MasterSongList& operator=(const MasterSongList& queueToCopy);
-    void removeSong(Song songToRemove); //removes song from array
+    void removeSong(int index); //removes song from array
     void importSong(Song songToAdd, int index); //imports a file to array
     void doubleCapacity();
-
-    };
+};
 
 #endif //INC_220_DJ_PROJECT_MASTERSONGLIST_H

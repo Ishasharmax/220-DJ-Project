@@ -15,13 +15,13 @@ private:
     int playcount;
 
 public:
+    Song();
+
     Song(std::string titleIn,std::string artistIn, float songLengthIn);
 
     Song(const Song& songToCopy);
 
     Song& operator=(const Song& songToCopy);
-
-
     void addToPlayCount();
 
     std::string getTitle();
