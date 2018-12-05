@@ -8,17 +8,17 @@ include_directories(.)
 add_executable(220_DJ_Project
         DJTestLib.cpp
 
-        LinkedPlayList.cpp
-        LinkedPlaylistNodeTest.cpp
-        LinkedPlaylistTest.cpp
-        MasterListTest.cpp
-        MasterPlaylist.cpp
-
-        MasterPlaylistTest.cpp
-        MasterSongList.cpp
-
-        MasterSongListTest.cpp
-        PlayListNode.cpp
+#        LinkedPlayList.cpp
+#        LinkedPlaylistNodeTest.cpp
+#        LinkedPlaylistTest.cpp
+#        MasterListTest.cpp
+#        MasterPlaylist.cpp
+#
+#        MasterPlaylistTest.cpp
+#        MasterSongList.cpp
+#
+#        MasterSongListTest.cpp
+#        PlayListNode.cpp
 
         Song.cpp
 
