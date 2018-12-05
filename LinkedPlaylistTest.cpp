@@ -5,3 +5,8 @@
 #include "Playlist.h"
 #include "LinkedPlaylist.h"
 #include "DJTestLib.h"
+
+
+void runTests(){
+    LinkedPlayList playList1 = new LinkedPlayList();
+}

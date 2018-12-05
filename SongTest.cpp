@@ -13,8 +13,17 @@ void runSongTests(){
 
     mySong.getArtist();
     printAssertEquals("Beyonce", mySong.getArtist());
+
     mySong.getTitle();
     printAssertEquals("Love on Top", mySong.getTitle());
+
+    mySong.getPlayCount();
+    printAssertEquals(0,0);
+    mySong.addToPlayCount();
+    mySong.getPlayCount();
+    printAssertEquals(1,1);
+
+    mySong.getSongLength();
 
    /* while (!qToTest->isEmpty()) {
         std::cout << qToTest->dequeueHighestPriorityItem() << std::endl;
