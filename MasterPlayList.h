@@ -6,20 +6,23 @@
 
 #include <string>
 #include <stdexcept>
-#include "PlayList.h"
 #include "LinkedPlayList.h"
-class MasterPlayList{
+class MasterPlayList {
 private:
     int *arrayOfPlayList;
+    LinkedPlayList *playListPtr;
     int currItemCount;
     int currCapacity;
-    MasterPlayList* playlistPointer;
+    void doubleCapacity();
 public:
-    MasterPlayList(int intialCapacity);
-    MasterPlayList(const ArrayList& arrayListToCopy);
+    MasterPlayList(int initialCapacity);
+    MasterPlayList(const  MasterPlayList& arrayListToCopy);
     ~MasterPlayList();
-    std::string getPlaylist();
-    void addPlayList();
+    MasterPlayList& operator=(const MasterPlayList& arrayListToCopy);
+    std::string toStringGetPlaylist(int index);
+    void addPlayList(PlayList playlistToAdd);
+    void addPlaylistAt(int itemToAdd, int index);
+    void insertAt(int index);
     std::string removePlayList();
     std::string findPlaylist();
     bool isEmpty();

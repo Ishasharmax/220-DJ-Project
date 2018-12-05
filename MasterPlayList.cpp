@@ -2,11 +2,10 @@
 // Created by Bobo on 12/3/2018.
 //
 #include <iostream>
-#include "MasterPlaylist.h"
-#include "MasterPlaylistLib.h"
-#include "Linkedf"
+#include "MasterPlayList.h"
 #include <stdexcept>
 #include <string>
+
 int numLinesEmpty=0;
 
 MasterPlayList::MasterPlayList(int initialCapacity) {
@@ -26,7 +25,7 @@ MasterPlayList::MasterPlayList(const MasterPlayList& MasterPlayListToCopy){
     this->arrayOfPlayList= new int [MasterPlayListToCopy.currCapacity];
     this->currItemCount=MasterPlayListToCopy.currItemCount;
     for(int i=0;i<MasterPlayListToCopy.currItemCount;i++){
-        this->arrayOfPlayListOfPlayList[i]=MasterPlayListToCopy.arrayOfPlayList[i];
+        this->arrayOfPlayList[i]=MasterPlayListToCopy.arrayOfPlayList[i];
     }
 }
 
@@ -67,8 +66,8 @@ void  MasterPlayList::doubleCapacity(){
     }
 }
 
-void  MasterPlayList::insertAtEnd(PlayList playlistToAdd) {
-    PlayList *playListPtr=playlistToAdd;
+void  MasterPlayList::addPlayList(PlayList playlistToAdd) {
+    LinkedPlayList *playListPtr =playlistToAdd;
     arrayOfPlayList[currItemCount]=playListPtr;
     //arrayOfPlayList[currItemCount++]=playlistToAdd;
 }
