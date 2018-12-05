@@ -41,6 +41,7 @@ public:
     std::string getHelp();
 
     int getSongCount();
+
     bool isEmpty();
 };
 #endif //INC_220_DJ_PROJECT_LINKEDPLAYLIST_H

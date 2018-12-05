@@ -8,7 +8,11 @@
 
 
 void runLinkedPlaylistTests(){
+<<<<<<< Updated upstream
     LinkedPlayList*playList1 =  new LinkedPlayList();
+=======
+    LinkedPlayList *playList1 = new LinkedPlayList();
+>>>>>>> Stashed changes
     std::cout << "-------AddToTests---------" <<std::endl;
     //void addSongAtEnd(std::string artist, std::string songName, float duration);
 
@@ -100,6 +104,9 @@ void runLinkedPlaylistTests(){
 }
 int main() {
     runLinkedPlaylistTests();
+<<<<<<< Updated upstream
     //delete playList1;
+=======
+>>>>>>> Stashed changes
     return 0;
 }

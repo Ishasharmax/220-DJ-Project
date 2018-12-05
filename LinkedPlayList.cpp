@@ -4,15 +4,16 @@
 
 #include "LinkedPlayList.h"
 #include <string>
+#include <iostream>
 #include "PlayList.h"
 #include "Song.h"
 using namespace std;
 
-LinkedPlayList * LinkedPlayList::LinkedPlayList() {
-    front= nullptr;
-    end= nullptr;
-    current= nullptr;
-    currItems=0;
+LinkedPlayList::LinkedPlayList() {
+    this->front= nullptr;
+    this->end= nullptr;
+    this->current= nullptr;
+    this->currItems=0;
 }
 LinkedPlayList::LinkedPlayList(const LinkedPlayList &playListToCopy) {
 
@@ -28,7 +29,7 @@ float LinkedPlayList::calcPlayListDuration() {
         throw std::string("No songs in playlist");
     }else{
         float totalSongDuration=0;
-        PlayListNode *copyPlayList=front;
+        LinkedPlayListNode *copyPlayList=front;
         while(copyPlayList!=nullptr){
             totalSongDuration=totalSongDuration+copyPlayList->getSong().getSongLength();
             copyPlayList=copyPlayList->getNext();
@@ -42,7 +43,7 @@ std::string LinkedPlayList::search(std::string item) {
         throw std::out_of_range("Out of range");
     }
     else{
-        PlayListNode *copyPlayList=front;
+        LinkedPlayListNode *copyPlayList=front;
         while(copyPlayList!= nullptr){
             if(copyPlayList->getSong().getTitle()==item){
                 return "Song name: "+copyPlayList->getSong().getTitle()+" Artist:"+copyPlayList->getSong().getArtist()+" Song length:"+ to_string(copyPlayList->getSong().getSongLength());
@@ -62,14 +63,14 @@ std::string LinkedPlayList::search(std::string item) {
 void LinkedPlayList::addSongAtEnd(std::string artist, std::string songName, float duration) {
     if(front== nullptr){
         Song newSong=Song(songName,artist,duration);
-        PlayListNode *addToPlayList=new PlayListNode(&newSong);
+        LinkedPlayListNode *addToPlayList=new LinkedPlayListNode(&newSong);
         front=addToPlayList;
         end=addToPlayList;
         currItems++;
     }
     else{
         int count=0;
-        PlayListNode *copyPlayList=front;
+        LinkedPlayListNode *copyPlayList=front;
         while(copyPlayList!= nullptr){
             if(songName!=copyPlayList->getSong().getTitle()){
                 count++;
@@ -77,33 +78,32 @@ void LinkedPlayList::addSongAtEnd(std::string artist, std::string songName, floa
         }
         if(count>0) {
             Song newSong=Song(songName,artist,duration);
-            PlayListNode *addToPlayList=new PlayListNode(&newSong);
+            LinkedPlayListNode *addToPlayList=new LinkedPlayListNode(&newSong);
             end->setNext(addToPlayList);
             end = addToPlayList;
             currItems++;
         }
     }
 }//DONE
-
 void LinkedPlayList::addSongAt(int index, std::string artist, std::string songName, float duration) {
     if (index < 0 || index > currItems) {
         throw std::out_of_range("Out of range");
     } else {
         if (front == nullptr) {
             Song newSong = Song(songName, artist, duration);
-            PlayListNode *addToPlayList = new PlayListNode(&newSong);
+            LinkedPlayListNode *addToPlayList = new LinkedPlayListNode(&newSong);
             front = addToPlayList;
             end = addToPlayList;
         }
         else {
             int count = 0;
-            PlayListNode *copyPlayList = front;
+            LinkedPlayListNode *copyPlayList = front;
             if (index == currItems) {
                 addSongAtEnd(artist, songName, duration);
             }
             else {
                 for(int i=0;i<index;i++){
-                    
+
                 }
             }
         }
@@ -117,3 +117,21 @@ bool LinkedPlayList::isEmpty(){
         return false;
     }
 }
+std::string LinkedPlayList::getAllSongs(){
+    std::string strList="{";
+    while(front!=nullptr){
+        if(front->getNext()== nullptr){
+            strList=strList, front->getNext();
+        }
+        else{
+            strList=strList, front->getNext();
+            front=front->getNext();
+        }
+    }
+    strList=strList + "}";
+    return strList;
+}
+/*std::string LinkedPlayList::getHelp(){
+    std::cout<< "{return a string representing all songs in the playlist\n", "add a song to the end (add).\n" ,"remove a song (remove)." << std::endl;
+
+}*/
