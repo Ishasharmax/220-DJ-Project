@@ -16,13 +16,13 @@ private:
 
 public:
 
-    PlayListNode(Song* songIN);
+    PlayListNode(std::string artist, Song* songIN, float duration);
 
     ~PlayListNode();
 
     PlayListNode(const PlayListNode& nodeToCopy);
 
-    PlayListNode&operator=(const PlayListNode& nodeToCopy);
+    PlayListNode& operator=(const PlayListNode& nodeToCopy);
 
     Song getSong();
 
@@ -31,7 +31,6 @@ public:
     void setNext(PlayListNode* newNode);
 
     void setSong(Song newSong);
-
 };
 
 

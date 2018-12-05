@@ -5,6 +5,10 @@
 #include "Song.h"
 #include <string>
 
+Song::Song(){
+
+}
+
 Song::Song(std::string titleIn, std::string artistIn, float songLengthIn){
     this->title= titleIn;
     this->artist = artistIn;

@@ -5,6 +5,7 @@
 #include "LinkedPlayList.h"
 #include <string>
 #include "PlayList.h"
+
 using namespace std;
 
 LinkedPlayList::LinkedPlayList() {
@@ -20,15 +21,14 @@ LinkedPlayList::~LinkedPlayList() {
 LinkedPlayList& LinkedPlayList::operator=(const LinkedPlayList& playListToCopy){
 
 }
-float LinkedPlayList::calcPlayListDuartion() {
+float LinkedPlayList::calcPlayListDuration() {
     if(front== nullptr){
         throw std::string("No songs in playlist");
-    }
-    else{
+    }else{
         float totalSongDuration=0;
         PlayListNode *copyPlayList=front;
-        while(copyPlayList!= nullptr){
-            totalSongDuration=totalSongDuration+PlayListNode.getSongDuration();
+        while(copyPlayList!=nullptr){
+            totalSongDuration=totalSongDuration+PlayListNode->getSongLength();
         }
         return totalSongDuration;
     }
@@ -41,17 +41,16 @@ std::string LinkedPlayList::search(std::string item) {
     else{
         PlayListNode *copyPlayList=front;
         while(copyPlayList!= nullptr){
-            if(copyPlayList.getSongName()==item){
-                return "Song name:" +PlayListNode.getSongName()+" Artist:"+PlayListNode.getArtist()+" Song length"+ PlayListNode.getDuration();
+            if(copyPlayList->getSong()==item){
+                return "Song name: "+copyPlayList->getSong()+" Artist:"+copyPlayList->getArtist()+" Song length"+ PlayListNode.getDuration();
             }
             else{
-                if(copyPlayList.getNext()== nullptr){
-                    if(copyPlayList.getSongName()!=item){
+                if(copyPlayList->getNext()== nullptr){
+                    if(copyPlayList->getSong()!=item){
                         return "Song not found";
                     }
                 }
-
-                newPlayList=newPlayList.getNext();
+                newPlayList=newPlayList->getNext();
             }
         }
     }
@@ -67,13 +66,13 @@ void LinkedPlayList::addSong(std::string artist, std::string songName, float dur
         int count=0;
         PlayListNode *copyPlayList=front;
         while(copyPlayList!= nullptr){
-            if(songName!=copyPlayList.getSongName()){
+            if(songName!=copyPlayList->getSong()){
                 count++;
             }
         }
         if(count>0) {
-            PlayListNode *newSong = PlayListNode(artist, songName, duration);
-            end.setNext(newSong);
+            PlayListNode *newSong =PlayListNode(artist, songName, duration);
+            end->setNext(newSong);
             end = newSong;
         }
     }
