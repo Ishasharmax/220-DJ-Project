@@ -16,7 +16,7 @@ private:
 
 public:
 
-    PlayListNode(std::string artist, Song* songIN, float duration);
+    PlayListNode(Song* songIN);
 
     ~PlayListNode();
 

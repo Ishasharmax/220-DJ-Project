@@ -3,6 +3,18 @@
 //
 #include <iostream>
 #include "Playlist.h"
+#include "song.h"
 #include "LinkedPlaylist.h"
+<<<<<<< HEAD
 #include "LinkedPlaylist.h"
+=======
+#include "PlaylistNode.h"
+>>>>>>> fa76b918428946b6fd9e39cdbc4b3421379b1c63
 #include "DJTestLib.h"
+
+void runPlayListNode_Test(){
+    std::cout << "PlayList Node Test" << std:: endl;
+    Song FineChina = Song("Fine China","Chris Brown",3.32);
+    PlayListNode firstSong = PlayListNode;
+
+}
