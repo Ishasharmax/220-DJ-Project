@@ -109,3 +109,11 @@ void LinkedPlayList::addSongAt(int index, std::string artist, std::string songNa
         }
     }
 }
+bool LinkedPlayList::isEmpty(){
+    if(front== nullptr){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
