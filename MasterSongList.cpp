@@ -93,6 +93,19 @@ std::string MasterSongList::toString(){
     return str1;
 }
 
+void MasterSongList::removeValueAtEnd(){
+    if (currItemCount==0){
+        throw std::out_of_range ("error");
+    }else{
+        currItemCount--;
+    }
+}
+
+void MasterSongList::insertAtEnd(Song songToAdd){
+    arraySong[currItemCount++]=songToAdd;
+}
+
+
 
 
 
