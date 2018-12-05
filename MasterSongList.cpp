@@ -7,6 +7,7 @@
 #include <string>
 #include <iostream>
 #include "Song.h"
+
 using namespace std;
 
 MasterSongList::MasterSongList(int initialCapacity){
@@ -81,6 +82,21 @@ void MasterSongList::importSong(Song songToAdd, int index){
         }arraySong[index]=songToAdd;
     }
 }
+
+std::string MasterSongList::toString() {
+    std::string str1 = "{";
+    for (int i = 0; i < currItemCount; i++) {
+        if (i != (currItemCount - 1)) {
+            str1 += std::to_string(arraySong[i]) + ", ";
+        } else if (i == (currItemCount - 1)) {
+            str1 += std::to_string(arraySong[i]);
+        }
+    }
+    str1 = str1 + "}";
+    return str1;
+}
+
+
 
 
 

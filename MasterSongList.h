@@ -24,6 +24,7 @@ public:
     void removeSong(int index); //removes song from array
     void importSong(Song songToAdd, int index); //imports a file to array
     void doubleCapacity();
+    std::string toString();
 };
 
 #endif //INC_220_DJ_PROJECT_MASTERSONGLIST_H
