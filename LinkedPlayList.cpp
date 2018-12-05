@@ -5,12 +5,14 @@
 #include "LinkedPlayList.h"
 #include <string>
 #include "PlayList.h"
-
+#include "Song.h"
 using namespace std;
 
 LinkedPlayList::LinkedPlayList() {
     front= nullptr;
     end= nullptr;
+    current= nullptr;
+    currItems=0;
 }
 LinkedPlayList::LinkedPlayList(const LinkedPlayList &playListToCopy) {
 
@@ -28,12 +30,13 @@ float LinkedPlayList::calcPlayListDuration() {
         float totalSongDuration=0;
         PlayListNode *copyPlayList=front;
         while(copyPlayList!=nullptr){
-            totalSongDuration=totalSongDuration+PlayListNode->getSongLength();
+            totalSongDuration=totalSongDuration+copyPlayList->getSong().getSongLength();
+            copyPlayList=copyPlayList->getNext();
         }
         return totalSongDuration;
     }
 
-}
+}//DONE
 std::string LinkedPlayList::search(std::string item) {
     if(front==nullptr){
         throw std::out_of_range("Out of range");
@@ -41,40 +44,68 @@ std::string LinkedPlayList::search(std::string item) {
     else{
         PlayListNode *copyPlayList=front;
         while(copyPlayList!= nullptr){
-            if(copyPlayList->getSong()==item){
-                return "Song name: "+copyPlayList->getSong()+" Artist:"+copyPlayList->getArtist()+" Song length"+ PlayListNode.getDuration();
+            if(copyPlayList->getSong().getTitle()==item){
+                return "Song name: "+copyPlayList->getSong().getTitle()+" Artist:"+copyPlayList->getSong().getArtist()+" Song length:"+ to_string(copyPlayList->getSong().getSongLength());
             }
             else{
                 if(copyPlayList->getNext()== nullptr){
-                    if(copyPlayList->getSong()!=item){
+                    if(copyPlayList->getSong().getTitle()!=item){
                         return "Song not found";
                     }
                 }
-                newPlayList=newPlayList->getNext();
+                copyPlayList=copyPlayList->getNext();
             }
         }
     }
 
-}
-void LinkedPlayList::addSong(std::string artist, std::string songName, float duration) {
+}//DONE
+void LinkedPlayList::addSongAtEnd(std::string artist, std::string songName, float duration) {
     if(front== nullptr){
-        PlayListNode *newSong=new PlayListNode(artist,songName,duration);
-        front=newSong;
-        end=newSong;
+        Song newSong=Song(songName,artist,duration);
+        PlayListNode *addToPlayList=new PlayListNode(&newSong);
+        front=addToPlayList;
+        end=addToPlayList;
+        currItems++;
     }
     else{
         int count=0;
         PlayListNode *copyPlayList=front;
         while(copyPlayList!= nullptr){
-            if(songName!=copyPlayList->getSong()){
+            if(songName!=copyPlayList->getSong().getTitle()){
                 count++;
             }
         }
         if(count>0) {
-            PlayListNode *newSong =PlayListNode(artist, songName, duration);
-            end->setNext(newSong);
-            end = newSong;
+            Song newSong=Song(songName,artist,duration);
+            PlayListNode *addToPlayList=new PlayListNode(&newSong);
+            end->setNext(addToPlayList);
+            end = addToPlayList;
+            currItems++;
+        }
+    }
+}//DONE
+
+void LinkedPlayList::addSongAt(int index, std::string artist, std::string songName, float duration) {
+    if (index < 0 || index > currItems) {
+        throw std::out_of_range("Out of range");
+    } else {
+        if (front == nullptr) {
+            Song newSong = Song(songName, artist, duration);
+            PlayListNode *addToPlayList = new PlayListNode(&newSong);
+            front = addToPlayList;
+            end = addToPlayList;
+        }
+        else {
+            int count = 0;
+            PlayListNode *copyPlayList = front;
+            if (index == currItems) {
+                addSongAtEnd(artist, songName, duration);
+            }
+            else {
+                for(int i=0;i<index;i++){
+
+                }
+            }
         }
     }
 }
-
