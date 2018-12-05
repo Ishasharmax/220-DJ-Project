@@ -6,7 +6,7 @@
 #include "DJTestLib.h"
 
 void addPlaylistAtEndtoStringGetPlaylistTest(MasterPlayList* listToTest,int initialCapacity){
-    std::cout << "-------insertAtEndAndtoStringGetPlaylistTest---------" <<std::endl;
+    std::cout << "-------addPlayListAndtoStringGetPlaylistTest---------" <<std::endl;
     try{
         listToTest->toStringGetPlaylist(0);
         std::cout << "FAIL: toStringGetPlaylist did not throw exception" << std::endl;
@@ -15,12 +15,12 @@ void addPlaylistAtEndtoStringGetPlaylistTest(MasterPlayList* listToTest,int init
         printAssertEquals("Bad index given to toStringGetPlaylist: 0", e.what());
     }
     for (int i=0; i<initialCapacity; i++){
-        listToTest->insertAtEnd(listToTest[i]);
-        printAssertEquals(numsToTest[i], listToTest->toStringGetPlaylist(i));
+        listToTest->addPlayList(listToTest[i]);
+        printAssertEquals(listToTest[i], listToTest->toStringGetPlaylist(i));
     }
     //once more now that the list is complete
     for (int i=0; i<initialCapacity; i++){
-        printAssertEquals(numsToTest[i], listToTest->toStringGetPlaylist(i));
+        printAssertEquals(listToTest[i], listToTest->toStringGetPlaylist(i));
     }
 
     try{
@@ -46,35 +46,35 @@ void addPlaylistAtEndtoStringGetPlaylistTest(MasterPlayList* listToTest,int init
     }
     std::cout << "--done--" <<std::endl;
 }
-void isEmptyTest(int* numsToTest, int initialCapacity, int initialCapacity){
+void isEmptyTest(MasterPlayList* listToTest, int initialCapacity, int initialCapacity){
     std::cout << "-------isEmptyTest---------" <<std::endl;
-    MasterPlaylist myList = MasterPlaylist(initialCapacity);
+    MasterPlaylist *listToTest = MasterPlaylist(initialCapacity);
     printAssertEquals(true, listToTest->isEmpty());
 
     for (int i=0; i<initialCapacity; i++){
-        listToTest->insertAtEnd(numsToTest[i]);
+        listToTest->addPlayList(listToTest[i]);
         printAssertEquals(false, listToTest->isEmpty());
     }
     std::cout << "--done--" <<std::endl;
 }
-void itemCountTest(int* numsToTest, int initialCapacity, int initialCapacity){
+void itemCountTest(int* listToTest, int initialCapacity, int initialCapacity){
     std::cout << "-------itemCountTest---------" <<std::endl;
     MasterPlaylist myList = MasterPlaylist(initialCapacity);
     for (int i=0; i<initialCapacity; i++){
         printAssertEquals(i, listToTest->itemCount());
-        listToTest->insertAtEnd(numsToTest[i]);
+        listToTest->addPlayList(listToTest[i]);
     }
     printAssertEquals(initialCapacity, listToTest->itemCount());
     std::cout << "--done--" <<std::endl;
 }
-void clearListTest(int* numsToTest, int initialCapacity, int initialCapacity){
+void clearListTest(int* listToTest, int initialCapacity, int initialCapacity){
     std::cout << "-------clearListTest---------" <<std::endl;
-    MasterPlaylist myList = MasterPlaylist(initialCapacity);
+    MastetPlayList myList = MastetPlayList(initialCapacity);
     printAssertEquals(0, listToTest->itemCount());
     listToTest->clearList();
     printAssertEquals(0, listToTest->itemCount());
     for (int i=0; i<initialCapacity; i++){
-        listToTest->insertAtEnd(numsToTest[i]);
+        listToTest->addPlayList(listToTest[i]);
     }
     printAssertEquals(initialCapacity, listToTest->itemCount());
     listToTest->clearList();
@@ -82,7 +82,7 @@ void clearListTest(int* numsToTest, int initialCapacity, int initialCapacity){
 
     //do it again
     for (int i=0; i<initialCapacity; i++){
-        listToTest->insertAtEnd(numsToTest[i]);
+        listToTest->addPlayList(listToTest[i]);
     }
     printAssertEquals(initialCapacity, listToTest->itemCount());
     listToTest->clearList();
@@ -90,33 +90,33 @@ void clearListTest(int* numsToTest, int initialCapacity, int initialCapacity){
     std::cout << "--done--" <<std::endl;
 }
 
-//assumes working insertAtEnd
+//assumes working addPlayList
 void toStringTest(){
     std::cout << "-------toStringTest---------" <<std::endl;
-    MasterPlaylist myList = MasterPlaylist(5);
+    MastetPlayList myList = MastetPlayList(5);
     printAssertEquals("{}", listToTest->toString());
 
     int a1[5]{5, 6, 7, 8, 9};
     std::string toStringOutputs[5]{"{5}","{5, 6}","{5, 6, 7}","{5, 6, 7, 8}","{5, 6, 7, 8, 9}"};
     for (int i=0; i<5; i++){
-        listToTest->insertAtEnd(a1[i]);
+        listToTest->addPlayList(a1[i]);
         printAssertEquals(toStringOutputs[i], listToTest->toString());
     }
     std::cout << "--done--" <<std::endl;
 }
 
-//helper function, assumes working constructor and insertAtEnd
-//@return an MasterPlaylist to be deleted by the user
-MasterPlaylist* createAndFillList(int* arr, int size){
-    MasterPlaylist* toReturn = new MasterPlaylist(size);
+//helper function, assumes working constructor and addPlayList
+//@return an MastetPlayList to be deleted by the user
+MastetPlayList* createAndFillList(int* arr, int size){
+    MastetPlayList* toReturn = new MastetPlayList(size);
     for (int i=0; i<size; i++){
-        toReturn->insertAtEnd(arr[i]);
+        toReturn->addPlayList(arr[i]);
     }
     return toReturn;
 }
 void findTest(){
     std::cout << "-------findTest---------" <<std::endl;
-    MasterPlayList *myListPtr = new MasterPlayList(6);
+    MastetPlayList *myListPtr = new MastetPlayList(6);
     int failCount = 0;
     for (int i=0; i< 10; i++){
         if (i != myListPtr->findPlaylist(myListPtr[i]){
@@ -143,14 +143,14 @@ void findTest(){
 //assumes working constructor, toStringGetPlaylist, toString, isEmpty, itemCount, clearList
 void insertAtTest(){
     std::cout << "-------insertAtTest---------" <<std::endl;
-    //copy of insertAtEnd
-    int numsToTest[5]{5, 6, 7, 8, 9};
+    //copy of addPlayList
+    int listToTest[5]{5, 6, 7, 8, 9};
     int initialCapacity = 5;
-    MasterPlaylist myList = MasterPlaylist(5);
+    MastetPlayList myList = MastetPlayList(5);
 
     for (int i=0; i<initialCapacity; i++){
-        listToTest->insertAt(numsToTest[i], i);
-        printAssertEquals(numsToTest[i], listToTest->toStringGetPlaylist(i));
+        listToTest->insertAt(listToTest[i], i);
+        printAssertEquals(listToTest[i], listToTest->toStringGetPlaylist(i));
     }
 
     try{
@@ -205,13 +205,13 @@ void insertAtTest(){
     std::cout << "--done--" <<std::endl;
 }
 
-void removeValueAtEndTest(){
-    std::cout << "-------removeValueAtEndTest---------" <<std::endl;
+void removePlayListTest(){
+    std::cout << "-------removePlayListTest---------" <<std::endl;
     int a1[]={1, 2, 3, 22, 64, 33, 24, 9, 865, 23};
-    MasterPlaylist* myListPtr = createAndFillList(a1, 10);
+    MastetPlayList* myListPtr = createAndFillList(a1, 10);
     int failCount = 0;
     for (int i=0; i< 10; i++){
-        if (a1[9-i] != myListPtr->removeValueAtEnd()){
+        if (a1[9-i] != myListPtr->removePlayList()){
             failCount++;
         }
         printAssertEquals(9-i, myListPtr->itemCount());
@@ -226,39 +226,39 @@ void removeValueAtEndTest(){
     }
 
     try{
-        myListPtr->removeValueAtEnd();
-        std::cout << "FAIL: removeValueAtEnd did not throw exception" << std::endl;
+        myListPtr->removePlayList();
+        std::cout << "FAIL: removePlayList did not throw exception" << std::endl;
     }
     catch(std::out_of_range& e){
-        printAssertEquals("In removeValueAtEnd, List must have items", e.what());
+        printAssertEquals("In removePlayList, List must have items", e.what());
     }
     delete myListPtr;
     std::cout << "--done--" <<std::endl;
 }
 
-void removeValueAtTest(){
-    std::cout << "-------removeValueAtTest---------" <<std::endl;
+void removePlayListAtTest(){
+    std::cout << "-------removePlayListAtTest---------" <<std::endl;
     int a1[]={10, 20, 30, 40, 50};
-    MasterPlaylist* myListPtr = createAndFillList(a1, 5);
+    MastetPlayList* myListPtr = createAndFillList(a1, 5);
 
-    printAssertEquals(30, myListPtr->removeValueAt(2));
+    printAssertEquals(30, myListPtr->removePlayListAt(2));
     printAssertEquals(4, myListPtr->itemCount());
     printAssertEquals("{10, 20, 40, 50}", myListPtr->toString());
 
-    printAssertEquals(40, myListPtr->removeValueAt(2));
+    printAssertEquals(40, myListPtr->removePlayListAt(2));
     printAssertEquals(3, myListPtr->itemCount());
     printAssertEquals("{10, 20, 50}", myListPtr->toString());
 
-    printAssertEquals(50, myListPtr->removeValueAt(2));
+    printAssertEquals(50, myListPtr->removePlayListAt(2));
     printAssertEquals(2, myListPtr->itemCount());
     printAssertEquals("{10, 20}", myListPtr->toString());
 
-    printAssertEquals(10, myListPtr->removeValueAt(0));
+    printAssertEquals(10, myListPtr->removePlayListAt(0));
     printAssertEquals(1, myListPtr->itemCount());
     printAssertEquals("{20}", myListPtr->toString());
     printAssertEquals(false, myListPtr->isEmpty());
 
-    printAssertEquals(20, myListPtr->removeValueAt(0));
+    printAssertEquals(20, myListPtr->removePlayListAt(0));
     printAssertEquals(0, myListPtr->itemCount());
     printAssertEquals("{}", myListPtr->toString());
     printAssertEquals(true, myListPtr->isEmpty());
@@ -267,27 +267,27 @@ void removeValueAtTest(){
 }
 
 
-//assume working insertAtEnd, insertAtFront, toString, itemCount, isEmpty, clearList
+//assume working addPlayList, insertAtFront, toString, itemCount, isEmpty, clearList
 void doubleCapacityTest(){
     std::cout << "-------doubleCapacityTest---------" <<std::endl;
     try{
-        MasterPlaylist badList = MasterPlaylist(0);
+        MastetPlayList badList = MastetPlayList(0);
         std::cout << "FAIL: constructor did not throw exception" << std::endl;
     }
     catch(std::invalid_argument& e){
-        printAssertEquals("In MasterPlaylist constructor, size must be > 0", e.what());
+        printAssertEquals("In MastetPlayList constructor, size must be > 0", e.what());
     }
-    MasterPlaylist myList = MasterPlaylist(1);
+    MastetPlayList myList = MastetPlayList(1);
     for(int i=0; i<10; i++){
         listToTest->insertAtFront(i);
-        listToTest->insertAtEnd(i);
+        listToTest->addPlayList(i);
     }
     printAssertEquals("{9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}", listToTest->toString());
     printAssertEquals(20, listToTest->itemCount());
     printAssertEquals(false, listToTest->isEmpty());
 
     int a1[10]{5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-    insertAtEndAndtoStringGetPlaylistTest(a1, 5, 3);
+    addPlayListAndtoStringGetPlaylistTest(a1, 5, 3);
     isEmptyTest(a1, 5, 3);
     itemCountTest(a1, 5, 3);
     clearListTest(a1, 5, 3);
@@ -295,27 +295,27 @@ void doubleCapacityTest(){
 
 }
 
-//assumes working doubleCapacity, insertAtEnd, removeValueAt, toString
+//assumes working doubleCapacity, addPlayList, removePlayListAt, toString
 void testCopyConstructor(){
     std::cout << "-------testCopyConstructor---------" <<std::endl;
     int numErrors = 0;
     //create object, add some stuff
-    MasterPlayList original = MasterPlayList(2);
+    MastetPlayList original = MastetPlayList(2);
     for (int i=0; i<4; i++){
-        original.insertAtEnd(i);
+        original.addPlayList(i);
     }
     //copy it
-    MasterPlayList copy = MasterPlayList(original);
+    MastetPlayList copy = MastetPlayList(original);
     //check they're the same
     if (!(original.toString() == copy.toString())){
         std::cout << "FAIL: error in copy checking toString" << std::endl;
         numErrors++;
     }
     //remove and add stuff to one
-    original.removeValueAt(0);
-    original.removeValueAt(0);
-    original.insertAtEnd(4);
-    original.insertAtEnd(5);
+    original.removePlayListAt(0);
+    original.removePlayListAt(0);
+    original.addPlayList(4);
+    original.addPlayList(5);
     //check that they're different
     if (!( original.toString() == "{2, 3, 4, 5}")){
         std::cout << "FAIL: error in changing original, it is now:" <<original.toString() << std::endl;
@@ -333,19 +333,19 @@ void testCopyConstructor(){
 
 }
 
-//assumes working doubleCapacity, insertAtEnd, removeValueAt, toString
+//assumes working doubleCapacity, addPlayList, removePlayListAt, toString
 void testAssnOperator(){
     std::cout << "-------testAssnOperator---------" <<std::endl;
     int numErrors = 0;
     //create object, add some stuff
-    MasterPlayList original = MasterPlayList(2);
+    MastetPlayList original = MastetPlayList(2);
     for (int i=0; i<4; i++){
-        original.insertAtEnd(i);
+        original.addPlayList(i);
     }
     //create a new list with its own data
-    MasterPlayList listToSet = MasterPlayList(2);
+    MastetPlayList listToSet = MastetPlayList(2);
     for (int i=10; i<14; i++){
-        listToSet.insertAtEnd(i);
+        listToSet.addPlayList(i);
     }
     //assign the original to the new
     listToSet = original;
@@ -356,10 +356,10 @@ void testAssnOperator(){
         numErrors++;
     }
     //remove and add stuff to one
-    original.removeValueAt(0);
-    original.removeValueAt(1);
-    original.insertAtEnd(4);
-    original.insertAtEnd(5);
+    original.removePlayListAt(0);
+    original.removePlayListAt(1);
+    original.addPlayList(4);
+    original.addPlayList(5);
     //check that they're different
     if (!( original.toString() == "{2, 3, 4, 5}")){
         std::cout << "FAIL: error in changing original, it is now:" <<original.toString() << std::endl;
@@ -384,7 +384,7 @@ void testAssnOperator(){
 
 int main(){
 
-    MasterPlayList *testList = new MasterPlayList(6);
+    MastetPlayList *testList = new MastetPlayList(6);
     //LinkedPlayList *testPtr= new LinkedPlayList();
 
     addPlaylistAtEndtoStringGetPlaylistTest(testList,5 );
@@ -396,8 +396,8 @@ int main(){
     findTest();
 
     insertAtTest();
-    removeValueAtEndTest();
-    removeValueAtTest();
+    removePlayListTest();
+    removePlayListAtTest();
 
     doubleCapacityTest();
     testCopyConstructor();

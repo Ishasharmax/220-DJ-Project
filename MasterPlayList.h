@@ -9,7 +9,7 @@
 #include "LinkedPlayList.h"
 class MasterPlayList {
 private:
-    int *arrayOfPlayList;
+    void *arrayOfPlayList;
     MasterPlayList *playListPtr;
     int currItemCount;
     int currCapacity;
@@ -19,11 +19,12 @@ public:
     MasterPlayList(const  MasterPlayList& arrayListToCopy);
     ~MasterPlayList();
     MasterPlayList& operator=(const MasterPlayList& arrayListToCopy);
+    void setNext(LinkedPlayList* newNode);
     std::string toStringGetPlaylist(int index);
-    void addPlayList(PlayList playlistToAdd);
-    void addPlaylistAt(int itemToAdd, int index);
+    void addPlayList(LinkedPlayList *playlistToAdd);
+    void addPlayListAt(LinkedPlayList *playlistToAddi, int index);
     std::string getPlayListAt(int index);
-    std::string removePlayList();
+    LinkedPlayList removePlayList();
     LinkedPlayList removePlayListAt(int index);
     LinkedPlayList findPlaylist(int index);
     int  getitemCount();

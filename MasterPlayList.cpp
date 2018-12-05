@@ -65,17 +65,32 @@ void  MasterPlayList::doubleCapacity(){
         for(int i=0; i<currItemCount;i++){
             temp[i]=arrayOfPlayList[i];
         }
-        delete[arrayOfPlayList;
+        delete[] arrayOfPlayList;
         arrayOfPlayList=temp;
     }
 }
 
-void  MasterPlayList::addPlayList(PlayList playlistToAdd) {
+void  MasterPlayList::addPlayList(LinkedPlayList *playlistToAdd) {
     arrayOfPlayList[currItemCount++];
-    MasterPlayList newPlayList=new MasterPlayList(currItemCount++);
-    playListPtr->newPtr;
+    playListPtr->setNext(playlistToAdd);
 
     //arrayOfPlayList[currItemCount++]=playlistToAdd;
+}
+
+void  MasterPlayList::addPlayListAt(LinkedPlayList *playlistToAdd, int index) {
+    if(index<0 || currCapacity<index){
+        throw std::out_of_range("Size is less than 1");
+    }
+    else{
+        currItemCount++;
+        if(currItemCount+1>=currCapacity){
+            doubleCapacity();
+        }
+        for(int i=currItemCount;i>index;i--){
+            arrayOfPlayList[i]=arrayOfPlayList[i-1];
+        }
+        arrayOfPlayList[index]=playListPtr->setNext(playlistToAdd);
+    }
 }
 
 std::string  MasterPlayList::getPlayListAt(int index){
@@ -122,21 +137,7 @@ LinkedPlayList MasterPlayList::findPlaylist(int numToFind){
     return  ::find(arrayOfPlayList,currCapacity,numToFind,numLinesEmpty);
 }
 
-void  MasterPlayList::addPlayListAt(PlayList playlistToAdd, int index) {
-    if(index<0 || currCapacity<index){
-        throw std::out_of_range("Size is less than 1");
-    }
-    else{
-        currItemCount++;
-        if(currItemCount+1>=currCapacity){
-            doubleCapacity();
-        }
-        for(int i=currItemCount;i>index;i--){
-            arrayOfPlayList[i]=arrayOfPlayList[i-1];
-        }
-        arrayOfPlayList[index]=playlistToAdd;
-    }
-}
+
 
 LinkedPlayList MasterPlayList::removePlayList() {
     if (currItemCount < 1) {
