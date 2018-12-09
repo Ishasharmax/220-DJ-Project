@@ -5,7 +5,11 @@
 #include "Playlist.h"
 #include "song.h"
 #include "LinkedPlaylist.h"
+<<<<<<< Updated upstream
+#include "LinkedPlayListNode.h"
+=======
 #include "PlaylistNode.h"
+>>>>>>> Stashed changes
 #include "DJTestLib.h"
 
 void runPlayListNode_Test(){
