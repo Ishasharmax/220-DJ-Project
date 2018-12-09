@@ -11,7 +11,31 @@ public:
     virtual ~PlayList(){}
 
     virtual std::string search(std::string item)=0;
+
+    virtual float calcPlayListDuration()=0;
+
+    virtual void addSongAtEnd(std::string artist, std::string songName, float duration)=0;
+
+    virtual void addSongAt(int index,std::string artist, std::string songName, float duration)=0;
+
+    virtual std::string removeSongAt(int index)=0;
+
+    virtual std::string removeSongAtEnd()=0;
+
+    virtual std::string getAllSongs()=0;
+
     virtual std::string getHelp()=0;
-    virtual void addSong(std::string artist, std::string songName, float duration)=0;
+
+    virtual int getSongCount()=0;
+
+    virtual bool isEmpty()=0;
+
+    virtual std::string nextSong()=0;
+
+    virtual std::string previousSong()=0;
+
+    virtual int getPlayCount(std::string song)=0;
+
+    virtual void replay()=0;
 };
 #endif //INC_220_DJ_PROJECT_PLAYLIST_H
