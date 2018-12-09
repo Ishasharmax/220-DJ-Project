@@ -7,12 +7,14 @@
 #include <string>
 #include <stdexcept>
 #include "PlayList.h"
-#include "PlayListNode.h"
+#include "LinkedPlayListNode.h"
 
 class LinkedPlayList {
 private:
-    PlayListNode *front;
-    PlayListNode *end;
+    LinkedPlayListNode *front;
+    LinkedPlayListNode *end;
+    LinkedPlayListNode *current;
+    int currItems;
 public:
     LinkedPlayList();
 
@@ -24,10 +26,22 @@ public:
 
     std::string search(std::string item);
 
-    void addSong(std::string artist, std::string songName, float duration);
+    float calcPlayListDuration();
+
+    void addSongAtEnd(std::string artist, std::string songName, float duration);
+
+    void addSongAt(int index,std::string artist, std::string songName, float duration);
+
+    std::string removeSongAt(int removeIndex);
+
+    std::string removeSongAtEnd();
+
+    std::string getAllSongs();
 
     std::string getHelp();
 
-    float calcPlayListDuration();
+    int getSongCount();
+
+    bool isEmpty();
 };
 #endif //INC_220_DJ_PROJECT_LINKEDPLAYLIST_H

@@ -7,14 +7,31 @@
 #include "DJTestLib.h"
 
 void runSongTests(){
+
+    std::cout << "Song Tests" << std::endl;
     Song mySong =  Song("Love on Top", "Beyonce", 4.00);
     //std::cout << mySong.toString() << std::endl;
 
 
     mySong.getArtist();
     printAssertEquals("Beyonce", mySong.getArtist());
+
     mySong.getTitle();
     printAssertEquals("Love on Top", mySong.getTitle());
+
+    mySong.getPlayCount();
+    printAssertEquals(0,0);
+    mySong.addToPlayCount();
+    mySong.getPlayCount();
+    printAssertEquals(1,1);
+
+    mySong.getSongLength();
+    printAssertEquals(4.00,mySong.getSongLength());
+
+
+
+
+
 
    /* while (!qToTest->isEmpty()) {
         std::cout << qToTest->dequeueHighestPriorityItem() << std::endl;

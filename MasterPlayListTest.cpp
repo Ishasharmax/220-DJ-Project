@@ -2,8 +2,9 @@
 // Created by Bobo on 12/3/2018.
 //
 #include <iostream>
-#include "MasterSongList.h"
+#include "MasterPlayList.h"
 #include "DJTestLib.h"
+
 void addPlaylistAtEndtoStringGetPlaylistTest(MasterPlayList* listToTest,int initialCapacity){
     std::cout << "-------addPlayListAndtoStringGetPlaylistTest---------" <<std::endl;
     try{

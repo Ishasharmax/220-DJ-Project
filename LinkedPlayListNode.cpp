@@ -2,7 +2,7 @@
 // Created by Joel Jerez on 11/29/18.
 //
 
-#include "PlayListNode.h"
+#include "LinkedPlayListNode.h"
 #include "Song.h"
 
 PlayListNode::PlayListNode(Song *songIN) {

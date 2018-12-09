@@ -5,7 +5,7 @@
 #ifndef INC_220_DJ_PROJECT_MASTERSONGLIST_H
 #define INC_220_DJ_PROJECT_MASTERSONGLIST_H
 
-#include "PlayListNode.h"
+#include "LinkedPlayListNode.h"
 #include "Song.h"
 #include <iostream>
 #include<string.h>
