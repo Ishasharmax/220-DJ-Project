@@ -7,13 +7,13 @@
 #include <string>
 #include <stdexcept>
 #include "PlayList.h"
-#include "PlayListNode.h"
+#include "LinkedPlayListNode.h"
 
 class LinkedPlayList {
 private:
-    PlayListNode *front;
-    PlayListNode *end;
-    PlayListNode *current;
+    LinkedPlayListNode *front;
+    LinkedPlayListNode *end;
+    LinkedPlayListNode *current;
     int currItems;
 public:
     LinkedPlayList();
@@ -41,5 +41,7 @@ public:
     std::string getHelp();
 
     int getSongCount();
+
+    bool isEmpty();
 };
 #endif //INC_220_DJ_PROJECT_LINKEDPLAYLIST_H

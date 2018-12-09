@@ -2,7 +2,7 @@
 // Created by Isha Sharma on 11/29/18.
 //
 #include "MasterSongList.h"
-#include "PlayListNode.h"
+#include "LinkedPlayListNode.h"
 #include <stdexcept>
 #include <string>
 #include <iostream>

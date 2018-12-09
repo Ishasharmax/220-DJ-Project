@@ -26,6 +26,11 @@ void runSongTests(){
     printAssertEquals(1,1);
 
     mySong.getSongLength();
+    printAssertEquals(4.00,mySong.getSongLength());
+
+
+
+
 
 
    /* while (!qToTest->isEmpty()) {
