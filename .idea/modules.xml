@@ -3,13 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
 <<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/220-DJ-Project1.iml" filepath="$PROJECT_DIR$/.idea/220-DJ-Project1.iml" />
-=======
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/220-DJ-Project-P2.iml" filepath="$PROJECT_DIR$/.idea/220-DJ-Project-P2.iml" />
 =======
       <module fileurl="file://$PROJECT_DIR$/.idea/220-DJ-Project.iml" filepath="$PROJECT_DIR$/.idea/220-DJ-Project.iml" />
->>>>>>> origin/master
 >>>>>>> origin/master
     </modules>
   </component>

@@ -9,7 +9,7 @@
 #include "PlayList.h"
 #include "LinkedPlayListNode.h"
 
-class LinkedPlayList {
+class LinkedPlayList : PlayList {
 private:
     LinkedPlayListNode *front;
     LinkedPlayListNode *end;
@@ -32,7 +32,7 @@ public:
 
     void addSongAt(int index,std::string artist, std::string songName, float duration);
 
-    std::string removeSongAt(int removeIndex);
+    std::string removeSongAt(int index);
 
     std::string removeSongAtEnd();
 
@@ -43,5 +43,14 @@ public:
     int getSongCount();
 
     bool isEmpty();
+
+    std::string nextSong();
+
+    std::string previousSong();
+
+    int getPlayCount(std::string song);
+
+    void replay();
+
 };
 #endif //INC_220_DJ_PROJECT_LINKEDPLAYLIST_H
