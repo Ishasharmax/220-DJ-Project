@@ -10,7 +10,7 @@ add_executable(220_DJ_Project
         LinkedPlayList.cpp
         LinkedPlaylistTest.cpp
         LinkedPlayListNode.cpp
-#        LinkedPlaylistNodeTest.cpp
+        LinkedPlaylistNodeTest.cpp
 
 
         LinkedPlaylistTest.cpp
