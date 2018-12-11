@@ -5,33 +5,29 @@
 #include "Playlist.h"
 #include "song.h"
 #include "LinkedPlaylist.h"
-<<<<<<< Updated upstream
+
 #include "LinkedPlayListNode.h"
-=======
-#include "PlaylistNode.h"
->>>>>>> Stashed changes
 #include "DJTestLib.h"
+#include <string>
 
 void runPlayListNode_Test(){
     std::cout << "PlayList Node Test" << std:: endl;
     Song FineChina = Song("Fine China","Chris Brown",3.32);
     Song Overdue = Song("Overdue","Metro Boomin", 2.44);
-    PlayListNode firstSong = PlayListNode(FineChina);
-    PlayListNode secondSong = PlayListNode(Overdue);
+    LinkedPlayListNode firstSong = LinkedPlayListNode(*FineChina);
+    LinkedPlayListNode secondSong = LinkedPlayListNode(*Overdue);
 
+    std::cout << firstSong.getSong() << std:: endl;
 
-    firstSong.getSong();
+    std::cout << firstSong.setNext(secondSong)<< std:: endl;
 
+    std::cout << firstSong.getNext()<< std:: endl;
 
-
-    firstSong.setNext(secondSong);
-
-    firstSong.getNext();
-
-    secondSong.getSong();
-    
+    std::cout << secondSong.getSong()<< std:: endl;
 
 
 
-
+}
+int main(){
+    runPlayListNode_Test();
 }
