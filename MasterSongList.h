@@ -28,6 +28,7 @@ public:
     std::string toString();
     void removeValueAtEnd();
     void insertAtEnd(Song songToAdd);
+    bool isEmpty();
 };
 
 #endif //INC_220_DJ_PROJECT_MASTERSONGLIST_H

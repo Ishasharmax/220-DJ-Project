@@ -9,7 +9,7 @@
 #include "LinkedPlayList.h"
 class MasterPlayList {
 private:
-    void *arrayOfPlayList;
+    int *arrayOfPlayList;
     MasterPlayList *playListPtr;
     int currItemCount;
     int currCapacity;
