@@ -5,21 +5,21 @@
 #include "LinkedPlayListNode.h"
 #include "Song.h"
 
-PlayListNode::PlayListNode(Song *songIN) {
+LinkedPlayListNode::LinkedPlayListNode(Song *songIN) {
     this->song=songIN;
     this->next= nullptr;
 }
 
-PlayListNode::~PlayListNode(){
+LinkedPlayListNode::~LinkedPlayListNode(){
     delete this->song;
 }
 
-PlayListNode::PlayListNode(const PlayListNode& nodeToCopy){
+LinkedPlayListNode::LinkedPlayListNode(const LinkedPlayListNode& nodeToCopy){
     song=nodeToCopy.song;
     next= nullptr;
 }
 
-PlayListNode& PlayListNode::operator=(const PlayListNode& nodeToCopy){
+LinkedPlayListNode& LinkedPlayListNode::operator=(const LinkedPlayListNode& nodeToCopy){
     if (this!=nodeToCopy){
         this->song=nodeToCopy.song;
         this->next=nodeToCopy.next;
@@ -28,17 +28,17 @@ PlayListNode& PlayListNode::operator=(const PlayListNode& nodeToCopy){
 }
 
 
-Song PlayListNode:: getSong() {
+Song LinkedPlayListNode:: getSong() {
     return *song;
 }
-void PlayListNode:: setSong(Song newSong){
+void LinkedPlayListNode:: setSong(Song newSong){
     *song = newSong;
 }
-PlayListNode* PlayListNode:: getNext(){
+LinkedPlayListNode* LinkedPlayListNode:: getNext(){
     return next;
 }
 
-void PlayListNode::setNext(PlayListNode* newNode){
+void LinkedPlayListNode::setNext(LinkedPlayListNode* newNode){
     next=newNode;
 }
 

@@ -9,6 +9,7 @@
 #include "Song.h"
 #include <iostream>
 #include<string.h>
+#include "SongLib.h"
 
 class MasterSongList {
 private:
@@ -25,6 +26,9 @@ public:
     void importSong(Song songToAdd, int index); //imports a file to array
     void doubleCapacity();
     std::string toString();
+    void removeValueAtEnd();
+    void insertAtEnd(Song songToAdd);
+    bool isEmpty();
 };
 
 #endif //INC_220_DJ_PROJECT_MASTERSONGLIST_H

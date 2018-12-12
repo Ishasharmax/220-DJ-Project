@@ -13,13 +13,13 @@ void printAssertEquals(int expected, int actual){
     }
 }
 
-void printAssertEquals(float expected, float actual){
-    if (expected == actual){
+void printAssertEquals(float expected, float actual) {
+    if (expected == actual) {
         std::cout << "pass" << std::endl;
-    }
-    else {
+    } else {
         std::cout << "FAIL, expected: " << expected << "\tactual: " << actual << std::endl;
     }
+}
 
 void printAssertEquals(bool expected, bool actual){
     if (expected == actual){
@@ -68,7 +68,4 @@ void printAssertArrayEqual(int* a1, int *a2, int size){
     else {
         std::cout << "FAIL, failCount: " << failCount << std::endl;
     }
-}
-
-
 }
