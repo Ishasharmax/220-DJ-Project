@@ -29,6 +29,7 @@ public:
     void removeValueAtEnd();
     void insertAtEnd(Song songToAdd);
     bool isEmpty();
+    int getValueAt(Song songToAdd);
 };
 
 #endif //INC_220_DJ_PROJECT_MASTERSONGLIST_H

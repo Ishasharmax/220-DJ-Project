@@ -105,12 +105,9 @@ void MasterSongList::insertAtEnd(Song songToAdd){
     arraySong[currItemCount++]=songToAdd;
 }
 
-bool MasterSongList::isEmpty(){
-    if (currItemCount==0){
-        return true;
-    }else{
-        return false;
-    }
+Song getValueAt(Song songx){
+
+
 }
 
 

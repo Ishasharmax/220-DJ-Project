@@ -54,7 +54,7 @@ void isEmptyTest(int numsToTestSize, int initialCapacity){
     printAssertEquals(true, myList.isEmpty());
 
     for (int i=0; i<numsToTestSize; i++){
-        myList.importSong(numsToTest[i]);
+        myList.importSong(numsToTestSize[i]);
         printAssertEquals(false, myList.isEmpty());
     }
     std::cout << "--done--" <<std::endl;
