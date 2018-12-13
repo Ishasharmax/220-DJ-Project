@@ -87,9 +87,9 @@ std::string MasterSongList::toString() {
     std::string str1 = "{";
     for (int i = 0; i < currItemCount; i++) {
         if (i != (currItemCount - 1)) {
-            str1 += std::to_string(arraySong[i]) + ", ";
+            str1=str1+arraySong[i].getTitle()+ ", ";
         } else if (i == (currItemCount - 1)) {
-            str1 += std::to_string(arraySong[i]);
+            str1=str1+arraySong[i].getTitle();
         }
     }
     str1 = str1 + "}";

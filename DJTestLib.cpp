@@ -69,5 +69,3 @@ void printAssertArrayEqual(int* a1, int *a2, int size){
         std::cout << "FAIL, failCount: " << failCount << std::endl;
     }
 }
-
-
