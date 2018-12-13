@@ -24,6 +24,7 @@ public:
     void addPlayList(LinkedPlayList *playlistToAdd);
     void addPlayListAt(LinkedPlayList *playlistToAddi, int index);
     std::string getPlayListAt(int index);
+    std::string toString();
     LinkedPlayList removePlayList();
     LinkedPlayList removePlayListAt(int index);
     LinkedPlayList findPlaylist(int index);
