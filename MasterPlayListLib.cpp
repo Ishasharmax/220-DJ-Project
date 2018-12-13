@@ -5,14 +5,16 @@
 #include "MasterPlayList.h"
 #include "LinkedPlayList.h"
 #include <string>
-std::string toString(const int* arrayPtr, int size){
+#include <iostream>
+
+std::string toString(const MasterPlayList* arrayPtr, int size){
     std::string strArray="{";
     for(int i=0; i< size;i++) {
         if(i!=(size-1)) {
-            strArray += std::to_string(arrayPtr[i]) + ", ";
+            strArray = arrayPtr[i] + ", ";
         }
         else if (i==(size-1)){
-            strArray+=std::to_string(arrayPtr[i]);
+            strArray= arrayPtr[i]);
         }
     }
     strArray=strArray + "}";

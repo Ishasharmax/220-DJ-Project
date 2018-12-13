@@ -16,6 +16,8 @@ MasterPlayList::MasterPlayList(int initialCapacity) {
         throw std::invalid_argument("Size is less than 1");
     }
     else{
+        this->currentNames=0;
+        arrayOfPlayListNameas= nullptr;
         this->currCapacity=initialCapacity;
         arrayOfPlayList=new int[currCapacity];
         currItemCount=0;
@@ -101,7 +103,10 @@ std::string  MasterPlayList::getPlayListAt(int index){
         return ::toString(arrayOfPlayList[index],currCapacity);
     }
 }
-
+void MasterPlayList::addPlayListName(std::string playListName) {
+    arrayOfPlayListNameas=&playListName;
+    currentNames++;
+}
 std::string MasterPlayList::toString(){
     return  ::toString(arrayOfPlayList,currCapacity);
 }

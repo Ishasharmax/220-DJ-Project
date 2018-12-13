@@ -13,6 +13,8 @@ private:
     MasterPlayList *playListPtr;
     int currItemCount;
     int currCapacity;
+    std::string *arrayOfPlayListNameas;
+    int currentNames;
     void doubleCapacity();
 public:
     MasterPlayList(int initialCapacity);
@@ -20,6 +22,7 @@ public:
     ~MasterPlayList();
     MasterPlayList& operator=(const MasterPlayList& arrayListToCopy);
     void setNext(LinkedPlayList* newNode);
+    void addPlayListName(std::string playListName);
     std::string toStringGetPlaylist(int index);
     void addPlayList(LinkedPlayList *playlistToAdd);
     void addPlayListAt(LinkedPlayList *playlistToAddi, int index);
