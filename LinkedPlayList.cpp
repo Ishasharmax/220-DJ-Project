@@ -121,6 +121,7 @@ void LinkedPlayList::addSongAtEnd(std::string artist, std::string songName, floa
             LinkedPlayListNode *addToPlayList=new LinkedPlayListNode(&newSong);
             end->setNext(addToPlayList);
             end = addToPlayList;
+
             currItems++;
         }
     }
