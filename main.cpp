@@ -1,4 +1,4 @@
-
+//
 // Created by Joel Jerez on 12/13/18.
 //
 
@@ -128,7 +128,7 @@ int main() {
                     "1. Import Songs\n"
                     "2. Remove Songs\n"
                     "3. Song Information\n"
-                    "4. Import songs from a file\n"
+                    "4. Import songs from a file\n" //library
                     "5. Add New Playlist\n"
                     "6. Play a Playlist\n"
                     "7. Remove Playlist\n"
@@ -307,12 +307,95 @@ int main() {
                     "9. Remove song in a Playlist\n"
                     "10. View All Playlists \n"
                     "11. Play Next song\n"
-                    "12. Artist's work\n"
+                    "12. New Random PLaylist\n"
                     "13. Help \n"
                     "14. Exit\n\n"
                     "Enter Your Choice: ";
             cin >> choice;
-        }if (choice==13) {
+        }
+//        if(choice==8) {
+//
+//            LinkedPlayList playList1 = new LinkedPlayList;
+//
+//            std::cout << "Which Song would You like to add to the playlist" << std::endl;
+//            getline(cin, songToAdd);
+//
+//            cout << "Enter the name of the song you want to add: ";
+//            cin.ignore();
+//            getline(cin, songName);
+//
+//
+//            out << "Song Title: \n" << songName << endl;
+//
+//            cout << "Enter artist for this song: ";
+//            cin.ignore();
+//            getline(cin, artist);
+//            out << "Artist: \n" << artist << endl;
+//
+//            cout << "Enter duration (in mins) for this song: ";
+//            cin >> song_duration;
+//            out << "Song Duration: \n" << song_duration << endl;
+//            out << "-----------------------------\n";
+//
+//            cout << "\nAdding " << "song \"" << songName
+//                 << "\" by " << artist << " to the " << playListName << ". Running time: "
+//                 << song_duration << " mins \n\n";
+//
+//            cout << "Want to add more songs? \n"
+//                    "1. Yes\n"
+//                    "2. No\n"
+//                    "Enter Your Choice: ";
+//            cin >> YorN;
+//        }
+//
+//        if(choice ==9){
+//            cout << "Which song would you like to remove from the playlist?" << endl;
+//            cin.ignore();
+//            getline(cin,song);
+//
+//            //LinkedPlaylist playlist1 = Linked playlist
+//
+//            //remove song from the playlist
+//
+//            cout << "You have succesfully removed the song from the playlist";
+//
+//        }
+//
+//        if(choice == 10){
+//            cout << "Here are all the playlists";
+//
+//            //For loop going through master playlist and printing the
+//
+//        }
+//
+//        if(choice == 11){
+//            cout<<"Here is the next song that will played";
+//
+//            //cout << Song.getartist song.gettitle song.getduration
+//            //remove it from playlist
+//            cout <<"Item has been removed from the playlist"<<std::endl;
+//            //song.addToPlaycount
+//            cout <<"You have played this song" << song.getPLaycount<<std::endl;
+//
+//        }
+//        if(choice == 12){
+//            cout<<"What would you like your random playlist to be called?"<<std::endl;
+//            cin.ignore();
+//            getline(cin,name);
+//
+//            cout <<"How long do you wan't the duration of the playlist to be"<<std::endl;
+//            cin.ignore();
+//            getline(cin,float durationIN);
+//
+//            float playlistDuration;
+//            LinkedPlayList name = new LinkedPlayList;
+//            LinkedPlayList.addSongAtEnd()
+//            playlistDuration += Song.duration;
+//
+//
+//
+//        }
+        if (choice==13) {
             cout << "Welcome to the Help section!" << endl;
             cout << "Through this program you can do the following things:\n";
             cout << "1. Import Songs\n"

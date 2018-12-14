@@ -13,7 +13,6 @@ void runLinkedPlaylistTests(){
     std::cout << "-------AddToTests---------" <<std::endl;
     //void addSongAtEnd(std::string artist, std::string songName, float duration);
 
-
     try{
         playList1->addSongAt(1,"Paramore", "That's What You Get", 3.00);
         std::cout << "FAIL: insertAt did not throw exception" << std::endl;
@@ -49,8 +48,12 @@ void runLinkedPlaylistTests(){
     catch(std::out_of_range& e){
         printAssertEquals("Bad index given to insertAt: -1", e.what());
     }
+    playList1->addSongAtEnd("kandace", "name", 3.66);
+    playList1->addSongAtEnd("kandace", "na8", 3.66);
+    std::cout<<playList1->getAllSongs();
     printAssertEquals("{9, 8, 7, 6, 5}", playList1->getAllSongs());
     printAssertEquals(false, playList1->isEmpty());
+
 
 
     /*//do it again

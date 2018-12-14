@@ -51,6 +51,7 @@ LinkedPlayList& LinkedPlayList::operator=(const LinkedPlayList& playListToCopy){
 }//DONE
 
 LinkedPlayList::~LinkedPlayList() {
+
     while(front!= nullptr){
         LinkedPlayListNode* song=front;
         front=front->getNext();
@@ -109,7 +110,7 @@ void LinkedPlayList::addSongAtEnd(std::string artist, std::string songName, floa
         currItems++;
     }
     else{
-        int count=0;
+        int count=-1;
         LinkedPlayListNode*copyPlayList=front;
         while(copyPlayList!= nullptr){
             if(songName!=copyPlayList->getSong().getTitle()){
@@ -164,6 +165,8 @@ void LinkedPlayList::addSongAt(int index, std::string artist, std::string songNa
                 }
                 addToPlayList->setNext(copyPlayList->getNext());
                 copyPlayList->setNext(addToPlayList);
+                front=copyPlayList;
+                end=end->getNext();
                 currItems++;
             }
         }
