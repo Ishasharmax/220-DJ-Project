@@ -2,7 +2,6 @@
 // Created by Bobo on 12/3/2018.
 //
 #include <iostream>
-#include "MasterPlayList.h"
 #include "DJTestLib.h"
 
 void addPlaylistAtEndtoStringGetPlaylistTest(MasterPlayList* listToTest,int initialCapacity){

@@ -7,7 +7,6 @@
 #ifndef INC_220_DJ_PROJECT_INTERFACEMAIN_H
 #define INC_220_DJ_PROJECT_INTERFACEMAIN_H
 
-#include "MasterPlayList.h"
 #include "MasterSongList.h"
 #include "LinkedPlayList.h"
 
@@ -17,7 +16,7 @@ private:
     libraryList* lib;
 
 public:
-    Interface();
+    interfaceMain();
     void import(string fileToUse);
     void newPlaylist(std::string name);
     void addSong(std::string name, std::string artist, std::string title);
