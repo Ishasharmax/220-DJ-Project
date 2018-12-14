@@ -4,7 +4,7 @@
 #include <iostream>
 #include "MasterSongList.h"
 #include "DJTestLib.h"
-void importSongAndGetValueAtTest(int numsToTestSize, int initialCapacity){
+void importSong(int numsToTestSize, int initialCapacity){
     std::cout << "-------importSongAndGetValueAtTest---------" <<std::endl;
     MasterSongList myList = MasterSongList(initialCapacity);
     try{
@@ -119,7 +119,7 @@ void removeSongTest(int numsToTestSize, int initialCapacity){
 
 int main() {
 
-    importSongAndGetValueAtTest(5, 5);
+    importSong(5, 5);
     isEmptyTest(5, 5);
     itemCountTest(5, 5);
     toStringTest();

@@ -17,14 +17,13 @@ void runPlayListNode_Test(){
     LinkedPlayListNode firstSong = LinkedPlayListNode(*FineChina);
     LinkedPlayListNode secondSong = LinkedPlayListNode(*Overdue);
 
-    std::cout << firstSong.getSong() << std:: endl;
+    std::cout << firstSong.getSong().getTitle() << std:: endl;
 
     std::cout << firstSong.setNext(secondSong)<< std:: endl;
 
     std::cout << firstSong.getNext()<< std:: endl;
 
-    std::cout << secondSong.getSong()<< std:: endl;
-
+    std::cout << secondSong.getSong().getTitle()<< std:: endl;
 
 
 }

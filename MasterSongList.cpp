@@ -1,4 +1,5 @@
 //
+//
 // Created by Isha Sharma on 11/29/18.
 //
 #include "MasterSongList.h"
@@ -10,7 +11,7 @@
 
 using namespace std;
 
-MasterSongList::MasterSongList(int initialCapacity){
+MasterSongList::MasterSongList(int initialCapacity, std::string nameOftheList){
     if (initialCapacity<1){
         throw std::invalid_argument("error");
     }else{
@@ -105,10 +106,6 @@ void MasterSongList::insertAtEnd(Song songToAdd){
     arraySong[currItemCount++]=songToAdd;
 }
 
-Song getValueAt(Song songx){
-
-
-}
 
 
 

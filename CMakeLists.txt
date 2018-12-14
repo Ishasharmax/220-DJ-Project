@@ -5,5 +5,15 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(220_DJ_Project
-        InputFile.cpp InputFIle.cpp)
+        DJTestLib.cpp
+        LinkedPlayList.cpp
+        LinkedPlaylistTest.cpp
+        LinkedPlayListNode.cpp
+        MasterPlayList.cpp
+        MasterPlayListLib.cpp
+        MasterPlayList.cpp
+        MasterSongList.cpp
+        Song.cpp
+        SongLib.cpp
+       )
 
