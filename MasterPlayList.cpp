@@ -4,161 +4,91 @@
 #include <iostream>
 #include "MasterPlayList.h"
 #include "LinkedPlayList.h"
-#include "MasterPlayListLib.h"
 
 #include <stdexcept>
 #include <string>
 
 int numLinesEmpty=0;
 
-MasterPlayList::MasterPlayList(int initialCapacity) {
-    if(initialCapacity<1){
-        throw std::invalid_argument("Size is less than 1");
-    }
-    else{
-        this->currCapacity=initialCapacity;
-        arrayOfPlayList=new int[currCapacity];
-        currItemCount=0;
-        playListPtr=nullptr;
-    }
-
-}
-//Copy Constructor
-MasterPlayList::MasterPlayList(const MasterPlayList& MasterPlayListToCopy){
-    this->currCapacity=MasterPlayListToCopy.currCapacity;
-    this->arrayOfPlayList= new int [MasterPlayListToCopy.currCapacity];
-    this->currItemCount=MasterPlayListToCopy.currItemCount;
-    for(int i=0;i<MasterPlayListToCopy.currItemCount;i++){
-        this->arrayOfPlayList[i]=MasterPlayListToCopy.arrayOfPlayList[i];
-    }
+template <class T>
+MyLinkedListMapT<T>::MyLinkedListMapT(){
+    keyFront= nullptr;
+    valueFront= nullptr;
 }
 
-//Overloaded Assignment Operator
-MasterPlayList&  MasterPlayList::operator=(const MasterPlayList& MasterPlayListToCopy){
-    if (this != &MasterPlayListToCopy ) {
-        delete arrayOfPlayList;
-        this->arrayOfPlayList= nullptr;
-        this->currCapacity=MasterPlayListToCopy.currCapacity;
-        this->arrayOfPlayList= new int [MasterPlayListToCopy.currCapacity];
-        this->currItemCount=MasterPlayListToCopy.currItemCount;
-        for(int i=0;i<MasterPlayListToCopy.currItemCount;i++){
-            this->arrayOfPlayList[i]=MasterPlayListToCopy.arrayOfPlayList[i];
+template <class T>
+MyLinkedListMapT<T>::MyLinkedListMapT(const MyLinkedListMapT& mapToCopy){
+    this->key= mapToCopy.key;
+    this->value = mapToCopy.value;
+    this->next = nullptr;
+}
+
+template <class T>
+MyLinkedListMapT<T>::~MyLinkedListMapT(){
+    while(keyFront!= nullptr && valueFront== nullptr) {
+        LinkedNodeT<std::string> * temp=keyFront;
+        keyFront=keyFront->getNext();
+        LinkedNodeT<T> *temp2=valueFront;
+        valueFront=valueFront->getNext();
+        delete temp;
+        delete temp2;
+    }
+}
+template <class T>
+void MyLinkedListMapT<T>::put(std::string key, const T& value) {
+    LinkedNodeT<std::string>* newKey = new LinkedNodeT<std::string>(key);
+    LinkedNodeT<T>* newValue = new LinkedNodeT<T>(value);
+    LinkedNodeT<std::string> * temp1=keyFront;
+    LinkedNodeT<T> * temp2=valueFront;
+    if (keyFront==nullptr && valueFront==nullptr){
+        keyFront=newKey;
+        valueFront=newValue;
+    }else{
+        while (temp1->getNext()!=nullptr && temp2->getNext()!=nullptr) {
+            if (temp1->getItem()==key){
+                temp2->setItem(value);
+                return;
+            }
+            temp1=temp1->getNext();
+            temp2=temp2->getNext();
+        }if (temp1->getItem()==key){
+            temp2->setItem(value);
+            return;
+        }
+        LinkedNodeT<std::string>* keyNodeAfter = temp1->getNext();
+        LinkedNodeT<T>* valueNodeAfter=temp2->getNext();
+        temp1->setNext(newKey);
+        temp2->setNext(newValue);
+        newKey->setNext(keyNodeAfter);
+        newValue->setNext(valueNodeAfter);
+    }
+}
+
+template <class T>
+T MyLinkedListMapT<T>::get(std::string key){
+    LinkedNodeT<std::string> * temp1=keyFront;
+    LinkedNodeT<T> * temp2=valueFront;
+    if (!containsKey(key)){
+        throw std::invalid_argument("Key not present");
+    }else{
+        while (temp1!= nullptr && temp2!= nullptr) {
+            if (temp1->getItem()==key) {
+                T item = temp2->getItem();
+                return item;
+            }temp1 = temp1->getNext();
+            temp2 = temp2->getNext();
         }
     }
-    return *this;
 }
 
-//Destructor
-MasterPlayList::~MasterPlayList(){
-    delete[] this ->arrayOfPlayList;
-    this ->arrayOfPlayList= nullptr;
-
-}
-
-void  MasterPlayList::doubleCapacity(){
-    if(currCapacity<1){
-        throw std::invalid_argument("Size is less than 1");
-    }
-    else{
-        currCapacity=currCapacity*2;
-        int * temp=new int [currCapacity];
-        for(int i=0; i<currItemCount;i++){
-            temp[i]=arrayOfPlayList[i];
-        }
-        delete[] arrayOfPlayList;
-        arrayOfPlayList=temp;
-    }
-}
-
-void  MasterPlayList::addPlayList(LinkedPlayList *playlistToAdd) {
-    arrayOfPlayList[currItemCount++];
-    playListPtr->setNext(playlistToAdd);
-
-    //arrayOfPlayList[currItemCount++]=playlistToAdd;
-}
-
-void  MasterPlayList::addPlayListAt(LinkedPlayList *playlistToAdd, int index) {
-    if(index<0 || currCapacity<index){
-        throw std::out_of_range("Size is less than 1");
-    }
-    else{
-        currItemCount++;
-        if(currItemCount+1>=currCapacity){
-            doubleCapacity();
-        }
-        for(int i=currItemCount;i>index;i--){
-            arrayOfPlayList[i]=arrayOfPlayList[i-1];
-        }
-        arrayOfPlayList[index]=playListPtr->setNext(playlistToAdd);
-    }
-}
-
-std::string  MasterPlayList::getPlayListAt(int index){
-    if(index<0 || index>=currItemCount){
-        throw std::out_of_range("Size is less than 1");
-    }
-    else{
-        return ::toString(arrayOfPlayList[index],currCapacity);
-    }
-}
-
-std::string MasterPlayList::toString(){
-    return  ::toString(arrayOfPlayList,currCapacity);
-}
-
-bool  MasterPlayList::isEmpty(){
-    if(currItemCount==0){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
-int  MasterPlayList::getitemCount(){
-    if(isEmpty()){
-        return 0;
-    }
-    else{
-        return currItemCount;
-    }
-}
-
-void  MasterPlayList::clearList(){
-    if(isEmpty()){
-        throw std::invalid_argument("Size is already 0");
-    }
-    else{
-        currItemCount=0;
-    }
-}
-
-LinkedPlayList MasterPlayList::findPlaylist(int numToFind){
-    return  ::find(arrayOfPlayList,currCapacity,numToFind,numLinesEmpty);
-}
-
-
-
-LinkedPlayList MasterPlayList::removePlayList() {
-    if (currItemCount < 1) {
-        throw std::out_of_range("List is empty");
-    } else {
-        currItemCount--;
-        int remove=arrayOfPlayList[currItemCount];
-        return remove;
-    }
-}
-
-
-LinkedPlayList MasterPlayList::removePlayListAt(int index) {
-    if (currItemCount < 1) {
-        throw std::invalid_argument("Size is less than 1");
-    } else {
-        currItemCount--;
-        int remove=arrayOfPlayList[index];
-        for(int i=index; i<currItemCount;i++ ){
-            arrayOfPlayList[i]=arrayOfPlayList[i+1];
-        }
-        return remove;
-    }
+template <class T>
+bool MyLinkedListMapT<T>::containsKey(std::string key) {
+    LinkedNodeT<std::string> * temp1=keyFront;
+    LinkedNodeT<T> * temp2=valueFront;
+    while (temp1!= nullptr && temp2!= nullptr){
+        if (temp1->getItem()==key){
+            return true;
+        }temp1=temp1->getNext();
+        temp2=temp2->getNext();
+    }return false;
 }

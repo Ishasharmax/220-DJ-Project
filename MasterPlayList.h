@@ -8,32 +8,37 @@
 #include <stdexcept>
 #include "LinkedPlayList.h"
 #include "PlayList.h"
-class MasterPlayList {
-private:
-    PlayList *arrayOfPlayList;
-    MasterPlayList *playListPtr;
-    int currItemCount;
-    int currCapacity;
-    void doubleCapacity();
-public:
-    MasterPlayList(int initialCapacity);
-    MasterPlayList(const  MasterPlayList& arrayListToCopy);
-    ~MasterPlayList();
-    MasterPlayList& operator=(const MasterPlayList& arrayListToCopy);
-    void setNext(LinkedPlayList* newNode);
-    std::string toStringGetPlaylist(int index);
-    void addPlayList(LinkedPlayList *playlistToAdd);
-    void addPlayListAt(LinkedPlayList *playlistToAddi, int index);
-    std::string getPlayListAt(int index);
-    std::string toString();
-    LinkedPlayList removePlayList();
-    LinkedPlayList removePlayListAt(int index);
-    LinkedPlayList findPlaylist(int index);
-    int  getitemCount();
-    void clearList();
-    bool isEmpty();
 
-};
+class MasterPlayList {
+    private:
+        LinkedNodeT<std::string>* keyFront;
+        LinkedNodeT<T>* valueFront;
+        MyLinkedListMapT(const MyLinkedListMapT<T>& mapToCopy);
+        MyLinkedListMapT& operator=(const MyLinkedListMapT<T>& mapToCopy);
+
+    public:
+        MyLinkedListMapT();
+        ~MyLinkedListMapT();
+
+        /*
+        * @post if the key is new, the key-value pair is added to the map
+        *       if the key was already present, the new value overwrites the old value
+        *       (i.e., the new value will be returned by get instead of the old value)
+        */
+        void put(std::string key, const T& value);
+
+        /*
+        * @return the value associated with the given key
+        * @throws std::invalid_argument if the key is not present
+        */
+        T get(std::string key);
+
+        /*
+     * @return true if the given key is associated with a value in the map, false otherwise
+     */
+        bool containsKey(std::string key);
+
+    };
 
 
 #endif //INC_220_DJ_PROJECT_MASTERPLAYLIST_H
