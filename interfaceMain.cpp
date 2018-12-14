@@ -84,7 +84,7 @@ void InterFace::randomPlayList(std::string name){
     }
     listOfPlaylist->put(*p1);
     std::cout<<"New Random Playlist made: " + name + "\n";
-}////////////////////////
+}
 
 string InterFace::diplayPlaylist(string name){
     try {

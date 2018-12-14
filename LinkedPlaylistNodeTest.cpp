@@ -26,7 +26,6 @@ void runPlayListNode_Test(){
     std::cout << secondSong.getSong().getTitle()<< std:: endl;
 
 
-
 }
 int main(){
     runPlayListNode_Test();

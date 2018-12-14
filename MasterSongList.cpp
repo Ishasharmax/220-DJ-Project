@@ -106,27 +106,6 @@ void MasterSongList::insertAtEnd(Song songToAdd){
     arraySong[currItemCount++]=songToAdd;
 }
 
-void MasterSongList::save(){
-    LinkedNode<Song>* temp=head;
-    ofstream outf("library.dat");
-
-    // If we couldn't open the output file stream for writing
-    if (!outf)
-    {
-        // Print an error and exit
-        cerr << "Uh oh, Music.dat could not be opened for writing!" << endl;
-        exit(1);
-    }
-    while(temp!= nullptr){
-
-        // We'll write two lines into this file
-        outf << temp->getItem()->getArtist() << endl;
-        outf << temp->getItem()->getTitle() << endl;
-        outf << std::to_string(temp->getItem()->getDuration()) << endl;
-        outf << std::to_string(temp->getItem()->getPlayCount()) << endl;
-        temp=temp->getNext();
-    }
-}
 
 
 
