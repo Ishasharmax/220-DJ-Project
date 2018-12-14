@@ -18,6 +18,10 @@ private:
     int currCapacity;
 
 public:
+<<<<<<< HEAD
+    std::string nameOftheList;
+=======
+>>>>>>> 8f8da86f8f79806ea32fdabc5b9ba7b6e8798737
     MasterSongList(int initialCapacity, std::string nameOftheList);
     ~MasterSongList(); //creates an array
     MasterSongList(const MasterSongList& songToCopy); //only copies item, next is set to nullptr
