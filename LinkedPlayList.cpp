@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include "Song.h"
+
 using namespace std;
 
 LinkedPlayList::LinkedPlayList() {
@@ -103,7 +104,7 @@ std::string LinkedPlayList::search(std::string item) {
 
 void LinkedPlayList::addSongAtEnd(std::string artist, std::string songName, float duration) {
     if(front== nullptr){
-        Song newSong=Song(songName,artist,duration);
+        Song newSong=Song(songName,artist ,duration);
         LinkedPlayListNode *addToPlayList=new LinkedPlayListNode(&newSong);
         front=addToPlayList;
         end=addToPlayList;
@@ -113,9 +114,10 @@ void LinkedPlayList::addSongAtEnd(std::string artist, std::string songName, floa
         int count=-1;
         LinkedPlayListNode*copyPlayList=front;
         while(copyPlayList!= nullptr){
-            if(songName!=copyPlayList->getSong().getTitle()){
+            if(songName==copyPlayList->getSong().getTitle()){
                 count++;
             }
+            copyPlayList=copyPlayList->getNext();
         }
         if(count<0) {
             Song newSong=Song(songName,artist,duration);
@@ -145,7 +147,7 @@ void LinkedPlayList::addSongAt(int index, std::string artist, std::string songNa
                 front=addToPlayList;
             }
         }
-        else if(index == currItems) {
+        if(index == currItems) {
             addSongAtEnd(artist, songName, duration);
         }
         else {
@@ -156,17 +158,17 @@ void LinkedPlayList::addSongAt(int index, std::string artist, std::string songNa
                 if(songName!=copyPlayList2->getSong().getTitle()){
                     count++;
                 }
+                copyPlayList=copyPlayList->getNext();
             }
             if(count<0) {
                 Song newSong=Song(songName,artist,duration);
                 LinkedPlayListNode *addToPlayList=new LinkedPlayListNode(&newSong);
                 for(int i =0;i<index-1;i++){
-                    copyPlayList=copyPlayList->getNext();
+                    copyPlayList2=copyPlayList2->getNext();
                 }
-                addToPlayList->setNext(copyPlayList->getNext());
-                copyPlayList->setNext(addToPlayList);
-                front=copyPlayList;
-                end=end->getNext();
+                addToPlayList->setNext(copyPlayList2->getNext());
+                copyPlayList2->setNext(addToPlayList);
+                front=copyPlayList2;
                 currItems++;
             }
         }
@@ -258,7 +260,6 @@ std::string LinkedPlayList::getAllSongs() {
         allSongs=allSongs+"Song name: "+copyPlayList->getSong().getTitle()+" Artist:"+copyPlayList->getSong().getArtist()+" Song length:"+ to_string(copyPlayList->getSong().getSongLength())+"\n";
         copyPlayList=copyPlayList->getNext();
     }
-
     return allSongs;
 }//DONE
 

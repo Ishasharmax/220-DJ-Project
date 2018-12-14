@@ -4,12 +4,14 @@
 
 #include "Song.h"
 #include <string>
+#include <iostream>
+using namespace std;
 
 Song::Song(){
 
 }
 
-Song::Song(std::string titleIn, std::string artistIn, float songLengthIn){
+Song::Song(const  std::string titleIn, const std::string artistIn, float songLengthIn){
     this->title= titleIn;
     this->artist = artistIn;
     this->songLength = songLengthIn;

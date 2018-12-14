@@ -48,8 +48,7 @@ void runLinkedPlaylistTests(){
     catch(std::out_of_range& e){
         printAssertEquals("Bad index given to insertAt: -1", e.what());
     }
-    playList1->addSongAtEnd("kandace", "name", 3.66);
-    playList1->addSongAtEnd("kandace", "na8", 3.66);
+    playList1->addSongAtEnd("kand", "jah",2.44);
     std::cout<<playList1->getAllSongs();
     printAssertEquals("{9, 8, 7, 6, 5}", playList1->getAllSongs());
     printAssertEquals(false, playList1->isEmpty());
@@ -77,7 +76,8 @@ void runLinkedPlaylistTests(){
 
     std::cout << "-------ItemGetTests---------" <<std::endl;
     printAssertEquals(6, playList1->getSongCount());
-    printAssertEquals("text", playList1->getHelp());
+    printAssertEquals("You have the option to: \n 1-add a song 2-remove a song 3-search and play a song 4-check is play list is empty \n 5-get song count 6-"
+                      "get play count 7-get number of songs in the list 8-get name of all songs \n 9-play next song 10-play previous song 11-get play list duration",playList1->getHelp());
     printAssertEquals("text", playList1->getAllSongs());
 
 
