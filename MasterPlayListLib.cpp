@@ -5,7 +5,7 @@
 #include "MasterPlayList.h"
 #include "LinkedPlayList.h"
 #include <string>
-std::string toString(const int* arrayPtr, int size){
+std::string toString(const MasterPlayList* arrayPtr, int size){
     std::string strArray="{";
     for(int i=0; i< size;i++) {
         if(i!=(size-1)) {
@@ -19,7 +19,7 @@ std::string toString(const int* arrayPtr, int size){
     std::cout<<strArray<<std::endl;
     return strArray;
 }
-int find(const int* arrayPtr, int size, LinkedPlayList *PlaylistPtrToFind, int& numLinesRun) {
+int find(const MasterPlayList* arrayPtr, int size, LinkedPlayList *PlaylistPtrToFind, int& numLinesRun) {
     (numLinesRun) += 4;
     if (size < 1) {
         (numLinesRun) += 1;

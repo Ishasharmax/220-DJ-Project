@@ -7,9 +7,10 @@
 #include <string>
 #include <stdexcept>
 #include "LinkedPlayList.h"
+#include "PlayList.h"
 class MasterPlayList {
 private:
-    int *arrayOfPlayList;
+    PlayList *arrayOfPlayList;
     MasterPlayList *playListPtr;
     int currItemCount;
     int currCapacity;
