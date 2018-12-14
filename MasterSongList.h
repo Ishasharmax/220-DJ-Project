@@ -18,7 +18,7 @@ private:
     int currCapacity;
 
 public:
-    MasterSongList(int initialCapacity);
+    MasterSongList(int initialCapacity, std::string nameOftheList);
     ~MasterSongList(); //creates an array
     MasterSongList(const MasterSongList& songToCopy); //only copies item, next is set to nullptr
     MasterSongList& operator=(const MasterSongList& queueToCopy);
@@ -29,6 +29,7 @@ public:
     void removeValueAtEnd();
     void insertAtEnd(Song songToAdd);
     bool isEmpty();
+    int getValueAt(Song songToAdd);
 };
 
 #endif //INC_220_DJ_PROJECT_MASTERSONGLIST_H

@@ -20,7 +20,7 @@ LinkedPlayListNode::LinkedPlayListNode(const LinkedPlayListNode& nodeToCopy){
 }
 
 LinkedPlayListNode& LinkedPlayListNode::operator=(const LinkedPlayListNode& nodeToCopy){
-    if (this!=nodeToCopy){
+    if (this!=&nodeToCopy){
         this->song=nodeToCopy.song;
         this->next=nodeToCopy.next;
     }
