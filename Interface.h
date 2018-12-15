@@ -11,8 +11,8 @@
 
 class Interface{
 private:
-    MasterPlayListMap* arrayOfPlaylist;
-    libraryList* lib;
+    /*MasterPlayListMap* arrayOfPlaylist;
+    libraryList* lib;*/
 
 public:
     Interface();

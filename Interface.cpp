@@ -16,6 +16,30 @@ using namespace std;
 #include "LinkedPlayList.h"
 #include "LinkedPlayListNode.h"
 
+
+int main () {
+     /*string fileName;
+    //cout << "Enter a file name you want: ";
+    //cin>>fileName;
+    //std::ofstream out(fileName);
+    //out << "Hello, World\n" << std::endl;
+
+    //string fileName, fileName2, line;
+    ifstream infile;
+    infile.open("sampleLibrary.txt");
+    if (infile.fail()) {
+        cout << "Unable to open file";
+    } else {
+        std::string s;
+        while (getline(infile, s)) {
+            cout << s << endl;
+        }
+        infile.close();
+        infile.clear();
+    }
+}*/
+
+
 Interface::Interface(){
     int initialCapacity;
     playLists= new MasterPlaylist();
@@ -36,7 +60,6 @@ void Interface::playNextSong(string name){
         cout << "Playlist " + name + " is removed!" << endl;
     }
     else {
-
         Song song = listOfPlaylist->get(name)->playNextSong();
         lib->getSong(song.getTitle())->playSong();
         cout << "Song Removed: " + song.getTitle() + " " + song.getArtist() + " " +
@@ -216,38 +239,42 @@ void Interface::importX(string fileName) {
     }
 }
 
-void Interface::importSongs(){
+
+void Interface::importSongs() {
     ifstream infile;
-    infile.open("sampleFile.dat");
+    infile.open("sampleLibrary.txt");
     if (infile.fail()) {
-        cout << "Playlist can't be opened" << endl;
-    }
-    while (infile) {
-        string playList;
-        getline(infile, playList);
-        if (playList != "") {
-            ifstream newPlayList;
-            string newX=newPlayList+".txt";
-            newPlayList.open(newX);
-            if (!newPlayList) {
-                cout << "playlist couldn't be opened" << endl;
-                exit(1);
-            }
-            while (newPlayList) {
-                for (int i = 0; i < 3; i++) {
-                    string artist, songName, duration;
-                    int song_duration=0;
-                    getline(newPlayList, artist);
-                    getline(newPlayList, songName);
-                    if (artist != "") {
-                        Song song(songName, artist, song_duration);
-                        cout << song.getArtist() + ", " + song.getTitle() + ", " + std::to_string(song.getDuration()) + "\n";
-                        listOfPlaylist->get(playlist)->addSongToEnd(song);
+        cout << "Unable to open file";
+    } else {
+        while (infile) {
+            string playList;
+            getline(infile, playList);
+            if (playList != "") {
+                ifstream newPlayList;
+                string newX = newPlayList + ".txt";
+                newPlayList.open(newX);
+                if (!newPlayList) {
+                    cout << "playlist couldn't be opened" << endl;
+                    exit(1);
+                }
+                while (newPlayList) {
+                    for (int i = 0; i < 3; i++) {
+                        string artist, songName, duration;
+                        int song_duration = 0;
+                        getline(newPlayList, artist);
+                        getline(newPlayList, songName);
+                        if (artist != "") {
+                            Song song(songName, artist, song_duration);
+                            cout << song.getArtist() + ", " + song.getTitle() + ", " +
+                                    std::to_string(song.getDuration()) +
+                                    "\n";
+                            listOfPlaylist->get(playlist)->addSongToEnd(song);
+                        }
                     }
                 }
             }
-        }
-    }cout<<"Playlist updated\n";
+        }cout << "Playlist updated\n";
+    }
 }
 
 void Interface::removeAPlaylist(string name) {
@@ -270,7 +297,6 @@ void Interface::removeAPlaylist(string name) {
         std::cout << "Sorry Playlist does not exsist";
     }
 }
-
 
 
 void Interface::discontinue(string fileForUse) {
@@ -300,18 +326,17 @@ void Interface::discontinue(string fileForUse) {
     }
 }
 
-
 int main() {
-    /*string fileName, userInput;
+    string fileName, userInput;
     cout << "Enter a file name you want: ";
     getline(cin, fileName);
     ofstream out(fileName);
     out << "Song List\n" << std::endl;
-    //add songs, artists and duration*/
+    //add songs, artists and duration
 
     string choice;
     Interface newUserInterface = Interface();
-    newUserInterface.importX("hello.dat");
+    newUserInterface.importX("Sample.txt");
 
     cout << "\n***************************************************\n"
             "*                                                 *\n"
@@ -341,6 +366,7 @@ int main() {
             "Enter Your Choice: ";
     cin >> choice;
     getline(cin, choice);
+
     while (choice != "18") {
 
         if (choice == "1") {
