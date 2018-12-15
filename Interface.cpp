@@ -20,7 +20,7 @@ interfaceMain::interfaceMain(){
 
 void interfaceMain::newPlaylist(string name){
     cout<<"Make New Playlist\n";
-    List* playlist= new Playlist(name);
+    MasterPlayList* playlist1= new Playlist(name);
     listOfPlaylist->put(*playlist);
     cout<<"New Playlist made: " + name + "\n";
 }
@@ -269,7 +269,7 @@ void interfaceMain::removePlaylist(string name) {
 
 
 
-void InterFace::discontinue(string fileForUse) {
+void interfaceMain::discontinue(string fileForUse) {
     ifstream infile(fileForUse);
     if (infile.fail()) {
         cout << "file cant be opened." << endl;
@@ -306,7 +306,7 @@ int main() {
     //add songs, artists and duration*/
 
     string choice;
-    InterFace newUserInterface = InterFace();
+    interfaceMain newUserInterface = interfaceMain();
     newUserInterface.startingImport();
     newUserInterface.import("hello.dat");
 
@@ -361,7 +361,7 @@ int main() {
             std::cout << "Please enter Artist: ";
             std::string artist;
             std::getline(std::cin, artist);
-            std::cout << ui.displaySong(songTitle, artist) + "\n";
+            std::cout << newUserInterface.displaySong(songTitle, artist) + "\n";
         } else if (choice == "4") {
             std::cout << newUserInterface.displayLibrary() + "\n";
         } else if (choice == "5") {
@@ -380,7 +380,7 @@ int main() {
             string song;
             cout << "Please enter song to remove from Playlist(s) and library: \n";
             getline(cin, song);
-            cout << ui.removeSong(song) + "\n";
+            cout << newUserInterface.removeSong(song) + "\n";
         } else if (choice == "7") {
             cout << "Enter name of new Playlist: ";
             string playListName;
@@ -391,7 +391,7 @@ int main() {
             std::cout << "Please enter Artist name: ";
             std::string artist;
             std::getline(std::cin, artist);
-            std::cout << ui.displayArtist(artist) + "\n";
+            std::cout << newUserInterface.displayArtist(artist) + "\n";
         } else if (choice == "9") {
             cout << "Name of the new playList: ";
             string playListNew, ;
@@ -401,7 +401,7 @@ int main() {
             string playlist;
             cout << "Name of the playlist: ";
             getline(cin, playlist);
-            cout << ui.diplayPlaylist(playlist) + "\n";
+            cout << newUserInterface.diplayPlaylist(playlist) + "\n";
         } else if (choice == "11") {
             string songName, duration, artist;
             int song_duration;
