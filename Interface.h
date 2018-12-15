@@ -16,7 +16,7 @@ private:
 
 public:
     Interface();
-    void import(std::string fileToUse);
+    void importX(std::string fileToUse);
     void newPlaylist(std::string name);
     void addSong(std::string name, std::string artist, std::string title);
     void playNextSong(std::string name);
@@ -24,8 +24,8 @@ public:
     std::string fullLibrary();
     std::string viewPlaylist(std::string name);
     std::string viewAllPlaylist();
-    std::string removeaSong(std::string name);
-    void addSongtoFile(std::string artist, std::string song, int duration);
+    std::string removeSong(std::string name);
+    void addSongToLibrary(std::string artist, std::string song, int duration);
     std::string artistWork(std::string artist);
     std::string viewSong(std::string title, std::string artist);
     void removeSongFromPlaylist(std::string name, std::string artist, std::string title);
