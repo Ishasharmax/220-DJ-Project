@@ -2,7 +2,6 @@
 // Created by Isha Sharma on 12/10/18.
 //
 
-#include "interfaceMain.h"
 #include <sstream>
 #include <fstream>
 #include <iostream>
@@ -11,21 +10,22 @@ using namespace std;
 #include <stdio.h>
 #include <string>
 #include <string.h>
+#include "Interface.h"
 
-interfaceMain::interfaceMain(){
+Interface::Interface(){
     int initialCapacity;
     playLists= new MasterPlaylist();
     songList= new MasterSongList(initialCapacity ,"Library");
 }
 
-void interfaceMain::newPlaylist(string name){
+void Interface::newPlaylist(string name){
     cout<<"Make New Playlist\n";
     MasterPlayList* playlist1= new Playlist(name);
     listOfPlaylist->put(*playlist);
     cout<<"New Playlist made: " + name + "\n";
 }
 
-void interfaceMain::playNext(string name){
+void Interface::playNext(string name){
     cout<<"Play Next Song in Playlist\n";
     if(listOfPlaylist->get(name)->isEmpty()==true){
         listOfPlaylist->removePlayList(name);
@@ -53,7 +53,7 @@ void interfaceMain::playNext(string name){
     }
 }
 
-void interfaceMain::addSongToPlaylist(string playList, string songName, string artist){
+void Interface::addSongToPlaylist(string playList, string songName, string artist){
     try {
         listOfPlaylist->get(playList);
         List* p1=listOfPlaylist->get(playList);
@@ -68,12 +68,12 @@ void interfaceMain::addSongToPlaylist(string playList, string songName, string a
     }
 }
 
-std::string interfaceMain::displayLibrary(){
+std::string Interface::displayLibrary(){
     std::cout<<"Display Library\n";
     return library->display();
 }
 
-void interfaceMain::randomPlayList(std::string name){
+void Interface::randomPlayList(std::string name){
     int tries=0;
     List* p1= new RandomPlaylist(name, duration);
     while(p1->getDuration()<duration && tries<3){
@@ -85,7 +85,7 @@ void interfaceMain::randomPlayList(std::string name){
     std::cout<<"New Random Playlist made: " + name + "\n";
 }
 
-string interfaceMain::diplayPlaylist(string name){
+string Interface::diplayPlaylist(string name){
     try {
         listOfPlaylist->get(name);
         return name + ": "+ listOfPlaylist->get(name)->display();
@@ -96,12 +96,12 @@ string interfaceMain::diplayPlaylist(string name){
     }
 }
 
-std::string interfaceMain::displayAllPlaylist(){
+std::string Interface::displayAllPlaylist(){
     std::cout<<"Display All Playlist\n";
     return listOfPlaylist->display();
 }
 
-void interfaceMain::addSongToLibrary(std::string artist, std::string song, int duration){
+void Interface::addSongToLibrary(std::string artist, std::string song, int duration){
     std::cout<<"Add Song to Library\n";
     Song newSong = Song(artist, song,duration);
 
@@ -110,7 +110,7 @@ void interfaceMain::addSongToLibrary(std::string artist, std::string song, int d
     std::cout<<"Added " + testSong->getTitle() + " by "+ testSong->getArtist() + " with a duration of "+ std::to_string(testSong->getDuration()) + " to library\n";
 }
 
-std::string interfaceMain::removeSong(std::string name){
+std::string Interface::removeSong(std::string name){
     std::cout<<"Remove Song\n";
 
     try {
@@ -129,7 +129,7 @@ std::string interfaceMain::removeSong(std::string name){
     }
 }
 
-void interfaceMain::removeSongFromPlaylist(string artistName, string songName, string playListName){
+void Interface::removeSongFromPlaylist(string artistName, string songName, string playListName){
     bool playListpresent=true;
     try {
         listOfPlaylist->get(name);
@@ -153,11 +153,11 @@ void interfaceMain::removeSongFromPlaylist(string artistName, string songName, s
     }
 }
 
-string interfaceMain::displayArtist(string artistName) {
+string Interface::displayArtist(string artistName) {
     return library->displayArtist(artistName);
 }
 
-std::string interfaceMain::displaySong(string trackName){
+std::string Interface::displaySong(string trackName){
     cout<<"Song info\n";
     Song* songInfo=lib->getSong(trackName);
     string songName=songInfo->getTitle();
@@ -168,13 +168,13 @@ std::string interfaceMain::displaySong(string trackName){
     return "Song Name: "<< songName << "\n"<< "Artist: " << artist << "\n"<< "Duration: " << to_string(songDuration) << "\n"<< " seconds  PlayCount: " + to_string(songPlayCount) << "\n";
 }
 
-void interfaceMain::saveFile() {
+void Interface::saveFile() {
     listOfPlaylist->savePlaylist();
     lib->saveSongs();
 }
 
 
-void interfaceMain::import(string fileName) {
+void Interface::import(string fileName) {
     ifstream infile(fileName);
     if (infile.fail()) {
         cout << "Unable to open file " << filename << endl;
@@ -212,7 +212,7 @@ void interfaceMain::import(string fileName) {
     }
 }
 
-void interfaceMain::startingImport(){
+void Interface::startingImport(){
     ifstream infile;
     infile.open("sampleFile.dat");
     if (infile.fail()) {
@@ -246,7 +246,7 @@ void interfaceMain::startingImport(){
     }cout<<"Playlist updated\n";
 }
 
-void interfaceMain::removePlaylist(string name) {
+void Interface::removePlaylist(string name) {
     try {
         listOfPlaylist->get(name);
         listOfPlaylist->removePlayList(name);
@@ -269,7 +269,7 @@ void interfaceMain::removePlaylist(string name) {
 
 
 
-void interfaceMain::discontinue(string fileForUse) {
+void Interface::discontinue(string fileForUse) {
     ifstream infile(fileForUse);
     if (infile.fail()) {
         cout << "file cant be opened." << endl;
@@ -306,7 +306,7 @@ int main() {
     //add songs, artists and duration*/
 
     string choice;
-    interfaceMain newUserInterface = interfaceMain();
+    Interface newUserInterface = Interface();
     newUserInterface.startingImport();
     newUserInterface.import("hello.dat");
 

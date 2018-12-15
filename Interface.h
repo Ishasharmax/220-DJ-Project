@@ -9,13 +9,13 @@
 #include "MasterSongList.h"
 #include "LinkedPlayList.h"
 
-class UserInterFace{
+class Interface{
 private:
     MasterPlayListMap* arrayOfPlaylist;
     libraryList* lib;
 
 public:
-    interfaceMain();
+    Interface();
     void import(std::string fileToUse);
     void newPlaylist(std::string name);
     void addSong(std::string name, std::string artist, std::string title);
