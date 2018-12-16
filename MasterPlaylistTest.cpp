@@ -384,7 +384,7 @@ void testAssnOperator(){
 
 int main(){
 
-    MastetPlayList *testList = new MastetPlayList(5);
+    MastetPlayList *testList = new MastetPlayList(6);
     //LinkedPlayList *testPtr= new LinkedPlayList();
 
     addPlaylistAtEndtoStringGetPlaylistTest(testList,5 );
