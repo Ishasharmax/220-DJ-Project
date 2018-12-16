@@ -129,7 +129,7 @@ void LinkedPlayList::addSongAtEnd(std::string artist, std::string songName, floa
     }
 }//DONE
 
-void LinkedPlayList::addSongAt(int index, std::string artist, std::string songName, float duration) {
+void LinkedPlayList::addSongAt(int index, std::string artist, std: :string songName, float duration) {
     if (index < 0 || index >currItems) {
         throw std::out_of_range("Out of range");
     } else {
@@ -344,3 +344,57 @@ int LinkedPlayList::getPlayCount(std::string song) {
     }
 
 }//DONE
+
+void LinkedPlayList::saveThePlayList() {
+    LinkedPlayListNode<Song>* temp=front;
+    ofstream inFile("SampleLibrary.txt");
+
+    if (!inFile) {
+        cout << "File cant be opened" << endl;
+        exit(1);
+    }
+    while(temp!= nullptr){
+        inFile << temp->getSong()->getTitle() << endl;
+        inFile << temp->getSong()->getArtist() << endl;
+        inFile << std::to_string(temp->getSong()->getDuration()) << endl;
+        inFile << std::to_string(temp->getSong()->getPlayCount()) << endl;
+        temp=temp->getNext();
+}
+
+Song LinkedPlayList::getSong(std::string songName){
+    LinkedPlayListNode<Song> *temp = front;
+    for (int i = 0; i < size; i++) {
+        if (temp->getItem()->getTitle() == songName) {
+            return temp->getItem();
+        }
+        temp = temp->getNext();
+    }
+    throw std::invalid_argument("Song not in the library");
+}
+
+void LinkedPlayList::clearList() {
+    while (isEmpty() == false) {
+        this->remove(*front->getItem());
+    }
+    front = nullptr;
+    end = nullptr;
+}
+
+
+
+std::string LinkedPlayList::displayArtist(std::string artist) {
+    LinkedPlayListNode<Song> *temp = front;
+    std::string artistWork = artist+" work: ";
+    while (temp != nullptr) {
+        if (temp != nullptr) {
+            if (temp->getSong().getArtist() == artist) {
+                artistWork = artistWork + temp->getSOng().getTitle() + ", ";
+            }
+            temp = temp->getNext();
+        }
+    }return artistWork;
+}
+
+
+
+

@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include "PlayList.h"
 #include "LinkedPlayListNode.h"
+#include "Song.h"
 
 class LinkedPlayList : PlayList {
 private:
@@ -51,6 +52,14 @@ public:
     int getPlayCount(std::string song);
 
     void replay();
+
+    void saveThePlayList();
+
+    Song getSong(std::string songName);
+
+    void clearList();
+
+    std::string displayArtist(std::string artist);
 
 };
 #endif //INC_220_DJ_PROJECT_LINKEDPLAYLIST_H
