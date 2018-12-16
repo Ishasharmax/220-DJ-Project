@@ -10,8 +10,9 @@ add_executable(220_DJ_Project
         LinkedPlaylistTest.cpp
         LinkedPlayListNode.cpp
         MasterPlayList.cpp
-        MasterPlayListLib.cpp
+        MasterPlaylistLib.cpp
         MasterPlayList.cpp
+        MasterSongListTest.cpp
         MasterSongList.cpp
         Song.cpp
         SongLib.cpp
