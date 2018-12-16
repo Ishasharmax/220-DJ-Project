@@ -18,12 +18,19 @@ private:
     int currCapacity;
 
 public:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 
 >>>>>>> Stashed changes
+=======
+<<<<<<< HEAD
+    MasterSongList(int initialCapacity);
+=======
+>>>>>>> b5a31536da121e1342383b6584e7575675ecaebf
     std::string nameOftheList;
     MasterSongList(int initialCapacity, std::string nameOftheList);
+>>>>>>> 59d064f2ba0d474780a6c57c788c5052ec6760bf
     ~MasterSongList(); //creates an array
     MasterSongList(const MasterSongList& songToCopy); //only copies item, next is set to nullptr
     MasterSongList& operator=(const MasterSongList& queueToCopy);
@@ -33,8 +40,9 @@ public:
     std::string toString();
     void removeValueAtEnd();
     void insertAtEnd(Song songToAdd);
+    int itemCount();
     bool isEmpty();
-    int getValueAt(Song songToAdd);
+    int getValueAt(int index);
 };
 
 #endif //INC_220_DJ_PROJECT_MASTERSONGLIST_H
