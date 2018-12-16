@@ -55,7 +55,7 @@ void Interface::playNextSong(string name){
     }
 }
 
-void Interface::addSong(string playList, string songName, string artist){
+void Interface::addSong(string playList, string songName, string artist, float songDuration){
     try {
         playLists->get(playList);  //mastrePlayListNeeded
         List* p1=playLists->get(playList);     //mastrePlayListNeeded
@@ -105,11 +105,9 @@ std::string Interface::viewAllPlaylist(){
 
 void Interface::addSongToLibrary(std::string artist, std::string song, int duration){
     std::cout<<"Add Song to Library\n";
-    Song newSong = Song(artist, song,duration);
-
-    lib->addSongToEnd(newSong);
-    Song* testSong=lib->getSong(song);
-    std::cout<<"Added " + testSong->getTitle() + " by "+ testSong->getArtist() + " with a duration of "+ std::to_string(testSong->getDuration()) + " to library\n";
+    playLists->addSongAtEnd(artist, song,duration);
+    std::string songAdd=playLists->search(song);
+    std::cout<<songAdd;
 }
 
 std::string Interface::removeSong(std::string name){
@@ -309,7 +307,7 @@ int main(){
 
     string choice;
     Interface newUserInterface = Interface();
-    newUserInterface.importX("Sample.txt");
+    newUserInterface.importX("sampleLibrary.txt");
 
     cout << "\n***************************************************\n"
             "*                                                 *\n"
