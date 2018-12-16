@@ -9,18 +9,20 @@
 #include <stdexcept>
 #include Playlist.h
 #include LinkedPlayList.h
+#include PlaylistPtr.h
 class MasterPlayList{
 private:
-    int *array;
+    int *arrayOfPlayList;
     int currItemCount;
     int currCapacity;
-    MasterPlayList* playlistPointer;
+    PlaylistPointer* playlistPtr;
 public:
     MasterPlayList(int intialCapacity);
     MasterPlayList(const MasterPlayList& arrayListToCopy);
     ~MasterPlayList();
     std::string getPlaylist();
     void addPlayList();
+    void addPlayListAt(int index);
     std::string removePlayList();
     std::string findPlaylist();
     bool isEmpty();
