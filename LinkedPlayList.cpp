@@ -109,12 +109,13 @@ void LinkedPlayList::addSongAtEnd(std::string artist, std::string songName, floa
         currItems++;
     }
     else{
-        int count=0;
+        int count=-1;
         LinkedPlayListNode*copyPlayList=front;
         while(copyPlayList!= nullptr){
             if(songName!=copyPlayList->getSong().getTitle()){
                 count++;
             }
+            copyPlayList=copyPlayList->getNext();
         }
         if(count<0) {
             Song newSong=Song(songName,artist,duration);

@@ -53,6 +53,10 @@ void runLinkedPlaylistTests(){
     printAssertEquals(false, playList1->isEmpty());
 
 
+    playList1->addSongAtEnd("Joel","Hi",4.08);
+    std::cout<<playList1->getAllSongs();
+    printAssertEquals(false,playList1->isEmpty());
+
     /*//do it again
     for (int i=0; i<5; i++){
         myList.addSongAt(a1[i], 0);

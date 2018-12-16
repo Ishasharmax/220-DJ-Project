@@ -18,6 +18,10 @@ private:
     int currCapacity;
 
 public:
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     std::string nameOftheList;
     MasterSongList(int initialCapacity, std::string nameOftheList);
     ~MasterSongList(); //creates an array
