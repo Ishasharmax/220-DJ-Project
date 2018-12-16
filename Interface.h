@@ -1,24 +1,27 @@
 //
-//
 // Created by Isha Sharma on 12/11/18.
 //
 //
 
-#ifndef INC_220_DJ_PROJECT_INTERFACEMAIN_H
-#define INC_220_DJ_PROJECT_INTERFACEMAIN_H
+#ifndef INC_220_DJ_PROJECT_INTERFACE_H
+#define INC_220_DJ_PROJECT_INTERFACE_H
 
-#include "MasterPlayList.h"
 #include "MasterSongList.h"
 #include "LinkedPlayList.h"
+#include "PlayList.h"
 
-class UserInterFace{
+class Interface{
 private:
-    MasterPlayListMap* arrayOfPlaylist;
-    libraryList* lib;
+    LinkedPlayList* playLists;
+
+    /*libraryList* lib;*/
+
+    /*PlayListMap* listOfPlaylist;
+    libraryList* lib;*/
 
 public:
     Interface();
-    void import(string fileToUse);
+    void importX(std::string fileToUse);
     void newPlaylist(std::string name);
     void addSong(std::string name, std::string artist, std::string title);
     void playNextSong(std::string name);
@@ -26,15 +29,14 @@ public:
     std::string fullLibrary();
     std::string viewPlaylist(std::string name);
     std::string viewAllPlaylist();
-    std::string removeaSong(std::string name);
-    void addSongtoFile(std::string artist, std::string song, int duration);
+    std::string removeSong(std::string name);
+    void addSongToLibrary(std::string artist, std::string song, int duration);
     std::string artistWork(std::string artist);
-    std::string viewSong(std::string title, std::string artist);
+    std::string viewSong(std::string trackName);
     void removeSongFromPlaylist(std::string name, std::string artist, std::string title);
     void saveFile();
     void importSongs();
     void removeAPlaylist(std::string name);
     void discontinue(std::string fileName);
 };
-
-#endif //INC_220_DJ_PROJECT_INTERFACEMAIN_H
+#endif //INC_220_DJ_PROJECT_INTERFACE_H

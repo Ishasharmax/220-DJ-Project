@@ -116,10 +116,13 @@ void removeSongTest(int numsToTestSize, int initialCapacity){
     std::cout << "--done--" <<std::endl;
 }
 
-
 int main() {
+<<<<<<< HEAD
 
     importSong(5);
+=======
+    importSong(5, 5);
+>>>>>>> 59d064f2ba0d474780a6c57c788c5052ec6760bf
     isEmptyTest(5, 5);
     itemCountTest(5, 5);
     toStringTest();
