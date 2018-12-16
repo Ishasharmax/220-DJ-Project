@@ -1,21 +1,13 @@
 //
-// Created by KandacePC on 11/29/2018.
+// Created by Isha Sharma on 12/15/18.
 //
 
-#ifndef INC_220_DJ_PROJECT_PLAYLIST_H
-#define INC_220_DJ_PROJECT_PLAYLIST_H
+#ifndef INC_220_DJ_PROJECT_ALLPLAYLISTSOPERATIONS_H
+#define INC_220_DJ_PROJECT_ALLPLAYLISTSOPERATIONS_H
 
-#include <string>
-#include <stdexcept>
-#include <string>
-#include "Song.h"
-#include <fstream>
-#include <cstdlib>
-
-
-class PlayList {
+class AllPlayListsOperations {
 public:
-    virtual ~PlayList(){}
+    virtual ~AllPlayListsOperations(){}
 
     virtual float calcPlayListDuration()=0;
 
@@ -37,6 +29,7 @@ public:
 
     //virtual std::string search(std::string item)=0;
 
+
     //virtual std::string removeSongAtEnd()=0;
 
     //virtual std::string getAllSongs()=0;
@@ -51,4 +44,5 @@ public:
 
     //virtual void replay()=0;
 };
-#endif //INC_220_DJ_PROJECT_PLAYLIST_H
+
+#endif //INC_220_DJ_PROJECT_ALLPLAYLISTSOPERATIONS_H

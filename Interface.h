@@ -8,10 +8,15 @@
 
 #include "MasterSongList.h"
 #include "LinkedPlayList.h"
+#include "PlayList.h"
 
 class Interface{
 private:
-    /*MasterPlayListMap* arrayOfPlaylist;
+    LinkedPlayList* playLists;
+
+    /*libraryList* lib;*/
+
+    /*PlayListMap* listOfPlaylist;
     libraryList* lib;*/
 
 public:
@@ -27,7 +32,7 @@ public:
     std::string removeSong(std::string name);
     void addSongToLibrary(std::string artist, std::string song, int duration);
     std::string artistWork(std::string artist);
-    std::string viewSong(std::string title, std::string artist);
+    std::string viewSong(std::string trackName);
     void removeSongFromPlaylist(std::string name, std::string artist, std::string title);
     void saveFile();
     void importSongs();

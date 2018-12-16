@@ -16,56 +16,31 @@ using namespace std;
 #include "LinkedPlayList.h"
 #include "LinkedPlayListNode.h"
 
-
-int main () {
-     /*string fileName;
-    //cout << "Enter a file name you want: ";
-    //cin>>fileName;
-    //std::ofstream out(fileName);
-    //out << "Hello, World\n" << std::endl;
-
-    //string fileName, fileName2, line;
-    ifstream infile;
-    infile.open("sampleLibrary.txt");
-    if (infile.fail()) {
-        cout << "Unable to open file";
-    } else {
-        std::string s;
-        while (getline(infile, s)) {
-            cout << s << endl;
-        }
-        infile.close();
-        infile.clear();
-    }
-}*/
-
-
 Interface::Interface(){
     int initialCapacity;
-    playLists= new MasterPlaylist();
+    playLists= new LinkedPlayList();
     songList= new MasterSongList(initialCapacity ,"Library");
 }
 
 void Interface::newPlaylist(string name){
     cout<<"Make New Playlist\n";
     MasterPlayList* playlist1= new Playlist(name);
-    listOfPlaylist->put(*playlist);
+    playLists->put(*playlist1);
     cout<<"New Playlist made: " + name + "\n";
 }
 
 void Interface::playNextSong(string name){
-    cout<<"Play Next Song in Playlist\n";
-    if(listOfPlaylist->get(name)->isEmpty()==true){
-        listOfPlaylist->removePlayList(name);
+    if(playLists->playListName(name)->isEmpty()==true){//masterLinkedList needed with the naem of the playlist
+        playLists->removePlayList(name);
         cout << "Playlist " + name + " is removed!" << endl;
     }
     else {
-        Song song = listOfPlaylist->get(name)->playNextSong();
+        Song song = playLists->get(name)->playNextSong();
         lib->getSong(song.getTitle())->playSong();
         cout << "Song Removed: " + song.getTitle() + " " + song.getArtist() + " " +
                 std::to_string(song.getDuration()) << std::endl;
-        if (listOfPlaylist->get(name)->isEmpty() == true) {
-            listOfPlaylist->removePlayList(name);
+        if (playLists->get(name)->isEmpty() == true) {
+            playLists->removePlayList(name);
             std::string str= name+".dat";
             char *cstr = new char[str.length() + 1];
             strcpy(cstr, str.c_str());
@@ -82,12 +57,12 @@ void Interface::playNextSong(string name){
 
 void Interface::addSong(string playList, string songName, string artist){
     try {
-        listOfPlaylist->get(playList);
-        List* p1=listOfPlaylist->get(playList);
+        playLists->get(playList);  //mastrePlayListNeeded
+        List* p1=playLists->get(playList);     //mastrePlayListNeeded
         Song* song=lib->getSong(title);
         p1->addSongToEnd(*song);
-        listOfPlaylist->put(*p1);
-        cout<<"Song"<< songName<< "by" << artist << "is added to"<< playList;
+        playLists->put(*p1);
+        cout<<"Song "<< songName<< " by " << artist << " is added to "<< playList;
     }
     catch (std::invalid_argument &e) {
         ("Song not found");
@@ -114,8 +89,8 @@ void Interface::createRandomPlaylist(std::string name){
 
 string Interface::viewPlaylist(string name){
     try {
-        listOfPlaylist->get(name);
-        return name + ": "+ listOfPlaylist->get(name)->display();
+        playLists->get(name);
+        return name + ": "+ playLists->get(name)->display();
     }
     catch (std::invalid_argument &e) {
         ("PlayList is not present");
@@ -125,7 +100,7 @@ string Interface::viewPlaylist(string name){
 
 std::string Interface::viewAllPlaylist(){
     std::cout<<"Display All Playlist\n";
-    return listOfPlaylist->display();
+    return playLists->display();
 }
 
 void Interface::addSongToLibrary(std::string artist, std::string song, int duration){
@@ -139,15 +114,13 @@ void Interface::addSongToLibrary(std::string artist, std::string song, int durat
 
 std::string Interface::removeSong(std::string name){
     std::cout<<"Remove Song\n";
-
     try {
-        lib->getSong(name)->getTitle();
+        playLists->getSong(name).getTitle();
         Song* song = lib->getSong(name);
         lib->goThroughList(name);
 
-        listOfPlaylist->goThrough(name);
-        return "Song Removed: " + song->getTitle() + ", " + song->getArtist() + ", " + std::to_string(song->getDuration());
-
+        playLists->goThrough(name);
+        return "Song Removed: " + song.getTitle() + ", " + song.getArtist() + ", " + std::to_string(song.getSongLength());
     }
     catch (std::invalid_argument &e) {
 
@@ -159,7 +132,7 @@ std::string Interface::removeSong(std::string name){
 void Interface::removeSongFromPlaylist(string artistName, string songName, string playListName){
     bool playListpresent=true;
     try {
-        listOfPlaylist->get(name);
+        playLists->get(name);
     }
     catch (std::invalid_argument &e) {
         ("There is no playlist");
@@ -168,9 +141,9 @@ void Interface::removeSongFromPlaylist(string artistName, string songName, strin
     }
     if(playListpresent==true){
         try {
-            listOfPlaylist->get(name)->getSong(title).getTitle();
+            playLists->get(name)->getSong(title).getTitle();
             Song* song = lib->getSong(title);
-            listOfPlaylist->get(name)->goThroughList(title);
+            playLists->get(name)->goThroughList(title);
             cout<< "Song successfully: " + song->getTitle() + ", " + song->getArtist() + ", " + std::to_string(song->getDuration()) + "\n";
         }
         catch (std::invalid_argument &e) {
@@ -181,30 +154,30 @@ void Interface::removeSongFromPlaylist(string artistName, string songName, strin
 }
 
 string Interface::artistWork(string artistName) {
-    return library->displayArtist(artistName);
-}
+    return playLists->displayArtist(artistName);
+}//done
 
-std::string Interface::viewSong(string trackName, string artist){
+std::string Interface::viewSong(string trackName){
     cout<<"Song info\n";
-    Song* songInfo=library->getSong(trackName);
-    string songName=songInfo->getTitle();
-    string artist1=songInfo->getArtist();
-    double songDuration=songInfo->getDuration();
-    int songPlayCount=songInfo->getPlayCount();
+    Song songInfo=playLists->getSong(trackName);
+    string songName=songInfo.getTitle();
+    string artist=songInfo.getArtist();
+    double songDuration=songInfo.getSongLength();
+    int songPlayCount=songInfo.getPlayCount();
 
-    return "Song Name: "+songName +"\n"+"Artist: " + artist1 +"\n"+"Duration: " + to_string(songDuration) + "\n"+ " seconds  PlayCount: " + to_string(songPlayCount) + "\n";
-}
+    return "Song Name: "+songName +"\n"+"Artist: " + artist +"\n"+"Duration: " + to_string(songDuration) + "\n"+ " seconds  PlayCount: " + to_string(songPlayCount) + "\n";
+}//done
 
 void Interface::saveFile() {
-    listOfPlaylist->savePlaylist();
-    library->saveSongs();
-}
+    playLists->saveThePlayList();
+    //library->saveSongs();
+}//done
 
 
 void Interface::importX(string fileName) {
     ifstream infile(fileName);
     if (infile.fail()) {
-        cout << "Unable to open file " << filename << endl;
+        cout << "Unable to open file " << fileName << endl;
     } else {
         while (infile) {
             for (int i = 0; i < 4; i++) {
@@ -268,7 +241,7 @@ void Interface::importSongs() {
                             cout << song.getArtist() + ", " + song.getTitle() + ", " +
                                     std::to_string(song.getDuration()) +
                                     "\n";
-                            listOfPlaylist->get(playlist)->addSongToEnd(song);
+                            playLists->get(playlist)->addSongToEnd(song);
                         }
                     }
                 }
@@ -277,19 +250,19 @@ void Interface::importSongs() {
     }
 }
 
-void Interface::removeAPlaylist(string name) {
+void Interface::removeAPlaylist(string playListName) {
     try {
-        listOfPlaylist->get(name);
-        listOfPlaylist->removePlayList(name);
-        std::string str = name + ".dat";
+        playLists->get(playListName);
+        playLists->removePlayList(playListName);
+        std::string str = playListName + ".txt";
         char *cstr = new char[str.length() + 1];
         strcpy(cstr, str.c_str());
         if (remove(cstr) != 0) {
             perror("Error deleting file");
         } else {
-            puts("File successfully deleted");
+            puts("File deleted");
         }
-        std::cout << "Playlist " + name + " is removed!" << std::endl;
+        std::cout << "Playlist " + playListName + " is removed!" << std::endl;
     }
     catch (std::invalid_argument &e) {
         //printAssertEquals("PlayList is not present", e.what());
@@ -326,7 +299,7 @@ void Interface::discontinue(string fileForUse) {
     }
 }
 
-int main() {
+int main(){
     string fileName, userInput;
     cout << "Enter a file name you want: ";
     getline(cin, fileName);
@@ -453,10 +426,36 @@ int main() {
         } else if (choice == "14") {
             cout << "No information in the file\n";
         } else if (choice == "15") {
-            string name;
-            cout << "Please enter Playlist name: ";
-            getline(cin, name);
-            newUserInterface.removeAPlaylist(name);
+            cout << "1. Import Songs\n"
+                    "This option lets you to import a song from a file\n"
+                    "2. Remove Songs\n"
+                    "This option lets you to remove a song from the file\n"
+                    "3. Song Information\n"
+                    "This option lets you view info about a song\n"
+                    "4. Import songs from a file\n"
+                    "This option lets you to import a song from a file\n"
+                    "5. Add New Playlist\n"
+                    "This option lets you to create a new playlist\n"
+                    "6. Play a Playlist\n"
+                    "This option lets you to play a playlist\n"
+                    "7. Remove Playlist\n"
+                    "This option lets you to remove a playlist\n"
+                    "8. Add song in a Playlist\n"
+                    "This option lets you to add a song to a playlist\n"
+                    "9. Remove song in a Playlist\n"
+                    "This option lets you to remove a song from a playlist\n"
+                    "10. View All Playlists \n"
+                    "This option lets you view all the playlists present\n"
+                    "11. Play Next song\n"
+                    "This option allows you to play next song in a playlist\n"
+                    "12. Artist's work\n"
+                    "This option lets separates the work of an artist and shows you\n"
+                    "13. Help \n"
+                    "This is the help section\n"
+                    "14. Exit\n"
+                    "This option lets you to exit the program and saves your file for future use\n";
+            cout << "_______________________________________\n\n";
+
         } else if (choice == "16") {
             string file;
             cout << "Enter file name: ";
