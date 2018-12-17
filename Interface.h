@@ -25,7 +25,9 @@ public:
     void newPlaylist(std::string name);
     void addSong(std::string playList, std::string songName, std::string artist, float songDuration);
     void playNextSong(std::string name);
-    void createRandomPlaylist(std::string name, int duration);
+    //void createRandomPlaylist(std::string name, int duration);
+    void createRandomPlaylist(std::string name);
+
     std::string fullLibrary();
     std::string viewPlaylist(std::string name);
     std::string viewAllPlaylist();
