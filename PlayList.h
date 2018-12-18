@@ -7,48 +7,48 @@
 
 #include <string>
 #include <stdexcept>
-#include <string>
 #include "Song.h"
+#include <iostream>
 #include <fstream>
 #include <cstdlib>
 
 
 class PlayList {
 public:
+
     virtual ~PlayList(){}
+
 
     virtual float calcPlayListDuration()=0;
 
-    virtual Song getSong(std::string title)=0;
+    virtual std::string search(std::string item)=0;
 
     virtual void addSongAtEnd(std::string artist, std::string songName, float duration)=0;
 
-    virtual std::string displayEverything()=0;
+    virtual void addSongAt(int index,std::string artist, std::string songName, float duration)=0;
+
+    virtual std::string removeSongAt(int index)=0;
+
+    virtual std::string removeSongAtEnd()=0;
+
+    virtual std::string getAllSongs()=0;
+
+    virtual int getSongCount()=0;
 
     virtual bool isEmpty()=0;
 
-    virtual std::string nextSong()=0; //Song Data Type?
+    virtual std::string nextSong()=0;
 
-    virtual void saveSongs(std::string fileName)=0;
+    virtual std::string previousSong()=0;
 
-    //virtual void addSongAt(int index,std::string artist, std::string songName, float duration)=0;
+    virtual int getPlayCount(std::string songName)=0;
 
-    //virtual std::string removeSongAt(int index)=0;
+    virtual void replay()=0;
 
-    //virtual std::string search(std::string item)=0;
+    virtual void saveThePlayList()=0;
 
-    //virtual std::string removeSongAtEnd()=0;
+    virtual void clearList()=0;
 
-    //virtual std::string getAllSongs()=0;
-
-    //virtual std::string getHelp()=0;
-
-    //virtual int getSongCount()=0;
-
-    //virtual std::string previousSong()=0;
-
-    //virtual int getPlayCount(std::string song)=0;
-
-    //virtual void replay()=0;
+    virtual std::string displayArtist(std::string artist)=0;
 };
 #endif //INC_220_DJ_PROJECT_PLAYLIST_H

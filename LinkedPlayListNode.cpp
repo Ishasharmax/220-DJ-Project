@@ -12,6 +12,7 @@ LinkedPlayListNode::LinkedPlayListNode(Song *songIN) {
 
 LinkedPlayListNode::~LinkedPlayListNode(){
     delete this->song;
+    song= nullptr;
 }
 
 LinkedPlayListNode::LinkedPlayListNode(const LinkedPlayListNode& nodeToCopy){

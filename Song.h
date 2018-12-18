@@ -17,7 +17,7 @@ private:
 public:
     Song();
 
-    Song(const std::string titleIn,const std::string artistIn, float songLengthIn);
+    Song( std::string titleIn, std::string artistIn, float songLengthIn);
 
     Song(const Song& songToCopy);
 
