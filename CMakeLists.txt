@@ -9,13 +9,13 @@ add_executable(220_DJ_Project
         LinkedPlaylistNodeTest.cpp
         LinkedPlayList.cpp
         LinkedPlayListNode.cpp
-        LinkedPlaylistTest.cpp
+        MasterPlayList.cpp
+        MasterPlayListLib.cpp
         MasterSongListTest.cpp
         MasterSongList.cpp
         SongLib.cpp
-        SongTest.cpp
         Song.cpp
-        MasterPlaylistTest.cpp
-        MasterPlaylist.cpp
-        MasterSongList.cpp
-        Interface.cpp)
+        SongTest.cpp
+       )
+
+

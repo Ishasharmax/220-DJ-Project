@@ -17,9 +17,9 @@ MasterPlayList::MasterPlayList(int initialCapacity) {
     }
     else{
         this->currCapacity=initialCapacity;
-        arrayOfPlayList=new int[currCapacity];
+        this->arrayOfPlayList=new int[currCapacity];
         currItemCount=0;
-        playListPtr=nullptr;
+        this->playListPtr=nullptr;
     }
 
 }

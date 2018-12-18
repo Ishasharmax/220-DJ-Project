@@ -15,16 +15,18 @@ using namespace std;
 #include "MasterSongList.h"
 #include "LinkedPlayList.h"
 #include "LinkedPlayListNode.h"
+#include "MasterPlayList.h"
 
 Interface::Interface(){
     int initialCapacity;
     playLists= new LinkedPlayList();
-    songList= new MasterSongList(initialCapacity ,"Library");
+    //songList= new MasterSongList(initialCapacity ,"Library");
+    //MasterPlayList* playlist1= new MasterPlayList(name);
 }
 
-void Interface::newPlaylist(string name){
+/*void Interface::newPlaylist(string name){
     cout<<"Make New Playlist\n";
-    MasterPlayList* playlist1= new Playlist(name);
+    MasterPlayList* playlist1= new MasterPlayList(name);
     playLists->put(*playlist1);
     cout<<"New Playlist made: " + name + "\n";
 }
@@ -35,10 +37,9 @@ void Interface::playNextSong(string name){
         cout << "Playlist " + name + " is removed!" << endl;
     }
     else {
-        Song song = playLists->get(name)->playNextSong();
-        lib->getSong(song.getTitle())->playSong();
-        cout << "Song Removed: " + song.getTitle() + " " + song.getArtist() + " " +
-                std::to_string(song.getDuration()) << std::endl;
+        string song = playLists->nextSong();
+        lib->search(name)->playSong();
+        cout << "Song Removed: " <<endl;
         if (playLists->get(name)->isEmpty() == true) {
             playLists->removePlayList(name);
             std::string str= name+".dat";
@@ -115,15 +116,14 @@ void Interface::addSongToLibrary(std::string artist, std::string song, int durat
 std::string Interface::removeSong(std::string name){
     std::cout<<"Remove Song\n";
     try {
-        playLists->getSong(name).getTitle();
-        Song* song = lib->getSong(name);
-        lib->goThroughList(name);
-
+        //playLists->getSong(name).getTitle();
+        //playLists->removeSong(name);
+        Song song = playLists->getSong(name);
+        //lib->goThroughList(name);
         playLists->goThrough(name);
         return "Song Removed: " + song.getTitle() + ", " + song.getArtist() + ", " + std::to_string(song.getSongLength());
     }
     catch (std::invalid_argument &e) {
-
         ("Song is not in Library");
         return "Song is not in Library";
     }
@@ -132,7 +132,7 @@ std::string Interface::removeSong(std::string name){
 void Interface::removeSongFromPlaylist(string artistName, string songName, string playListName){
     bool playListpresent=true;
     try {
-        playLists->get(name);
+        playLists->search(playListName);
     }
     catch (std::invalid_argument &e) {
         ("There is no playlist");
@@ -141,8 +141,10 @@ void Interface::removeSongFromPlaylist(string artistName, string songName, strin
     }
     if(playListpresent==true){
         try {
-            playLists->get(name)->getSong(title).getTitle();
-            Song* song = lib->getSong(title);
+            playLists->search(songName);
+
+            //playLists->get(name)->getSong(title).getTitle();
+            //Song* song = lib->getSong(title);
             playLists->get(name)->goThroughList(title);
             cout<< "Song successfully: " + song->getTitle() + ", " + song->getArtist() + ", " + std::to_string(song->getDuration()) + "\n";
         }
@@ -151,7 +153,7 @@ void Interface::removeSongFromPlaylist(string artistName, string songName, strin
             std::cout<<"Song is not in Playlist :/ \n";
         }
     }
-}
+}*/
 
 string Interface::artistWork(string artistName) {
     return playLists->displayArtist(artistName);
@@ -159,20 +161,13 @@ string Interface::artistWork(string artistName) {
 
 std::string Interface::viewSong(string trackName){
     cout<<"Song info\n";
-    Song songInfo=playLists->getSong(trackName);
-    string songName=songInfo.getTitle();
-    string artist=songInfo.getArtist();
-    double songDuration=songInfo.getSongLength();
-    int songPlayCount=songInfo.getPlayCount();
-
-    return "Song Name: "+songName +"\n"+"Artist: " + artist +"\n"+"Duration: " + to_string(songDuration) + "\n"+ " seconds  PlayCount: " + to_string(songPlayCount) + "\n";
+    string songInfo=playLists->search(trackName);
+    return songInfo;
 }//done
 
 void Interface::saveFile() {
-    playLists->saveThePlayList();
-    //library->saveSongs();
+    playLists->saveSongs();
 }//done
-
 
 void Interface::importX(string fileName) {
     ifstream infile(fileName);
@@ -190,25 +185,23 @@ void Interface::importX(string fileName) {
                 stringstream songTime(duration);
                 songTime >> song_duration;
                 getline(infile, songPlayCount);
-                stringstream count(playcount);
+                stringstream count(songPlayCount);
                 count >> played;
                 try {
-                    library->getSong(title)->getTitle();
+                    playLists->search(songName);
                     cout << "Song is in the library already.\n";
                 }
                 catch (std::invalid_argument &e) {
-                    ("New song");
                     if (artist != "") {
                         Song songToAdd(songName, artist, song_duration);
                         cout << songToAdd.getArtist() << ", " + songToAdd.getTitle()
-                             << ", " + std::to_string(songToAdd.getDuration()) << "\n";
-                        library->addSongToEnd(songToAdd);
-                        library->getSong(songToAdd.getTitle())->setPlaycount(played);
+                             << ", " + std::to_string(songToAdd.getSongLength());
+                        playLists->addSongAtEnd(songName, artist, song_duration);
+                        //playLists->search(songName)->addToPlayCount(played);
                     }
                 }
             }
-        }
-        std::cout << "Library is updated \n";
+        }std::cout << "Library is updated \n";
     }
 }
 
@@ -220,28 +213,31 @@ void Interface::importSongs() {
         cout << "Unable to open file";
     } else {
         while (infile) {
-            string playList;
-            getline(infile, playList);
-            if (playList != "") {
-                ifstream newPlayList;
-                string newX = newPlayList + ".txt";
-                newPlayList.open(newX);
-                if (!newPlayList) {
-                    cout << "playlist couldn't be opened" << endl;
+            string playlist;
+            getline(infile, playlist);
+
+            if (playlist != "") {
+                //newPlayList.open(newX);
+                ifstream newPlaylist(playlist + ".txt");
+                this->newPlaylist(playlist);
+
+                if (!newPlaylist) {
+                    cerr << "playlist couldn't be opened" << endl;
                     exit(1);
                 }
-                while (newPlayList) {
+                while (newPlaylist) {
                     for (int i = 0; i < 3; i++) {
                         string artist, songName, duration;
                         int song_duration = 0;
-                        getline(newPlayList, artist);
-                        getline(newPlayList, songName);
+                        getline(newPlaylist, artist);
+                        getline(newPlaylist, songName);
                         if (artist != "") {
                             Song song(songName, artist, song_duration);
                             cout << song.getArtist() + ", " + song.getTitle() + ", " +
-                                    std::to_string(song.getDuration()) +
+                                    std::to_string(song.getSongLength()) +
                                     "\n";
-                            playLists->get(playlist)->addSongToEnd(song);
+                            //playLists->get(playlist)->addSongToEnd(song);
+                            playLists->addSongAtEnd(artist, songName, song_duration);
                         }
                     }
                 }
@@ -250,7 +246,7 @@ void Interface::importSongs() {
     }
 }
 
-void Interface::removeAPlaylist(string playListName) {
+/*void Interface::removeAPlaylist(string playListName) {
     try {
         playLists->get(playListName);
         playLists->removePlayList(playListName);
@@ -269,7 +265,7 @@ void Interface::removeAPlaylist(string playListName) {
         ("PlayList is not present");
         std::cout << "Sorry Playlist does not exsist";
     }
-}
+}*/
 
 
 void Interface::discontinue(string fileForUse) {
@@ -279,17 +275,16 @@ void Interface::discontinue(string fileForUse) {
     }
     while (infile) {
         for (int i = 0; i < 4; i++) {
-            string songName, artist, duration;
+            string songName, artist, duration, songPlayed;
             double song_duration = 0;
             int played = 0;
             getline(infile, songName);
             getline(infile, artist);
             getline(infile, duration);
-            stringstream (duration);
             stringstream songTime(duration);
             songTime >> song_duration;
-            getline(infile, songPlayCount);
-            stringstream count(playcount);
+            getline(infile, songPlayed);
+            stringstream count(songPlayed);
             count >> played;
             if (artist != "") {
                 Song song(artist, songName, song_duration);
@@ -309,7 +304,7 @@ int main(){
 
     string choice;
     Interface newUserInterface = Interface();
-    newUserInterface.importX("Sample.txt");
+    newUserInterface.importX("sampleLibrary.txt");
 
     cout << "\n***************************************************\n"
             "*                                                 *\n"
@@ -363,21 +358,24 @@ int main(){
             std::cout << "Please enter Artist: ";
             std::string artist;
             std::getline(std::cin, artist);
-            std::cout << newUserInterface.viewSong(songTitle, artist) + "\n";
+            std::cout << newUserInterface.viewSong(songTitle) + "\n";
         } else if (choice == "4") {
             std::cout << newUserInterface.fullLibrary() + "\n";
         } else if (choice == "5") {
             cout << "Please enter Playlist, Song to add, and Artist \n";
-            std::string song;
-            std::string playlist;
-            std::string artist;
+            string song, playlist, artist, duration;
+            float song_duration=0;
             cout << "Please Enter Song: \n";
             std::getline(std::cin, song);
             cout << "Please Enter Artist: \n";
             std::getline(std::cin, artist);
             cout << "Please Enter Playlist: \n";
             std::getline(std::cin, playlist);
-            newUserInterface.addSong(playlist, artist, song);
+            cout << "Duration: \n";
+            getline(cin, duration);
+            stringstream songTime(duration);
+            songTime >> song_duration;
+            newUserInterface.addSong(playlist, artist, song, song_duration);
         } else if (choice == "6") {
             string song;
             cout << "Please enter song to remove from Playlist(s) and library: \n";
@@ -390,14 +388,14 @@ int main(){
             newUserInterface.newPlaylist(playListName);
             cout << "Playlist " << playListName << " made";
         } else if (choice == "8") {
-            std::cout << "Please enter Artist name: ";
-            std::string artist;
-            std::getline(std::cin, artist);
-            std::cout << newUserInterface.artistWork(artist) + "\n";
+            cout << "Please enter Artist name: ";
+            string artist;
+            getline(std::cin, artist);
+            cout << newUserInterface.artistWork(artist) + "\n";
         } else if (choice == "9") {
             cout << "Name of the new playList: ";
-            string playListNew, ;
-            std::getline(cin, playListNew);
+            string playListNew;
+            getline(cin, playListNew);
             newUserInterface.createRandomPlaylist(playListNew);
         } else if (choice == "10") {
             string playlist;
@@ -492,3 +490,4 @@ int main(){
     }
     return 0;
 }
+
