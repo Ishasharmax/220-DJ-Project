@@ -11,6 +11,7 @@ add_executable(220_DJ_Project
         LinkedPlayListNode.cpp
         SongLib.cpp
         Song.cpp
+        Interface.cpp
         SongTest.cpp
        )
 

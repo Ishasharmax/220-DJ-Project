@@ -19,11 +19,11 @@ void runSongTests(){
     mySong.getTitle();
     printAssertEquals("Love on Top", mySong.getTitle());
 
-    mySong.getPlayCount();
+    /*//mySong.getPlayCount();
     printAssertEquals(0,0);
-    mySong.addToPlayCount();
-    mySong.getPlayCount();
-    printAssertEquals(1,1);
+    //mySong.addToPlayCount();
+    //mySong.getPlayCount();
+    printAssertEquals(1,1);*/
 
     mySong.getSongLength();
     printAssertEquals(4.00,mySong.getSongLength());
