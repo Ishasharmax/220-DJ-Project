@@ -17,14 +17,14 @@ using namespace std;
 #include "LinkedPlayListNode.h"
 #include "MasterPlayList.h"
 
-Interface::Interface(){
+/*Interface::Interface(){
     int initialCapacity;
     playLists= new LinkedPlayList();
     //songList= new MasterSongList(initialCapacity ,"Library");
     //MasterPlayList* playlist1= new MasterPlayList(name);
 }
 
-/*void Interface::newPlaylist(string name){
+*//*void Interface::newPlaylist(string name){
     cout<<"Make New Playlist\n";
     MasterPlayList* playlist1= new MasterPlayList(name);
     playLists->put(*playlist1);
@@ -153,7 +153,7 @@ void Interface::removeSongFromPlaylist(string artistName, string songName, strin
             std::cout<<"Song is not in Playlist :/ \n";
         }
     }
-}*/
+}*//*
 
 string Interface::artistWork(string artistName) {
     return playLists->displayArtist(artistName);
@@ -246,7 +246,7 @@ void Interface::importSongs() {
     }
 }
 
-/*void Interface::removeAPlaylist(string playListName) {
+*//*void Interface::removeAPlaylist(string playListName) {
     try {
         playLists->get(playListName);
         playLists->removePlayList(playListName);
@@ -265,7 +265,7 @@ void Interface::importSongs() {
         ("PlayList is not present");
         std::cout << "Sorry Playlist does not exsist";
     }
-}*/
+}*//*
 
 
 void Interface::discontinue(string fileForUse) {
@@ -292,9 +292,34 @@ void Interface::discontinue(string fileForUse) {
             }
         }
     }
-}
+}*/
 
 int main(){
+
+    / to write something
+    /*string fileName;
+    cout << "Enter a file name you want: ";
+    cin>>fileName;
+    std::ofstream out(fileName);
+    out << "Hello, World\n" << std::endl;
+    //to wriet soemthing in file*/
+
+    //to read somehting
+    string fileName2, line;
+    ifstream infile;
+    infile.open("sampleLibrary.txt");
+    if (infile.fail()) {
+        cout << "Unable to open file";
+    } else {
+        std::string s;
+        while (getline(infile, s)) {
+            cout << s << endl;
+        }
+        infile.close();
+        infile.clear();
+    } //read files
+
+
     string fileName, userInput;
     cout << "Enter a file name you want: ";
     getline(cin, fileName);
